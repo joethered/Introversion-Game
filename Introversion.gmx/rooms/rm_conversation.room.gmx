@@ -62,6 +62,7 @@
     <instance objName="obj_cursor" x="12" y="106" name="inst_A74B40D4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_talk" x="18" y="106" name="inst_87BFAE60" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_run" x="100" y="106" name="inst_05DA0828" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="menu_template" x="34" y="22" name="inst_71279DFF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

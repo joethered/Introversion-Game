@@ -25,8 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>texture_set_interpolation(false);
-global.inventory_menu = false;
+            <string>global.inventory_menu = false;
 </string>
           </argument>
         </arguments>
