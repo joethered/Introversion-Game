@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-10</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -45,7 +45,7 @@ cursor_row = 0;
 //Sample Item
 item[0,0] = "Name";     //Name of item
 item[0,1] = true;      //is Active?
-item[0,2] = -1;         //Count for item.  -1 means no count
+item[0,2] = 2;         //Count for item.  -1 means no count
 item[0,4] = scr_sample_menu_script;   //Script to execute on item
 
 
@@ -316,6 +316,10 @@ for (i = 0; i &lt; items; i++){
     draw_text(x + left_margin + x_curs * x_spacing,
                 y + top_margin + y_curs * y_spacing,
                 item[i,0]);
+    if (item[i,2] &gt; -1)
+        draw_text(x - left_margin + (x_curs+1) * x_spacing,
+                y + top_margin + y_curs * y_spacing,
+                item[i,2]);
     x_curs += 1;
     if (x_curs == cols){
         x_curs = 0;
