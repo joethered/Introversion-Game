@@ -17,7 +17,8 @@
     <sprite>sprites\spt_courage_border</sprite>
     <sprite>sprites\spt_topbar</sprite>
     <sprite>sprites\lbl_stamina</sprite>
-    <sprite>sprites\sprite12</sprite>
+    <sprite>sprites\spt_talk</sprite>
+    <sprite>sprites\spt_run</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_party_entry</background>
@@ -27,7 +28,7 @@
     <font>fonts\thefont</font>
   </fonts>
   <objects name="objects">
-    <object>objects\obj_cursor</object>
+    <object>objects\obj_controller</object>
     <object>objects\obj_Stamina</object>
     <object>objects\obj_menu_window</object>
     <object>objects\obj_courage</object>
@@ -36,6 +37,10 @@
     <object>objects\obj_guy2</object>
     <object>objects\obj_girl2</object>
     <object>objects\obj_topbar</object>
+    <object>objects\obj_cursor</object>
+    <object>objects\obj_talk</object>
+    <object>objects\obj_run</object>
+    <object>objects\obj_inventory</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_conversation</room>
