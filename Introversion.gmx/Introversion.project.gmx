@@ -10,6 +10,7 @@
     <sprite>sprites\spt_menu_window</sprite>
     <sprite>sprites\spt_cursor</sprite>
     <sprite>sprites\bg_party_Entry</sprite>
+    <sprite>sprites\spt_player_party</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
