@@ -26,14 +26,14 @@
           <argument>
             <kind>1</kind>
             <string>ds_stack_push(global.menu_stack,id);
-kind = "inventory";
+kind = "main";
 
 
-items = 4;
-cols = 2;
+items = 2;
+cols = 1;
 
-rows = ceil(items / 2);
-x_spacing = 60;
+rows = ceil(items / cols);
+x_spacing = 80;
 y_spacing = 10;
 width = 160;
 height = 44;
@@ -47,36 +47,51 @@ cursor_y = cursor_start_y;
 cursor_col = 0;
 cursor_row = 0;
 focus = true;
+wait_for_focus = false;
 
 
 //Sample Item
-item[0,0] = "Cars";     //Name of item
-item[0,1] = true;      //is Active?
-item[0,2] = 2;         //Count for item.  -1 means no count
-item[0,4] = scr_check_convo;   //Script to execute on item
+item[0,0] = "Talk";     //Name of item
+item[0,1] = false;      //is Active?
+item[0,2] = -1;         //Count for item.  -1 means no count
+item[0,4] = scr_make_menu;   //Script to execute on item
 
 
-item[1,0] = "Video Games";     //Name of item
-item[1,1] = false;      //is Active?
+item[1,0] = "Run Away";     //Name of item
+item[1,1] = true;      //is Active?
 item[1,2] = -1;         //Count for item.  -1 means no count
-item[1,4] = scr_check_convo;   //Script to execute on item
+item[1,4] = scr_sample_menu_script;   //Script to execute on item
 
-item[2,0] = "Politics";     //Name of item
-item[2,1] = false;      //is Active?
-item[2,2] = -1;         //Count for item.  -1 means no count
-item[2,4] = scr_check_convo;   //Script to execute on item
-
-item[3,0] = "Yey";     //Name of item
-item[3,1] = false;      //is Active?
-item[3,2] = -1;         //Count for item.  -1 means no count
-item[3,4] = scr_check_convo;   //Script to execute on item
 
 
 //Widget objects
-//widget[0] = instance_create(x + left_margin, y + top_margin + (rows + 1) * y_spacing,
-//                    obj_Stamina);
-//widget[0].depth = depth-1;
+widget[0] = instance_create(x + left_margin + x_spacing, y + top_margin+8,
+                    obj_courage);
+widget[0].depth = depth-1;
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>focus = true;
 </string>
           </argument>
         </arguments>
@@ -99,46 +114,63 @@ item[3,4] = scr_check_convo;   //Script to execute on item
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (keyboard_check_pressed(vk_right)){
-    if (cursor_col &lt; cols - 1){
-        cursor_x += x_spacing;
-        cursor_col += 1;
-    }else{
-        cursor_x = cursor_start_x;
-        cursor_col = 0
-    }
-}
-if (keyboard_check_pressed(vk_left)){
-    if (cursor_col &gt; 0){
-        cursor_x -= x_spacing;
-        cursor_col -= 1;
-    }else{
-        cursor_x = cursor_start_x + (cols-1)*x_spacing;
-        cursor_col = cols-1;
-    }
-}
-if (keyboard_check_pressed(vk_down)){
-    if (cursor_row &lt; rows - 1){
-        cursor_y += y_spacing;
-        cursor_row += 1;
-    }else{
-        cursor_y = cursor_start_y;
-        cursor_row = 0
-    }
-}
-if (keyboard_check_pressed(vk_up)){
-    if (cursor_row &gt; 0){
-        cursor_y -= y_spacing;
-        cursor_row -= 1;
-    }else{
-        cursor_y = cursor_start_y + (rows-1)*y_spacing;
-        cursor_row = rows-1;
-    }
+            <string>if (wait_for_focus){
+    alarm[0] = 10;
+    wait_for_focus = false;    
 }
 
-if (keyboard_check_pressed(vk_space) || keyboard_check_pressed(vk_enter)){
-    index = cursor_row * cols + cursor_col;
-    script_execute(item[index,4], item[index,0]);
+if (widget[0].courage == 100)
+    item[0,1] = true;
+else
+    item[0,1] = false;
+if (focus){
+    if (keyboard_check_pressed(vk_right)){
+        if (cursor_col &lt; cols - 1){
+            cursor_x += x_spacing;
+            cursor_col += 1;
+        }else{
+            cursor_x = cursor_start_x;
+            cursor_col = 0
+        }
+    }
+    if (keyboard_check_pressed(vk_left)){
+        if (cursor_col &gt; 0){
+            cursor_x -= x_spacing;
+            cursor_col -= 1;
+        }else{
+            cursor_x = cursor_start_x + (cols-1)*x_spacing;
+            cursor_col = cols-1;
+        }
+    }
+    if (keyboard_check_pressed(vk_down)){
+        if (cursor_row &lt; rows - 1){
+            cursor_y += y_spacing;
+            cursor_row += 1;
+        }else{
+            cursor_y = cursor_start_y;
+            cursor_row = 0
+        }
+    }
+    if (keyboard_check_pressed(vk_up)){
+        if (cursor_row &gt; 0){
+            cursor_y -= y_spacing;
+            cursor_row -= 1;
+        }else{
+            cursor_y = cursor_start_y + (rows-1)*y_spacing;
+            cursor_row = rows-1;
+        }
+    }
+
+    if (keyboard_check_pressed(vk_space) || keyboard_check_pressed(vk_enter)){
+        index = cursor_row * cols + cursor_col;
+        if (item[index,1] == true){
+            if (item[index,4] == scr_make_menu){
+                script_execute(item[index,4], x+1, y-1);
+                focus = false;
+            }else
+                script_execute(item[index,4], item[index,0]);
+        }
+    }
 }
 </string>
           </argument>

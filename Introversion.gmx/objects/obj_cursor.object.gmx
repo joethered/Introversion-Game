@@ -52,8 +52,10 @@
           <argument>
             <kind>1</kind>
             <string>if (obj_courage.courage == 100 &amp;&amp; x_pos == 1 &amp;&amp;
-    (keyboard_check_pressed(vk_space) || keyboard_check_pressed(vk_enter))){
-    instance_create(2,85,obj_inventory);
+    (keyboard_check_pressed(vk_space) || 
+    keyboard_check_pressed(vk_enter))){
+    
+    //instance_create(2,85,obj_inventory);
 }
 </string>
           </argument>
