@@ -4,7 +4,9 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\sfx_menu</sound>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\spt_topic_bubble_left</sprite>
     <sprite>sprites\spt_topic_bubble_left_flip</sprite>
@@ -22,6 +24,7 @@
     <sprite>sprites\lbl_stamina</sprite>
     <sprite>sprites\spt_talk</sprite>
     <sprite>sprites\spt_run</sprite>
+    <sprite>sprites\spt_scroll_cursor</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_party_entry</background>

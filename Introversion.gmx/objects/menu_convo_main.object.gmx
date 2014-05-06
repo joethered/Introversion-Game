@@ -124,6 +124,13 @@ if (widget[0].courage == 100)
 else
     item[0,1] = false;
 if (focus){
+    if (keyboard_check_pressed(vk_down) || keyboard_check_pressed(vk_up)
+        || keyboard_check_pressed(vk_enter) || keyboard_check_pressed(vk_space)
+        || keyboard_check_pressed(vk_escape)){
+    
+        audio_play_sound(sfx_menu, true, 0);    
+    }
+
     if (keyboard_check_pressed(vk_right)){
         if (cursor_col &lt; cols - 1){
             cursor_x += x_spacing;
@@ -149,7 +156,7 @@ if (focus){
         }else{
             cursor_y = cursor_start_y;
             cursor_row = 0
-        }
+        } 
     }
     if (keyboard_check_pressed(vk_up)){
         if (cursor_row &gt; 0){
