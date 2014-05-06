@@ -45,7 +45,7 @@ allTopics[16] = "Gossip";
 allTopics[17] = "Food";      
 allTopics[18] = "Comics";      
 allTopics[19] = "Hobbies";     
-topic = allTopics[irandom(20) - 1]; 
+topic = allTopics[irandom(19)]; 
 bubble = instance_create(x + 16, y - 16, obj_speech_bubble);
 bubble.topic = topic;
 i = 1;
@@ -77,7 +77,8 @@ if( i &gt;= stepTime)
 {
     i = 1;
     stepTime = 150 + irandom(150);
-    topic = allTopics[irandom(20) - 1];
+    tindex = irandom(19);
+    topic = allTopics[tindex];
     bubble.topic = topic;
 }
 </string>
