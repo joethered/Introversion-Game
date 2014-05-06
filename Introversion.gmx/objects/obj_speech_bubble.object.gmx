@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>topic = "stuff";
 flip = false;
+color = c_black;
 </string>
           </argument>
         </arguments>
@@ -102,7 +103,7 @@ for(i = 0; i &lt; string_length(topic) * 5; i+=1){
     draw_sprite(spt_topic_bubble_center,0,x+6+i,y);
 } 
 draw_sprite(spt_topic_bubble_right,0,x + 6 + i,y);
-draw_set_color(c_black);
+draw_set_color(color);
 
 draw_text(x+4,y+6, topic);
 </string>
