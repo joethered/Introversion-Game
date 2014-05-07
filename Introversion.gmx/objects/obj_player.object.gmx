@@ -55,6 +55,8 @@
             <kind>1</kind>
             <string>set_shake = false;
 shakes = 6;
+win = false;
+count = 0;
 </string>
           </argument>
         </arguments>
@@ -116,6 +118,12 @@ if (shakes &gt; 0){
     set_shake = false;
     alarm[0] = 3;
 }
+if (count == 12 &amp;&amp; !win)
+{
+    win = true;
+    script_execute(scr_make_player_speech, "I win", c_green);
+}
+
 </string>
           </argument>
         </arguments>

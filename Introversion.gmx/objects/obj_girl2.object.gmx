@@ -98,6 +98,10 @@ stepTime = 150 + irandom(150);
             <string>i +=1;
 if( i &gt;= stepTime)
 {
+    if !instance_exists(bubble)
+    {
+        bubble = instance_create(x + 16, y , obj_speech_bubble);
+    }
     i = 1;
     stepTime = 150 + irandom(150);
     tindex = irandom(19);

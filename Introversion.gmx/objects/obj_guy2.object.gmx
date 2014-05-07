@@ -99,6 +99,11 @@ stepTime = 150 + irandom(150);
             <string>i +=1;
 if( i &gt;= stepTime)
 {
+    if !instance_exists(bubble)
+    {
+        bubble = instance_create(x + 18, y + 16, obj_speech_bubble);
+        bubble.flip = true;
+    }
     i = 1;
     stepTime = 150 + irandom(150);
     tindex = irandom(19);

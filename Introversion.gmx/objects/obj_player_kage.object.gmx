@@ -98,29 +98,9 @@ if (hspeed &lt; 0 &amp;&amp; keyboard_check_released(vk_left)){
     <event eventtype="4" ename="obj_ground">
       <action>
         <libid>1</libid>
-        <id>104</id>
-        <kind>0</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_set_vspeed</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>611</id>
-        <kind>6</kind>
-        <userelative>-1</userelative>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
         <exetype>2</exetype>
@@ -132,11 +112,28 @@ if (hspeed &lt; 0 &amp;&amp; keyboard_check_released(vk_left)){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>jumping</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>false</string>
+            <string>if (vspeed &gt; 0 &amp;&amp; !place_free(x,y+vspeed))
+{ 
+    move_contact(270)
+    vspeed = 0;
+    jumping = 0;
+}
+
+if (vspeed &lt; 0 &amp;&amp; !place_free(x,y+vspeed))
+{ 
+    move_contact(90)
+    vspeed = 0;
+}
+
+if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
+{ 
+    if( hspeed &gt; 0)
+        move_contact(0);
+    else
+        move_contact(180);   
+    hspeed = 0;
+}
+</string>
           </argument>
         </arguments>
       </action>
