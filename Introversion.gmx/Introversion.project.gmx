@@ -81,11 +81,13 @@
       <object>objects\obj_ground</object>
     </objects>
     <object>objects\debug_controller</object>
+    <object>objects\obj_winRoom</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_conversation</room>
     <room>rooms\Imagination</room>
     <room>rooms\rm_entry</room>
+    <room>rooms\rm_win</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
