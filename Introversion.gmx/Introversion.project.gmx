@@ -11,6 +11,7 @@
     <sound>sound\sfx_loss</sound>
     <sound>sound\mus_party1</sound>
     <sound>sound\sfx_bad_select</sound>
+    <sound>sound\sfx_to_imagination</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spt_topic_bubble_left</sprite>

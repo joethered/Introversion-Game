@@ -30,6 +30,9 @@
     
 if(keyboard_check_pressed(vk_numpad1))
     room_goto(rm_conversation);
+    
+if(keyboard_check_pressed(vk_delete))
+    game_end();
 </string>
           </argument>
         </arguments>
