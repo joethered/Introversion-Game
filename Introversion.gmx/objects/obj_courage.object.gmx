@@ -29,7 +29,7 @@
           </argument>
           <argument>
             <kind>0</kind>
-            <string>50</string>
+            <string>100</string>
           </argument>
         </arguments>
       </action>
@@ -54,6 +54,30 @@
           <argument>
             <kind>0</kind>
             <string>false</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>611</id>
+        <kind>6</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>increasing</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>true</string>
           </argument>
         </arguments>
       </action>
@@ -127,12 +151,25 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (courage == 100 &amp;&amp; reached == false){
+            <string>if (increasing &amp;&amp; courage &lt; 100)
+    courage += 0.5;
+if (!increasing &amp;&amp; courage &gt; 0)
+    courage -= 5;
+
+
+if (courage == 100 &amp;&amp; reached == false){
     audio_play_sound(sfx_ready,true,0);
     reached = true;
 }
 
 if (courage &lt; 100) reached = false;
+
+if (!increasing &amp;&amp; courage &lt;= 0){
+    increasing = true;
+    with(obj_player_speech){
+        scr_check_convo(color);
+    }
+}
 </string>
           </argument>
         </arguments>

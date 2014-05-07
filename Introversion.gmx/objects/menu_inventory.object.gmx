@@ -33,7 +33,7 @@ items = 20;
 cols = 2;
 
 rows = ceil(items / cols);
-x_spacing = 60;
+x_spacing = 80;
 y_spacing = 12;
 width = 160;
 height = 44;
@@ -58,124 +58,124 @@ view_rows = ceil(view_end / cols);
 //Sample Item
 item[0,0] = "Cars";     //Name of item
 item[0,1] = true;      //is Active?
-item[0,2] = -1;         //Count for item.  -1 means no count
+item[0,2] = global.item[0,1];         //Count for item.  -1 means no count
 item[0,3] = c_red;      //color
-item[0,4] = scr_check_convo;   //Script to execute on item
+item[0,4] = scr_make_player_speech;   //Script to execute on item
 
 
 item[1,0] = "Vid.Games";     //Name of item
 item[1,1] = true;      //is Active?
-item[1,2] = -1;         //Count for item.  -1 means no count
+item[1,2] = global.item[1,1];         //Count for item.  -1 means no count
 item[1,3] = c_green;      //color
-item[1,4] = scr_check_convo;   //Script to execute on item
+item[1,4] = scr_make_player_speech;   //Script to execute on item
 
 item[2,0] = "Politics";     //Name of item
 item[2,1] = true;      //is Active?
-item[2,2] = -1;         //Count for item.  -1 means no count
+item[2,2] = global.item[2,1];         //Count for item.  -1 means no count
 item[2,3] = c_blue;      //color
-item[2,4] = scr_check_convo;   //Script to execute on item
+item[2,4] = scr_make_player_speech;   //Script to execute on item
 
 item[3,0] = "Gardening";     //Name of item
 item[3,1] = true;      //is Active?
-item[3,2] = -1;         //Count for item.  -1 means no count
+item[3,2] = global.item[3,1];         //Count for item.  -1 means no count
 item[3,3] = c_gray;      //color
-item[3,4] = scr_check_convo;   //Script to execute on item
+item[3,4] = scr_make_player_speech;   //Script to execute on item
 
 item[4,0] = "T.V.";     //Name of item
 item[4,1] = true;      //is Active?
-item[4,2] = -1;         //Count for item.  -1 means no count
+item[4,2] = global.item[4,1];         //Count for item.  -1 means no count
 item[4,3] = c_navy;      //color
-item[4,4] = scr_check_convo;   //Script to execute on item
+item[4,4] = scr_make_player_speech;   //Script to execute on item
 
 item[5,0] = "Society";     //Name of item
 item[5,1] = true;      //is Active?
-item[5,2] = -1;         //Count for item.  -1 means no count
+item[5,2] = global.item[5,1];         //Count for item.  -1 means no count
 item[5,3] = c_blue;      //color
-item[5,4] = scr_check_convo;   //Script to execute on item
+item[5,4] = scr_make_player_speech;   //Script to execute on item
 
 item[6,0] = "Hiking";     //Name of item
 item[6,1] = true;      //is Active?
-item[6,2] = -1;         //Count for item.  -1 means no count
+item[6,2] = global.item[6,1];         //Count for item.  -1 means no count
 item[6,3] = c_maroon;      //color
-item[6,4] = scr_check_convo;   //Script to execute on item
+item[6,4] = scr_make_player_speech;   //Script to execute on item
 
 item[7,0] = "B.Games";     //Name of item
 item[7,1] = true;      //is Active?
-item[7,2] = -1;         //Count for item.  -1 means no count
+item[7,2] = global.item[7,1];         //Count for item.  -1 means no count
 item[7,3] = c_green;      //color
-item[7,4] = scr_check_convo;   //Script to execute on item
+item[7,4] = scr_make_player_speech;   //Script to execute on item
 
 item[8,0] = "Computers";     //Name of item
 item[8,1] = true;      //is Active?
-item[8,2] = -1;         //Count for item.  -1 means no count
+item[8,2] = global.item[8,1];         //Count for item.  -1 means no count
 item[8,3] = c_green;      //color
-item[8,4] = scr_check_convo;   //Script to execute on item
+item[8,4] = scr_make_player_speech;   //Script to execute on item
 
 item[9,0] = "Sports";     //Name of item
 item[9,1] = true;      //is Active?
-item[9,2] = -1;         //Count for item.  -1 means no count
+item[9,2] = global.item[9,1];         //Count for item.  -1 means no count
 item[9,3] = c_red;      //color
-item[9,4] = scr_check_convo;   //Script to execute on item
+item[9,4] = scr_make_player_speech;   //Script to execute on item
 
 item[10,0] = "Fashion";     //Name of item
 item[10,1] = true;      //is Active?
-item[10,2] = -1;         //Count for item.  -1 means no count
+item[10,2] = global.item[10,1];         //Count for item.  -1 means no count
 item[10,3] = c_red;      //color
-item[10,4] = scr_check_convo;   //Script to execute on item
+item[10,4] = scr_make_player_speech;   //Script to execute on item
 
 item[11,0] = "Movies";     //Name of item
 item[11,1] = true;      //is Active?
-item[11,2] = -1;         //Count for item.  -1 means no count
+item[11,2] = global.item[11,1];         //Count for item.  -1 means no count
 item[11,3] = c_navy;      //color
-item[11,4] = scr_check_convo;   //Script to execute on item
+item[11,4] = scr_make_player_speech;   //Script to execute on item
 
 item[12,0] = "Weather";     //Name of item
 item[12,1] = true;      //is Active?
-item[12,2] = -1;         //Count for item.  -1 means no count
+item[12,2] = global.item[12,1];         //Count for item.  -1 means no count
 item[12,3] = c_gray;      //color
-item[12,4] = scr_check_convo;   //Script to execute on item.
+item[12,4] = scr_make_player_speech;   //Script to execute on item.
 
 item[13,0] = "School";     //Name of item
 item[13,1] = true;      //is Active?
-item[13,2] = -1;         //Count for item.  -1 means no count
+item[13,2] = global.item[13,1];         //Count for item.  -1 means no count
 item[13,3] = c_gray;      //color
-item[13,4] = scr_check_convo;   //Script to execute on item
+item[13,4] = scr_make_player_speech;   //Script to execute on item
 
 item[14,0] = "Work";     //Name of item
 item[14,1] = true;      //is Active?
-item[14,2] = -1;         //Count for item.  -1 means no count
+item[14,2] = global.item[14,1];         //Count for item.  -1 means no count
 item[14,3] = c_gray;      //color
-item[14,4] = scr_check_convo;   //Script to execute on item
+item[14,4] = scr_make_player_speech;   //Script to execute on item
 
 item[15,0] = "Celebrities";     //Name of item
 item[15,1] = true;      //is Active?
-item[15,2] = -1;         //Count for item.  -1 means no count
+item[15,2] = global.item[15,1];         //Count for item.  -1 means no count
 item[15,3] = c_gray;      //color
-item[15,4] = scr_check_convo;   //Script to execute on item
+item[15,4] = scr_make_player_speech;   //Script to execute on item
 
 item[16,0] = "Gossip";     //Name of item
 item[16,1] = true;      //is Active?
-item[16,2] = -1;         //Count for item.  -1 means no count
+item[16,2] = global.item[16,1];         //Count for item.  -1 means no count
 item[16,3] = c_gray;      //color
-item[16,4] = scr_check_convo;   //Script to execute on item
+item[16,4] = scr_make_player_speech;   //Script to execute on item
 
 item[17,0] = "Food";     //Name of item
 item[17,1] = true;      //is Active?
-item[17,2] = -1;         //Count for item.  -1 means no count
+item[17,2] = global.item[17,1];         //Count for item.  -1 means no count
 item[17,3] = c_olive;      //color
-item[17,4] = scr_check_convo;   //Script to execute on item
+item[17,4] = scr_make_player_speech;   //Script to execute on item
 
 item[18,0] = "Comics";     //Name of item
 item[18,1] = true;      //is Active?
-item[18,2] = -1;         //Count for item.  -1 means no count
+item[18,2] = global.item[18,1];         //Count for item.  -1 means no count
 item[18,3] = c_green;      //color
-item[18,4] = scr_check_convo;   //Script to execute on item
+item[18,4] = scr_make_player_speech;   //Script to execute on item
 
 item[19,0] = "Hobbies";     //Name of item
 item[19,1] = true;      //is Active?
-item[19,2] = -1;         //Count for item.  -1 means no count
+item[19,2] = global.item[19,1];         //Count for item.  -1 means no count
 item[19,3] = c_green;      //color
-item[19,4] = scr_check_convo;   //Script to execute on item
+item[19,4] = scr_make_player_speech;   //Script to execute on item
 </string>
           </argument>
         </arguments>
@@ -225,7 +225,6 @@ item[19,4] = scr_check_convo;   //Script to execute on item
             <kind>1</kind>
             <string>if (keyboard_check_pressed(vk_right) || keyboard_check_pressed(vk_left)
     || keyboard_check_pressed(vk_down) || keyboard_check_pressed(vk_up)
-    || keyboard_check_pressed(vk_enter) || keyboard_check_pressed(vk_space)
     || keyboard_check_pressed(vk_escape)){
 
     audio_play_sound(sfx_menu, true, 0);    
@@ -289,11 +288,16 @@ if (keyboard_check_pressed(vk_up)){
 
 if (keyboard_check_pressed(vk_space) || keyboard_check_pressed(vk_enter)){
     index = cursor_row * cols + cursor_col;
-    script_execute(item[index,4], item[index,3]);
-    with (menu_convo_main){
-        widget[0].courage = 0;
+    if (item[index,2] &gt; 0){
+        global.item[index,1] -= 1;
+        script_execute(item[index,4], item[index,0], item[index,3]);
+        with (menu_convo_main){
+            widget[0].increasing = false;
+        }
+        instance_destroy();
+    }else{
+        audio_play_sound(sfx_bad_select, true, 0);  
     }
-    instance_destroy();
 }
 
 if (keyboard_check_pressed(vk_escape)){
@@ -479,6 +483,7 @@ if (keyboard_check_pressed(vk_escape)){
             <kind>1</kind>
             <string>x_curs = 0;
 y_curs = 0;
+i = 0;
 for (i = view_start; i &lt; view_end; i++){
     if (item[i,1] == true)
         draw_set_color(item[i,3]);
