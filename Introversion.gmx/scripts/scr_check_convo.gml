@@ -1,8 +1,8 @@
-var player_topic = argument0;
+var player_color = argument0;
 
 
 with(obj_guy1){
-    if (topic == player_topic){
+    if (colors[tindex] == player_color){
         with(obj_Stamina){
             stamina += 10;
             if (stamina > 100) stamina = 100;
@@ -13,7 +13,7 @@ with(obj_guy1){
 }
 
 with(obj_guy2){
-    if (topic == player_topic){
+    if (colors[tindex] == player_color){
         with(obj_Stamina){
             stamina += 10;
             if (stamina > 100) stamina = 100;
@@ -24,7 +24,7 @@ with(obj_guy2){
 }
 
 with(obj_girl2){
-    if (topic == player_topic){
+    if (colors[tindex] == player_color){
         with(obj_Stamina){
             stamina += 10;
             if (stamina > 100) stamina = 100;
