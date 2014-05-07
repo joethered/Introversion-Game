@@ -60,7 +60,7 @@ item[0,4] = scr_make_menu;   //Script to execute on item
 item[1,0] = "Run Away";     //Name of item
 item[1,1] = true;      //is Active?
 item[1,2] = -1;         //Count for item.  -1 means no count
-item[1,4] = scr_sample_menu_script;   //Script to execute on item
+item[1,4] = scr_run_away;   //Script to execute on item
 
 
 
