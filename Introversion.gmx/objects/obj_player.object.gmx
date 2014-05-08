@@ -118,7 +118,7 @@ if (shakes &gt; 0){
     set_shake = false;
     alarm[0] = 3;
 }
-if (count == 12 &amp;&amp; !win)
+if (count == 9 &amp;&amp; !win)
 {
     win = true;
      room_goto(rm_win);

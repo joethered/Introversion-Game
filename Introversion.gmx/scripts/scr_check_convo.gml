@@ -10,7 +10,7 @@ with(obj_guy1){
     if (colors[tindex] == player_color){
         match1 = true;
         with(obj_Stamina){
-            stamina += 10;
+            stamina += 20;
             if (stamina > 100) stamina = 100;
         }
     }   
@@ -20,7 +20,7 @@ with(obj_guy2){
     if (colors[tindex] == player_color){
         match2 = true;
         with(obj_Stamina){
-            stamina += 10;
+            stamina += 20;
             if (stamina > 100) stamina = 100;
         }
     }   
@@ -30,7 +30,7 @@ with(obj_girl2){
     if (colors[tindex] == player_color){
         match3 = true;
         with(obj_Stamina){
-            stamina += 10;
+            stamina += 20;
             if (stamina > 100) stamina = 100;
         }
     }   

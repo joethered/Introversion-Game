@@ -154,7 +154,7 @@
             <string>if (increasing &amp;&amp; courage &lt; 100)
     courage += 0.5;
 if (!increasing &amp;&amp; courage &gt; 0)
-    courage -= 5;
+    courage -= 4;
 
 
 if (courage == 100 &amp;&amp; reached == false){

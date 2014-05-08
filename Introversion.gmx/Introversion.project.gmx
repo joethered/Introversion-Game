@@ -23,6 +23,7 @@
     <sprite>sprites\spt_topic_bubble_cspeak</sprite>
     <sprite>sprites\spt_cursor</sprite>
     <sprite>sprites\spt_player_convo</sprite>
+    <sprite>sprites\spt_player_convo_speak</sprite>
     <sprite>sprites\spt_guy1_convo</sprite>
     <sprite>sprites\spt_guy2_convo</sprite>
     <sprite>sprites\spt_girl2_convo</sprite>
