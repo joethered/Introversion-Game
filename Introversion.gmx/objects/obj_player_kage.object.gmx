@@ -77,14 +77,14 @@
     vspeed = -40;    
 }
 
-if (keyboard_check_pressed(vk_right)){
+if (keyboard_check(vk_right)){
     hspeed = 10;
 }
 if (hspeed &gt; 0 &amp;&amp; keyboard_check_released(vk_right)){
     hspeed = 0;
 }
 
-if (keyboard_check_pressed(vk_left)){
+if (keyboard_check(vk_left)){
     hspeed = -10;
 }
 if (hspeed &lt; 0 &amp;&amp; keyboard_check_released(vk_left)){

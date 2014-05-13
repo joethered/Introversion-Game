@@ -40,12 +40,18 @@
     <sprite>sprites\spt_ground</sprite>
     <sprite>sprites\spt_minus</sprite>
     <sprite>sprites\sprite23</sprite>
-    <sprite>sprites\spt_player_party</sprite>
-    <sprite>sprites\spt_entry_room</sprite>
-    <sprite>sprites\spt_party_group1</sprite>
+    <sprite>sprites\sprite29</sprite>
+    <sprites name="party">
+      <sprite>sprites\spt_entry_rail</sprite>
+      <sprite>sprites\spt_party_group1</sprite>
+      <sprite>sprites\spt_entry_room</sprite>
+      <sprite>sprites\spt_player_party</sprite>
+      <sprite>sprites\spt_living_room</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_party_entry</background>
+    <background>background\bg_party_living</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -78,6 +84,15 @@
       <object>objects\obj_convo_plus</object>
       <object>objects\obj_convo_minus</object>
     </objects>
+    <objects name="Party">
+      <object>objects\obj_party_controller</object>
+      <object>objects\obj_player_party</object>
+      <object>objects\obj_entry_collision</object>
+      <object>objects\obj_living_collision</object>
+      <object>objects\obj_party_group1</object>
+      <object>objects\obj_entry_foreground</object>
+      <object>objects\jmp_entry_to_living</object>
+    </objects>
     <object>objects\obj_Stamina</object>
     <object>objects\obj_topbar</object>
     <object>objects\obj_controller</object>
@@ -89,20 +104,13 @@
     </objects>
     <object>objects\debug_controller</object>
     <object>objects\obj_winRoom</object>
-    <objects name="Party">
-      <object>objects\obj_party_controller</object>
-      <object>objects\obj_player_party</object>
-      <object>objects\walls_entry</object>
-      <object>objects\obj_wall</object>
-      <object>objects\obj_entry_collision</object>
-      <object>objects\obj_party_group1</object>
-    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_entry</room>
     <room>rooms\rm_conversation</room>
     <room>rooms\Imagination</room>
     <room>rooms\rm_win</room>
+    <room>rooms\rm_living</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
