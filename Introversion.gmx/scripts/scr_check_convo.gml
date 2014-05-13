@@ -75,7 +75,7 @@ if (match1 || match2 || match3){
             }
         }
     }
-    with(obj_player)
+    with(obj_player_convo)
     {
         count +=1;
     }
@@ -91,7 +91,7 @@ with(obj_Stamina){
         instance_create(120,y,obj_convo_minus);
         instance_destroy();
     }
-    with(obj_player){
+    with(obj_player_convo){
         set_shake = true;
     }
     with(obj_guy1)

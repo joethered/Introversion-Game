@@ -39,6 +39,8 @@
     <sprite>sprites\spt_ground</sprite>
     <sprite>sprites\spt_minus</sprite>
     <sprite>sprites\sprite23</sprite>
+    <sprite>sprites\spt_player_party</sprite>
+    <sprite>sprites\spt_entry_room</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_party_entry</background>
@@ -66,16 +68,16 @@
     <objects name="Conversation">
       <object>objects\obj_speech_bubble</object>
       <object>objects\obj_player_speech</object>
-      <object>objects\obj_Stamina</object>
       <object>objects\obj_courage</object>
-      <object>objects\obj_player</object>
+      <object>objects\obj_player_convo</object>
       <object>objects\obj_guy1</object>
       <object>objects\obj_guy2</object>
       <object>objects\obj_girl2</object>
-      <object>objects\obj_topbar</object>
       <object>objects\obj_convo_plus</object>
       <object>objects\obj_convo_minus</object>
     </objects>
+    <object>objects\obj_Stamina</object>
+    <object>objects\obj_topbar</object>
     <object>objects\obj_controller</object>
     <object>objects\tmp_imagination</object>
     <objects name="Kage">
@@ -84,11 +86,18 @@
     </objects>
     <object>objects\debug_controller</object>
     <object>objects\obj_winRoom</object>
+    <objects name="Party">
+      <object>objects\obj_party_controller</object>
+      <object>objects\obj_player_party</object>
+      <object>objects\walls_entry</object>
+      <object>objects\obj_wall</object>
+      <object>objects\obj_entry_collision</object>
+    </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_entry</room>
     <room>rooms\rm_conversation</room>
     <room>rooms\Imagination</room>
-    <room>rooms\rm_entry</room>
     <room>rooms\rm_win</room>
   </rooms>
   <help>
