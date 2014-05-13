@@ -84,6 +84,7 @@
     <objects name="Kage">
       <object>objects\obj_player_kage</object>
       <object>objects\obj_ground</object>
+      <object>objects\obj_kage_controller</object>
     </objects>
     <object>objects\debug_controller</object>
     <object>objects\obj_winRoom</object>
