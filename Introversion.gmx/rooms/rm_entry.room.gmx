@@ -55,13 +55,9 @@
     <instance objName="obj_topbar" x="0" y="0" name="inst_ED030EF9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Stamina" x="7" y="1" name="inst_75DCB019" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_player_party" x="80" y="88" name="inst_584C77EF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_entry_collision" x="0" y="8" name="inst_DB798F01" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_party_group1" x="96" y="56" name="inst_031367B6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_entry_foreground" x="48" y="81" name="inst_EB63CA70" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="jmp_entry_to_living" x="130" y="65" name="inst_A9052F87" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="jmp_entry_to_living" x="134" y="73" name="inst_13423AAE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="jmp_entry_to_living" x="138" y="82" name="inst_8653D2F9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="jmp_entry_to_living" x="144" y="92" name="inst_8F6D8EC4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_party_group1" x="96" y="56" name="inst_031367B6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="jmp_entry_to_living" x="130" y="73" name="inst_F10BA1D7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

@@ -47,11 +47,14 @@
       <sprite>sprites\spt_entry_room</sprite>
       <sprite>sprites\spt_player_party</sprite>
       <sprite>sprites\spt_living_room</sprite>
+      <sprite>sprites\spt_entry_exit3</sprite>
+      <sprite>sprites\spt_living_exit1</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_party_entry</background>
     <background>background\bg_party_living</background>
+    <background>background\bg_title</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -87,11 +90,16 @@
     <objects name="Party">
       <object>objects\obj_party_controller</object>
       <object>objects\obj_player_party</object>
-      <object>objects\obj_entry_collision</object>
-      <object>objects\obj_living_collision</object>
       <object>objects\obj_party_group1</object>
-      <object>objects\obj_entry_foreground</object>
-      <object>objects\jmp_entry_to_living</object>
+      <objects name="Entry Room">
+        <object>objects\jmp_entry_to_living</object>
+        <object>objects\obj_entry_collision</object>
+        <object>objects\obj_entry_foreground</object>
+      </objects>
+      <objects name="Living Room">
+        <object>objects\obj_living_collision</object>
+        <object>objects\jmp_living_to_entry</object>
+      </objects>
     </objects>
     <object>objects\obj_Stamina</object>
     <object>objects\obj_topbar</object>
@@ -104,8 +112,10 @@
     </objects>
     <object>objects\debug_controller</object>
     <object>objects\obj_winRoom</object>
+    <object>objects\obj_title_controller</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_title</room>
     <room>rooms\rm_entry</room>
     <room>rooms\rm_conversation</room>
     <room>rooms\Imagination</room>

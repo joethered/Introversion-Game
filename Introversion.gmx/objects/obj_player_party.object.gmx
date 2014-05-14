@@ -164,44 +164,24 @@ if (group1){
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_living_collision">
+    <event eventtype="4" ename="jmp_living_to_entry">
       <action>
         <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
+        <id>224</id>
+        <kind>0</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_another_room</functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>1</kind>
-            <string>if (vspeed &gt; 0 &amp;&amp; !place_free(x,y+vspeed))
-{ 
-    move_contact(270)
-    vspeed = 0;
-}
-
-if (vspeed &lt; 0 &amp;&amp; !place_free(x,y+vspeed))
-{ 
-    move_contact(90)
-    vspeed = 0;
-}
-
-if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
-{ 
-    if( hspeed &gt; 0)
-        move_contact(0);
-    else
-        move_contact(180);   
-    hspeed = 0;
-}
-</string>
+            <kind>11</kind>
+            <room>rm_entry</room>
           </argument>
         </arguments>
       </action>
@@ -291,6 +271,48 @@ hasCollided = true;
           <argument>
             <kind>0</kind>
             <string>0</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_living_collision">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (vspeed &gt; 0 &amp;&amp; !place_free(x,y+vspeed))
+{ 
+    move_contact(270)
+    vspeed = 0;
+}
+
+if (vspeed &lt; 0 &amp;&amp; !place_free(x,y+vspeed))
+{ 
+    move_contact(90)
+    vspeed = 0;
+}
+
+if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
+{ 
+    if( hspeed &gt; 0)
+        move_contact(0);
+    else
+        move_contact(180);   
+    hspeed = 0;
+}
+</string>
           </argument>
         </arguments>
       </action>
