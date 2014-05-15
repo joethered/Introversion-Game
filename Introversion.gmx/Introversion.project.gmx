@@ -39,6 +39,18 @@
     <sprite>sprites\spt_ground</sprite>
     <sprite>sprites\spt_minus</sprite>
     <sprite>sprites\sprite23</sprite>
+    <sprites name="Kage">
+      <sprites name="Player Kage">
+        <sprite>sprites\spt_player_kage_idle</sprite>
+        <sprite>sprites\spt_player_kage_run</sprite>
+        <sprite>sprites\spt_player_kage_jump</sprite>
+        <sprite>sprites\spt_player_kage_spin</sprite>
+        <sprite>sprites\spt_throwing_star</sprite>
+      </sprites>
+      <sprites name="Ninja">
+        <sprite>sprites\spt_kage_ninja_run</sprite>
+      </sprites>
+    </sprites>
     <sprite>sprites\sprite29</sprite>
     <sprites name="party">
       <sprite>sprites\spt_entry_rail</sprite>
@@ -48,11 +60,6 @@
       <sprite>sprites\spt_living_room</sprite>
       <sprite>sprites\spt_entry_exit3</sprite>
       <sprite>sprites\spt_living_exit1</sprite>
-    </sprites>
-    <sprites name="Player Kage">
-      <sprite>sprites\spt_player_kage_idle</sprite>
-      <sprite>sprites\spt_player_kage_run</sprite>
-      <sprite>sprites\spt_player_kage_jump</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -113,6 +120,8 @@
       <object>objects\obj_player_kage</object>
       <object>objects\obj_ground</object>
       <object>objects\obj_kage_controller</object>
+      <object>objects\obj_ninja_kage</object>
+      <object>objects\obj_throwing_star</object>
     </objects>
     <object>objects\debug_controller</object>
     <object>objects\obj_winRoom</object>
