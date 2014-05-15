@@ -52,7 +52,7 @@
   <instances>
     <instance objName="obj_player_party" x="64" y="96" name="inst_2985DDAE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_living_collision" x="0" y="0" name="inst_D6636A14" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="jmp_living_to_entry" x="17" y="53" name="inst_79ABF5AA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="jmp_living_to_entry" x="13" y="51" name="inst_79ABF5AA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
