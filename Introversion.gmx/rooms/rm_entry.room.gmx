@@ -4,7 +4,7 @@
   <width>160</width>
   <height>128</height>
   <vsnap>1</vsnap>
-  <hsnap>2</hsnap>
+  <hsnap>1</hsnap>
   <isometric>0</isometric>
   <speed>30</speed>
   <persistent>0</persistent>
@@ -53,12 +53,10 @@
     <instance objName="debug_controller" x="0" y="27" name="inst_8FDFFF0A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_party_controller" x="0" y="10" name="inst_4D9A9450" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_topbar" x="0" y="0" name="inst_ED030EF9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Stamina" x="7" y="1" name="inst_75DCB019" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_player_party" x="80" y="88" name="inst_584C77EF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_entry_foreground" x="48" y="104" name="inst_EB63CA70" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_party_group1" x="112" y="108" name="inst_031367B6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="jmp_entry_to_living" x="130" y="73" name="inst_F10BA1D7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_entry_collision" x="0" y="8" name="inst_DB7CA440" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_entry_foreground" x="48" y="104" name="inst_EB63CA70" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_party_group1" x="112" y="108" name="inst_031367B6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

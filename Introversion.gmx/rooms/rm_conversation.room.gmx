@@ -51,7 +51,7 @@
   </views>
   <instances>
     <instance objName="obj_guy2" x="8" y="36" name="inst_519B4A87" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_controller" x="0" y="8" name="inst_ED3EE94A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_convo_controller" x="0" y="8" name="inst_ED3EE94A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Stamina" x="6" y="2" name="inst_B6A23448" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="debug_controller" x="134" y="10" name="inst_43D0A1A7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_player_convo" x="156" y="28" name="inst_C96740AF" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>

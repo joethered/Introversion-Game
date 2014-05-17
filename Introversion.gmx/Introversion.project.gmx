@@ -13,6 +13,7 @@
     <sound>sound\sfx_bad_select</sound>
     <sound>sound\sfx_to_imagination</sound>
     <sound>sound\mus_kage</sound>
+    <sound>sound\sfx_spin_attack</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spt_topic_bubble_left</sprite>
@@ -51,7 +52,6 @@
         <sprite>sprites\spt_kage_ninja_run</sprite>
       </sprites>
     </sprites>
-    <sprite>sprites\sprite29</sprite>
     <sprites name="party">
       <sprite>sprites\spt_entry_rail</sprite>
       <sprite>sprites\spt_party_group1</sprite>
@@ -60,12 +60,16 @@
       <sprite>sprites\spt_living_room</sprite>
       <sprite>sprites\spt_entry_exit3</sprite>
       <sprite>sprites\spt_living_exit1</sprite>
+      <sprite>sprites\spt_lving_exit2</sprite>
+      <sprite>sprites\spt_parlor_room</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_party_entry</background>
     <background>background\bg_party_living</background>
     <background>background\bg_title</background>
+    <background>background\bg_party_parlor</background>
+    <background>background\bg_party_kitchen</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -74,6 +78,7 @@
     <script>scripts\scr_make_menu.gml</script>
     <script>scripts\scr_run_away.gml</script>
     <script>scripts\scr_make_player_speech.gml</script>
+    <script>scripts\scr_initialize_game.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\thefont</font>
@@ -97,6 +102,7 @@
       <object>objects\obj_girl2</object>
       <object>objects\obj_convo_plus</object>
       <object>objects\obj_convo_minus</object>
+      <object>objects\obj_convo_controller</object>
     </objects>
     <objects name="Party">
       <object>objects\obj_party_controller</object>
@@ -110,12 +116,15 @@
       <objects name="Living Room">
         <object>objects\obj_living_collision</object>
         <object>objects\jmp_living_to_entry</object>
+        <object>objects\jmp_livng_to_parlor</object>
+      </objects>
+      <objects name="Parlor Room">
+        <object>objects\obj_parlor_collision</object>
       </objects>
     </objects>
     <object>objects\obj_Stamina</object>
+    <object>objects\obj_clock</object>
     <object>objects\obj_topbar</object>
-    <object>objects\obj_controller</object>
-    <object>objects\tmp_imagination</object>
     <objects name="Kage">
       <object>objects\obj_player_kage</object>
       <object>objects\obj_ground</object>
@@ -134,6 +143,8 @@
     <room>rooms\rm_kage</room>
     <room>rooms\rm_win</room>
     <room>rooms\rm_living</room>
+    <room>rooms\rm_parlor</room>
+    <room>rooms\rm_kitchen</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
