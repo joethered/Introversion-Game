@@ -164,7 +164,6 @@
       <sprite>sprites\spt_contra_Up_Diagonal</sprite>
       <sprite>sprites\Spr_Wall</sprite>
     </sprites>
-    <sprite>sprites\spt_run</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_party_entry</background>
@@ -268,7 +267,6 @@
     <room>rooms\rm_conversation</room>
     <room>rooms\rm_kage</room>
     <room>rooms\rm_win</room>
-<<<<<<< .merge_file_a11644
     <rooms name="Party">
       <room>rooms\rm_entry</room>
       <room>rooms\rm_living</room>
@@ -277,10 +275,6 @@
       <room>rooms\rm_hallway</room>
       <room>rooms\rm_dining</room>
     </rooms>
-=======
-    <room>rooms\rm_living</room>
-    <room>rooms\rm_parlor</room>
-    <room>rooms\rm_kitchen</room>
     <room>rooms\rm_contra</room>
   </rooms>
   <help>
