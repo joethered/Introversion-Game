@@ -105,7 +105,7 @@ if (global.seconds == 1){
 else
     minutes = "0" + string(global.minutes);
 
-draw_text(x,y,string(global.hours) + ":" + minutes);
+draw_text(x,y,string(global.hours) + ":" + minutes + " PM");
 </string>
           </argument>
         </arguments>

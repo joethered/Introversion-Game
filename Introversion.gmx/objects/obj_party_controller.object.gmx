@@ -32,21 +32,6 @@ if (global.music != "party1"){
 }
 surf = -1;
 
-switch (global.prev_room){
-case "title":
-    instance_create(80,88,obj_player_party);
-    break;
-case "entry":
-    if (global.cur_room == "living")
-        instance_create(50,68,obj_player_party);
-    break;
-case "living":
-    if (global.cur_room == "entry")
-        instance_create(124,93,obj_player_party);
-    else
-        instance_create(150,56,obj_player_party);
-    break;
-}
 </string>
           </argument>
         </arguments>

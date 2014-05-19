@@ -54,6 +54,44 @@
           <argument>
             <kind>1</kind>
             <string>hasCollided = false;
+prevx = x;
+prevy = y;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>moved = sqrt(power(x-prevx,2)+power(y-prevy,2));
+huh = moved &gt; 2;
+
+if (moved &gt; 2){
+    x = prevx;
+    y = prevy;
+}
+prevx = x;
+prevy = y;
+
+if (hspeed == 0 &amp;&amp; vspeed = 0){
+    image_speed = 0;
+    image_index = 0;
+}
 </string>
           </argument>
         </arguments>
@@ -76,7 +114,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var group1Depth;
+            <string>
+
+var group1Depth;
 var group1y = -100;
 var group1 = false;
 with(obj_party_group1)
@@ -95,10 +135,6 @@ if (keyboard_check(vk_right)){
 }
 if (hspeed &gt; 0 &amp;&amp; keyboard_check_released(vk_right)){
     hspeed = 0;
-    if (vspeed == 0){
-        image_speed = 0;
-        image_index = 0;
-    }
 }
 
 if (keyboard_check(vk_left)){
@@ -109,10 +145,6 @@ if (keyboard_check(vk_left)){
 }
 if (hspeed &lt; 0 &amp;&amp; keyboard_check_released(vk_left)){
     hspeed = 0;
-    if (vspeed == 0){
-        image_speed = 0;
-        image_index = 0;
-    }
 }
 
 
@@ -125,10 +157,6 @@ if (keyboard_check(vk_down)){
 
 if (vspeed &gt; 0 &amp;&amp; keyboard_check_released(vk_down)){
     vspeed = 0;
-    if (hspeed == 0){
-        image_speed = 0;
-        image_index = 0;
-    }
 }
 
 if (keyboard_check(vk_up)){
@@ -138,10 +166,6 @@ if (keyboard_check(vk_up)){
 }
 if (vspeed &lt; 0 &amp;&amp; keyboard_check_released(vk_up)){
     vspeed = 0;
-    if (hspeed == 0){
-        image_speed = 0;
-        image_index = 0;
-    }
 }
 
 if(keyboard_check(vk_space) &amp;&amp; hasCollided)
@@ -150,6 +174,8 @@ if(keyboard_check(vk_space) &amp;&amp; hasCollided)
 }
 
 depth = -y +100;
+
+
 
 /*
 if (group1){
@@ -205,94 +231,6 @@ if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
     hspeed = 0;
 }
 </string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="jmp_livng_to_parlor">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>global.prev_room = global.cur_room;
-global.cur_room = "parlor";
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>224</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_another_room</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>11</kind>
-            <room>rm_parlor</room>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="jmp_living_to_entry">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>global.prev_room = global.cur_room;
-global.cur_room = "entry";
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>224</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_another_room</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>11</kind>
-            <room>rm_entry</room>
           </argument>
         </arguments>
       </action>
@@ -377,50 +315,6 @@ if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
     hspeed = 0;
 }
 </string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="jmp_entry_to_living">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>global.prev_room = global.cur_room;
-global.cur_room = "living";
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>224</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_another_room</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>11</kind>
-            <room>rm_living</room>
           </argument>
         </arguments>
       </action>
