@@ -163,6 +163,21 @@
       <sprite>sprites\spt_contra_Up_Diagonal</sprite>
       <sprite>sprites\Spr_Wall</sprite>
     </sprites>
+<<<<<<< .merge_file_a12864
+=======
+    <sprites name="Contra">
+      <sprite>sprites\spt_contra_bullet</sprite>
+      <sprite>sprites\spt_contra_crouch</sprite>
+      <sprite>sprites\spt_contra_down_diagonal</sprite>
+      <sprite>sprites\spt_contra_jumping</sprite>
+      <sprite>sprites\spt_contra_run</sprite>
+      <sprite>sprites\spt_contra_shoot</sprite>
+      <sprite>sprites\spt_contra_shoot_and_run</sprite>
+      <sprite>sprites\spt_contra_up</sprite>
+      <sprite>sprites\spt_contra_Up_Diagonal</sprite>
+      <sprite>sprites\Spr_Wall</sprite>
+    </sprites>
+>>>>>>> .merge_file_a09444
     <sprite>sprites\spt_run</sprite>
   </sprites>
   <backgrounds name="background">
@@ -281,6 +296,10 @@
     <room>rooms\rm_parlor</room>
     <room>rooms\rm_kitchen</room>
     <room>rooms\rm_contra</room>
+<<<<<<< .merge_file_a12864
+>>>>>>> .merge_file_a12380
+=======
+>>>>>>> .merge_file_a09444
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
