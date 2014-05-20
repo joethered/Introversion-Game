@@ -147,7 +147,7 @@ item[14,2] = global.item[14,1];         //Count for item.  -1 means no count
 item[14,3] = c_gray;      //color
 item[14,4] = scr_make_player_speech;   //Script to execute on item
 
-item[15,0] = "Celebrities";     //Name of item
+item[15,0] = "Philosophy";     //Name of item
 item[15,1] = true;      //is Active?
 item[15,2] = global.item[15,1];         //Count for item.  -1 means no count
 item[15,3] = c_gray;      //color
