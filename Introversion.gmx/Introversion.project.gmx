@@ -64,7 +64,7 @@
           <sprite>sprites\spt_carmen_idle</sprite>
         </sprites>
         <sprites name="Chell">
-          <sprite>sprites\spt_chell_idel</sprite>
+          <sprite>sprites\spt_chell_idle</sprite>
         </sprites>
         <sprites name="Ezio">
           <sprite>sprites\spt_ezio_idle</sprite>
@@ -146,11 +146,16 @@
         <sprite>sprites\spt_hallway_exit2</sprite>
         <sprite>sprites\spt_hallway_exit1</sprite>
       </sprites>
-      <sprites name="dining">
+      <sprites name="Dining">
         <sprite>sprites\spt_dining_room</sprite>
         <sprite>sprites\spt_dining_exit2</sprite>
         <sprite>sprites\spt_dining_exit1</sprite>
       </sprites>
+      <sprite>sprites\spt_npc_wall</sprite>
+      <sprite>sprites\spt_group_spot1</sprite>
+      <sprite>sprites\spt_group_spot2</sprite>
+      <sprite>sprites\spt_group_spot3</sprite>
+      <sprite>sprites\spt_group_spot4</sprite>
     </sprites>
     <sprites name="Contra">
       <sprite>sprites\spt_contra_bullet</sprite>
@@ -179,15 +184,43 @@
       <background>background\bg_contra_scrolling</background>
     </backgrounds>
   </backgrounds>
-  <paths name="paths"/>
+  <paths name="paths">
+    <path>paths\pth_empty</path>
+    <paths name="Entry">
+      <path>paths\pth_entry_dining_to_kitchen</path>
+      <path>paths\pth_entry_dining_to_living</path>
+      <path>paths\pth_entry_living_to_kitchen</path>
+    </paths>
+    <paths name="Living">
+      <path>paths\pth_living_entry_to_parlor</path>
+    </paths>
+    <paths name="Parlor">
+      <path>paths\pth_parlor_living_to_kitchen</path>
+    </paths>
+    <paths name="Kitchen">
+      <path>paths\pth_kitchen_parlor_to_entry</path>
+      <path>paths\pth_kitchen_parlor_to_hallway</path>
+      <path>paths\pth_kitchen_hallway_to_entry</path>
+    </paths>
+    <paths name="Hallway">
+      <path>paths\pth_hallway_kitchen_to_dining</path>
+    </paths>
+    <paths name="Dining">
+      <path>paths\pth_dining_hallway_to_entry</path>
+    </paths>
+  </paths>
   <scripts name="scripts">
+    <script>scripts\scr_initialize_game.gml</script>
     <script>scripts\scr_sample_menu_script.gml</script>
     <script>scripts\scr_check_convo.gml</script>
     <script>scripts\scr_make_menu.gml</script>
     <script>scripts\scr_run_away.gml</script>
     <script>scripts\scr_make_player_speech.gml</script>
-    <script>scripts\scr_initialize_game.gml</script>
-    <script>scripts\scr_spawn_party_player.gml</script>
+    <scripts name="Party">
+      <script>scripts\scr_spawn_party_player.gml</script>
+      <script>scripts\scr_get_path.gml</script>
+      <script>scripts\scr_spawn_npcs.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\thefont</font>
@@ -247,6 +280,14 @@
         <object>objects\jmp_dining_to_hallway</object>
         <object>objects\jmp_dining_to_entry</object>
       </objects>
+      <objects name="Characters">
+        <object>objects\obj_npc</object>
+      </objects>
+      <object>objects\obj_npc_wall</object>
+      <object>objects\obj_group_spot1</object>
+      <object>objects\obj_group_spot2</object>
+      <object>objects\obj_group_spot3</object>
+      <object>objects\obj_group_spot4</object>
     </objects>
     <object>objects\obj_Stamina</object>
     <object>objects\obj_clock</object>

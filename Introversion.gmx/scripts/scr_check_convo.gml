@@ -10,8 +10,8 @@ with(obj_guy1){
     if (colors[tindex] == player_color){
         match1 = true;
         with(obj_Stamina){
-            stamina += 20;
-            if (stamina > 100) stamina = 100;
+            global.stamina += 20;
+            if (global.stamina > 100) global.stamina = 100;
         }
     }   
 }
@@ -20,8 +20,8 @@ with(obj_guy2){
     if (colors[tindex] == player_color){
         match2 = true;
         with(obj_Stamina){
-            stamina += 20;
-            if (stamina > 100) stamina = 100;
+            global.stamina += 20;
+            if (global.stamina > 100) global.stamina = 100;
         }
     }   
 }
@@ -30,8 +30,8 @@ with(obj_girl2){
     if (colors[tindex] == player_color){
         match3 = true;
         with(obj_Stamina){
-            stamina += 20;
-            if (stamina > 100) stamina = 100;
+            global.stamina += 20;
+            if (global.stamina > 100) global.stamina = 100;
         }
     }   
 }
@@ -84,8 +84,8 @@ if (match1 || match2 || match3){
 }
 
 with(obj_Stamina){
-    stamina -= 10;
-    if (stamina < 0) stamina = 0;
+    global.stamina -= 10;
+    if (global.stamina < 0) global.stamina = 0;
     audio_play_sound(sfx_loss,true,0);
     with(obj_player_speech){
         instance_create(120,y,obj_convo_minus);
