@@ -18,6 +18,7 @@ script_execute(scr_spawn_party_player);
 scr_spawn_npcs();</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
+  <clearDisplayBuffer>-1</clearDisplayBuffer>
   <makerSettings>
     <isSet>0</isSet>
     <w>0</w>
