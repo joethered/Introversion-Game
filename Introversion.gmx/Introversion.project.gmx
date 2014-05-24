@@ -14,6 +14,7 @@
     <sound>sound\sfx_to_imagination</sound>
     <sound>sound\mus_kage</sound>
     <sound>sound\sfx_spin_attack</sound>
+    <sound>sound\mus_contrain</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spt_topic_bubble_left</sprite>
