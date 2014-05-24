@@ -173,6 +173,7 @@
       <sprite>sprites\spt_contrain_connector</sprite>
       <sprite>sprites\spt_contrain_platform_bottom</sprite>
       <sprite>sprites\spt_contrain_platform_top</sprite>
+      <sprite>sprites\spt_contrain_wheels</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -315,6 +316,9 @@
       <object>objects\obj_contrain_connector</object>
       <object>objects\obj_contrain_platform_bottom</object>
       <object>objects\obj_contrain_platform_top</object>
+      <object>objects\obj_ninja_contra</object>
+      <object>objects\obj_contra_Ninja_spawnpoint</object>
+      <object>objects\obj_contrain_wheels</object>
     </objects>
   </objects>
   <rooms name="rooms">
