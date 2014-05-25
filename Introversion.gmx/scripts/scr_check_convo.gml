@@ -44,7 +44,7 @@ if (match1 || match2 || match3){
     }
     if(match1)
     {
-        with(obj_guy1)
+        with(obj_middle_convo)
         {
             with(bubble)
             {
@@ -55,7 +55,7 @@ if (match1 || match2 || match3){
     }
     if(match2)
     {
-        with(obj_guy2)
+        with(obj_back_convo)
         {
             with(bubble)
             {
@@ -66,7 +66,7 @@ if (match1 || match2 || match3){
     }
     if(match3)
     {
-        with(obj_girl2)
+        with(obj_front_convo)
         {
             with(bubble)
             {
@@ -94,7 +94,7 @@ with(obj_Stamina){
     with(obj_player_convo){
         set_shake = true;
     }
-    with(obj_guy1)
+    with(obj_middle_convo)
     {
         with(bubble)
             {
@@ -102,7 +102,7 @@ with(obj_Stamina){
                 instance_destroy ();
             }
     }
-    with(obj_guy2)
+    with(obj_back_convo)
     {
         with(bubble)
             {
@@ -110,7 +110,7 @@ with(obj_Stamina){
                 instance_destroy ();
             }
     }
-    with(obj_girl2)
+    with(obj_front_convo)
     {
         with(bubble)
             {
