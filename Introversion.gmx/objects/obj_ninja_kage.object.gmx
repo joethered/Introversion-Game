@@ -11,26 +11,6 @@
     <event eventtype="0" enumb="0">
       <action>
         <libid>1</libid>
-        <id>103</id>
-        <kind>0</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_set_hspeed</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>0</kind>
-            <string>-5</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
         <id>107</id>
         <kind>0</kind>
         <userelative>-1</userelative>
@@ -72,6 +52,7 @@
             <string>jumping = 0;
 image_speed = 0.3;
 facing = -1;
+prevx = x-1;
 </string>
           </argument>
         </arguments>
@@ -100,10 +81,12 @@ facing = -1;
     if (jump == 1)
         vspeed = -12;
 }
-if (hspeed == 0){
+if (x == prevx){
     facing *= -1;
     hspeed = facing * 5;
 }
+prevx = x;
+
 </string>
           </argument>
         </arguments>

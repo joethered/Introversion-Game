@@ -6,7 +6,7 @@ match1 = false;
 match2 = false;
 match3 = false;
 
-with(obj_guy1){
+with(obj_middle_convo){
     if (colors[tindex] == player_color){
         match1 = true;
         with(obj_Stamina){
@@ -16,7 +16,7 @@ with(obj_guy1){
     }   
 }
 
-with(obj_guy2){
+with(obj_back_convo){
     if (colors[tindex] == player_color){
         match2 = true;
         with(obj_Stamina){
@@ -26,7 +26,7 @@ with(obj_guy2){
     }   
 }
 
-with(obj_girl2){
+with(obj_front_convo){
     if (colors[tindex] == player_color){
         match3 = true;
         with(obj_Stamina){

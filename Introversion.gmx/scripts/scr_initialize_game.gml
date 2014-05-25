@@ -12,6 +12,10 @@ global.hours = 8;
 global.stamina_pause = false;
 global.stamina = 100;
 
+global.back_convo = spt_leon_convo;
+global.middle_convo = spt_max_convo;
+global.front_convo = spt_lara_convo;
+
 //Inventory Setup\
 cars = 0;
 vid_games = 5;
@@ -148,7 +152,7 @@ ds_map_add(global.npc_map[0], "prev_room", "dining");
 ds_map_add(global.npc_map[0], "next_room", "kitchen");
 ds_map_add(global.npc_map[0], "walking", true);
 ds_map_add(global.npc_map[0], "path", pth_entry_dining_to_kitchen);
-ds_map_add(global.npc_map[0], "path_pos", 0.6);
+ds_map_add(global.npc_map[0], "path_pos", 0.1);
 ds_map_add(global.npc_map[0], "path_dir", 1);
 ds_map_add(global.npc_map[0], "group_num", 0);
 ds_map_add(global.npc_map[0], "group_pos", 0);
@@ -889,5 +893,34 @@ ds_map_add(global.npc_map[19], "group_pos", 0);
 
 
 
+global.walkers = ds_list_create();
+global.standers = ds_list_create();
+
+for(i = 0; i < 20; i+=1){
+    if (ds_map_find_value(global.npc_map[i], "walking"))
+        ds_list_add(global.walkers,i);
+    else
+        ds_list_add(global.standers, i);
+}
 
 
+
+global.entry_exits[0] = "dining";
+global.entry_exits[1] = "kitchen";
+global.entry_exits[2] = "living";
+
+global.living_exits[0] = "entry";
+global.living_exits[1] = "parlor";
+
+global.parlor_exits[0] = "living";
+global.parlor_exits[1] = "kitchen";
+
+global.kitchen_exits[0] = "hallway";
+global.kitchen_exits[1] = "entry";
+global.kitchen_exits[2] = "parlor";
+
+global.hallway_exits[0] = "kitchen";
+global.hallway_exits[1] = "dining";
+
+global.dining_exits[0] = "hallway";
+global.dining_exits[1] = "entry";

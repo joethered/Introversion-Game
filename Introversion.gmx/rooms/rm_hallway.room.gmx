@@ -13,12 +13,9 @@
   <code>global.prev_room = global.cur_room;
 global.cur_room = "hallway";
 
-script_execute(scr_spawn_party_player);
-
-scr_spawn_npcs();</code>
+script_execute(scr_spawn_party_player);</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
-  <clearDisplayBuffer>-1</clearDisplayBuffer>
   <makerSettings>
     <isSet>0</isSet>
     <w>0</w>
@@ -86,6 +83,8 @@ scr_spawn_npcs();</code>
     <instance objName="obj_npc_wall" x="152" y="104" name="inst_5883E08F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_npc_wall" x="136" y="104" name="inst_1C3DC38C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_npc_wall" x="112" y="104" name="inst_046364A1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_party_group10" x="56" y="111" name="inst_F4763E84" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_party_group8" x="79" y="111" name="inst_D0047353" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
