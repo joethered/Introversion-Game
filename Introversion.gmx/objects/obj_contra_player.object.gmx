@@ -30,6 +30,7 @@ jump = 0;
 moving = false;
 shooting = false;
 facing = 1;
+crouching = false;
 bulletCooldown = 5;
 bulletReady = true;
 bulletTimer = 0;
@@ -60,7 +61,7 @@ lookDirection = 2;
 if(jump == 0 &amp;&amp; keyboard_check_pressed(ord('C')) &amp;&amp; vspeed ==0)
 {
     jump = 1;
-    vspeed = -25;
+    vspeed = -20;
 }
 
 if ( keyboard_check(vk_up) &amp;&amp; (keyboard_check(vk_right) || keyboard_check(vk_left)))
@@ -113,6 +114,12 @@ else if(keyboard_check(vk_left))
     hspeed = -6;
     moving = true;
 }
+else if(keyboard_check(vk_down))
+{
+    lookDirection = 2;
+    crouching = true;
+    moving = false;
+}
 
 if( keyboard_check_released(vk_up))
 {
@@ -122,37 +129,53 @@ if( keyboard_check_released(vk_up))
 if( keyboard_check_released(vk_down))
 {
     lookDirection = 2;
+    crouching = false; 
 }
 
 if( hspeed &gt; 0 &amp;&amp; keyboard_check_released(vk_right))
 {
+    if(keyboard_check(vk_down))
+        lookDirection = 2;
     hspeed = 0;   
     moving = false;
 }
 
 if( hspeed &lt; 0 &amp;&amp; keyboard_check_released(vk_left))
 {
+    if(keyboard_check(vk_down))
+        lookDirection = 2;
     hspeed = 0;   
     moving = false;
 }
 
 if(keyboard_check(ord('X')) &amp;&amp; bulletReady &amp;&amp; bulletTimer &lt;=0)
 {
-    bullet = instance_create(x + (22 * facing), y - 24, obj_bullet);
-    if(lookDirection == 2){
+    if(jump == 1 &amp;&amp; keyboard_check(vk_down))
+    {
+       bullet = instance_create(x, y, obj_bullet);
+       bullet.vspeed = 12;
+    }
+    else if(lookDirection == 2){
+        bullet = instance_create(x + (6 * facing), y - 20, obj_bullet);
         bullet.hspeed = 12 * facing;
         bullet.facing = facing;
     }
     else if (lookDirection = 0) {
+        bullet = instance_create(x, y - 42, obj_bullet);
         bullet.vspeed = -12;
         bullet.facing = facing;
     }
     else if (lookDirection = 1) {
+        if(jump == 1)
+            bullet = instance_create(x + (10 * facing), y - 10, obj_bullet);
+        else
+            bullet = instance_create(x + (10 * facing), y - 24, obj_bullet);
         bullet.vspeed = -9;
         bullet.hspeed = 9 * facing;
         bullet.facing = facing;
     }
     else if (lookDirection = 3) {
+        bullet = instance_create(x + (10 * facing), y - 16, obj_bullet);
         bullet.vspeed = 9;
         bullet.hspeed = 9 * facing;
         bullet.facing = facing;
@@ -175,6 +198,187 @@ else
 {
     bulletReady = true;
 }
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_contrain_platform_top">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (vspeed &gt; 0 &amp;&amp; !place_free(x,y+vspeed))
+{ 
+    move_contact(270)
+    vspeed = 0;
+    jump = 0;
+}
+
+if (vspeed &lt; 0 &amp;&amp; !place_free(x,y+vspeed))
+{ 
+    move_contact(90)
+    vspeed = 0;
+}
+
+if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
+{ 
+    if( hspeed &gt; 0)
+        move_contact(0);
+    else
+        move_contact(180);   
+    hspeed = 0;
+}
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_contrain_platform_bottom">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (vspeed &gt; 0 &amp;&amp; !place_free(x,y+vspeed))
+{ 
+    move_contact(270)
+    vspeed = 0;
+    jump = 0;
+}
+
+if (vspeed &lt; 0 &amp;&amp; !place_free(x,y+vspeed))
+{ 
+    move_contact(90)
+    vspeed = 0;
+}
+
+if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
+{ 
+    if( hspeed &gt; 0)
+        move_contact(0);
+    else
+        move_contact(180);   
+    hspeed = 0;
+}
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_contrain_connector">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (vspeed &gt; 0 &amp;&amp; !place_free(x,y+vspeed))
+{ 
+    move_contact(270)
+    vspeed = 0;
+    jump = 0;
+}
+
+if (vspeed &lt; 0 &amp;&amp; !place_free(x,y+vspeed))
+{ 
+    move_contact(90)
+    vspeed = 0;
+}
+
+if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
+{ 
+    if( hspeed &gt; 0)
+        move_contact(0);
+    else
+        move_contact(180);   
+    hspeed = 0;
+}
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_contrain_car">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (vspeed &gt; 0 &amp;&amp; !place_free(x,y+vspeed))
+{ 
+    move_contact(270)
+    vspeed = 0;
+    jump = 0;
+}
+
+if (vspeed &lt; 0 &amp;&amp; !place_free(x,y+vspeed))
+{ 
+    move_contact(90)
+    vspeed = 0;
+}
+
+if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
+{ 
+    if( hspeed &gt; 0)
+        move_contact(0);
+    else
+        move_contact(180);   
+    hspeed = 0;
+    moving = false;
+}
+
 
 </string>
           </argument>
@@ -255,7 +459,7 @@ if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
 else if (jump == 1)
 {
    draw_sprite_ext(spt_contra_jumping,image_index,x,y,facing * -1,1,0,c_white,1); 
-   image_speed = 0.8;
+   image_speed = 0.6;
 }
 else if(lookDirection == 1 &amp;&amp; jump == 0 )
 {
@@ -290,6 +494,10 @@ else if(moving &amp;&amp; lookDirection == 2 )
         draw_sprite_ext(spt_contra_run, image_index,x,y,facing * -1,1,0,c_white,1);
     }
     image_speed = 0.5;
+}
+else if (crouching)
+{
+    draw_sprite_ext(spt_contra_crouch,0,x,y,facing * -1,1,0,c_white,1);
 }
 
 </string>
