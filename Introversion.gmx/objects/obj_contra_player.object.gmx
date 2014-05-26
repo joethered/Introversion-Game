@@ -38,6 +38,35 @@ bulletTimer = 0;
 lookDirection = 2;
 lastx = x;
 lasty = y;
+
+recentlyDamaged = false;
+damaged = false;
+invulnerable = false;
+
+color = c_white;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>invulnerable = false;
 </string>
           </argument>
         </arguments>
@@ -61,152 +90,174 @@ lasty = y;
           <argument>
             <kind>1</kind>
             <string>image_index += 1;
-if(jump == 0 &amp;&amp; keyboard_check_pressed(ord('C')) &amp;&amp; vspeed ==0)
+if(recentlyDamaged)
 {
+    vspeed =-15;
+    hspeed = -1*facing*6;
+    moving = false;
+    recentlyDamaged = false;
+}
+
+//boundry patrol just in case
+if(x &lt; 0 || x &gt; room_width || y &gt; room_height)
+{
+    x = 203;
+    y = -50;
+    vspeed = 0;
+    hspeed = 0;
     jump = 1;
-    vspeed = -20;
+    moving = false;
+    damaged = true;
 }
 
-if(vspeed &gt; 0)
-{
-    falling = true;
-}
-
-if ( keyboard_check(vk_up) &amp;&amp; (keyboard_check(vk_right) || keyboard_check(vk_left)))
-{
-    lookDirection = 1;
-    moving = true;
-    if(keyboard_check(vk_right))
+if(!damaged){
+    
+    if(jump == 0 &amp;&amp; keyboard_check_pressed(ord('C')) &amp;&amp; vspeed ==0)
     {
-        hspeed = 6;
+        jump = 1;
+        vspeed = -20;
+    }
+    
+    if(vspeed &gt; 0)
+    {
+        falling = true;
+    }
+    
+    if ( keyboard_check(vk_up) &amp;&amp; (keyboard_check(vk_right) || keyboard_check(vk_left)))
+    {
+        lookDirection = 1;
+        moving = true;
+        if(keyboard_check(vk_right))
+        {
+            hspeed = 6;
+            facing = 1;
+        }
+        else if(keyboard_check(vk_left))
+        {
+            hspeed = -6;
+            facing = -1;
+        }
+    }
+    else if ( keyboard_check(vk_down) &amp;&amp; (keyboard_check(vk_right) || keyboard_check(vk_left)))
+    {
+        lookDirection = 3;
+        moving = true;
+        if(keyboard_check(vk_right))
+        {
+            hspeed = 6;
+            facing = 1;
+        }
+        else if(keyboard_check(vk_left))
+        {
+            hspeed = -6;
+            facing = -1;
+        }
+    }
+    else if(keyboard_check(vk_up))
+    {
+        lookDirection = 0;
+        moving = false;
+        crouching = false;
+    }
+    else if(keyboard_check(vk_right))
+    {
         facing = 1;
+        lookDirection = 2;
+        hspeed = 6;
+        moving = true;
     }
     else if(keyboard_check(vk_left))
     {
-        hspeed = -6;
         facing = -1;
-    }
-}
-else if ( keyboard_check(vk_down) &amp;&amp; (keyboard_check(vk_right) || keyboard_check(vk_left)))
-{
-    lookDirection = 3;
-    moving = true;
-    if(keyboard_check(vk_right))
-    {
-        hspeed = 6;
-        facing = 1;
-    }
-    else if(keyboard_check(vk_left))
-    {
+        lookDirection = 2;
         hspeed = -6;
-        facing = -1;
+        moving = true;
     }
-}
-else if(keyboard_check(vk_up))
-{
-    lookDirection = 0;
-    moving = false;
-    crouching = false;
-}
-else if(keyboard_check(vk_right))
-{
-    facing = 1;
-    lookDirection = 2;
-    hspeed = 6;
-    moving = true;
-}
-else if(keyboard_check(vk_left))
-{
-    facing = -1;
-    lookDirection = 2;
-    hspeed = -6;
-    moving = true;
-}
-else if(keyboard_check(vk_down))
-{
-    lookDirection = 2;
-    crouching = true;
-    moving = false;
-}
-
-if( keyboard_check_released(vk_up))
-{
-    lookDirection = 2;
-}
-
-if( keyboard_check_released(vk_down))
-{
-    lookDirection = 2;
-    crouching = false; 
-}
-
-if( hspeed &gt; 0 &amp;&amp; keyboard_check_released(vk_right))
-{
-    if(keyboard_check(vk_down))
-        lookDirection = 2;
-    hspeed = 0;   
-    moving = false;
-}
-
-if( hspeed &lt; 0 &amp;&amp; keyboard_check_released(vk_left))
-{
-    if(keyboard_check(vk_down))
-        lookDirection = 2;
-    hspeed = 0;   
-    moving = false;
-}
-
-if(keyboard_check(ord('X')) &amp;&amp; bulletReady &amp;&amp; bulletTimer &lt;=0)
-{
-    if(jump == 1 &amp;&amp; keyboard_check(vk_down))
+    else if(keyboard_check(vk_down))
     {
-       bullet = instance_create(x, y, obj_bullet);
-       bullet.vspeed = 12;
+        lookDirection = 2;
+        crouching = true;
+        moving = false;
     }
-    else if(lookDirection == 2){
-        bullet = instance_create(x + (6 * facing), y - 20, obj_bullet);
-        bullet.hspeed = 12 * facing;
-        bullet.facing = facing;
+    
+    if( keyboard_check_released(vk_up))
+    {
+        lookDirection = 2;
     }
-    else if (lookDirection = 0) {
-        bullet = instance_create(x, y - 42, obj_bullet);
-        bullet.vspeed = -12;
-        bullet.facing = facing;
+    
+    if( keyboard_check_released(vk_down))
+    {
+        lookDirection = 2;
+        crouching = false; 
     }
-    else if (lookDirection = 1) {
-        if(jump == 1)
-            bullet = instance_create(x + (10 * facing), y - 10, obj_bullet);
-        else
-            bullet = instance_create(x + (10 * facing), y - 24, obj_bullet);
-        bullet.vspeed = -9;
-        bullet.hspeed = 9 * facing;
-        bullet.facing = facing;
+    
+    if( hspeed &gt; 0 &amp;&amp; keyboard_check_released(vk_right))
+    {
+        if(keyboard_check(vk_down))
+            lookDirection = 2;
+        hspeed = 0;   
+        moving = false;
     }
-    else if (lookDirection = 3) {
-        bullet = instance_create(x + (10 * facing), y - 16, obj_bullet);
-        bullet.vspeed = 9;
-        bullet.hspeed = 9 * facing;
-        bullet.facing = facing;
+    
+    if( hspeed &lt; 0 &amp;&amp; keyboard_check_released(vk_left))
+    {
+        if(keyboard_check(vk_down))
+            lookDirection = 2;
+        hspeed = 0;   
+        moving = false;
     }
-    bulletTimer = bulletCooldown;
-    bulletReady = false;
-    shooting = true;
+    
+    if(keyboard_check(ord('X')) &amp;&amp; bulletReady &amp;&amp; bulletTimer &lt;=0)
+    {
+        if(jump == 1 &amp;&amp; keyboard_check(vk_down))
+        {
+           bullet = instance_create(x, y, obj_bullet);
+           bullet.vspeed = 12;
+        }
+        else if(lookDirection == 2){
+            bullet = instance_create(x + (6 * facing), y - 20, obj_bullet);
+            bullet.hspeed = 12 * facing;
+            bullet.facing = facing;
+        }
+        else if (lookDirection = 0) {
+            bullet = instance_create(x, y - 42, obj_bullet);
+            bullet.vspeed = -12;
+            bullet.facing = facing;
+        }
+        else if (lookDirection = 1) {
+            if(jump == 1)
+                bullet = instance_create(x + (10 * facing), y - 10, obj_bullet);
+            else
+                bullet = instance_create(x + (10 * facing), y - 24, obj_bullet);
+            bullet.vspeed = -9;
+            bullet.hspeed = 9 * facing;
+            bullet.facing = facing;
+        }
+        else if (lookDirection = 3) {
+            bullet = instance_create(x + (10 * facing), y - 16, obj_bullet);
+            bullet.vspeed = 9;
+            bullet.hspeed = 9 * facing;
+            bullet.facing = facing;
+        }
+        bulletTimer = bulletCooldown;
+        bulletReady = false;
+        shooting = true;
+    }
+    
+    if (keyboard_check_released(ord('X')))
+    {
+        shooting = false;
+    }
+    
+    if (bulletTimer &gt; 0)
+    {
+        bulletTimer -= 1;
+    }
+    else
+    {
+        bulletReady = true;
+    }
 }
-
-if (keyboard_check_released(ord('X')))
-{
-    shooting = false;
-}
-
-if (bulletTimer &gt; 0)
-{
-    bulletTimer -= 1;
-}
-else
-{
-    bulletReady = true;
-}
-
 if(falling &amp;&amp; lasty == y)
 {
     y -= 5;
@@ -217,6 +268,111 @@ lasty = y;
 </string>
           </argument>
         </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_ninja_contra">
+      <action>
+        <libid>1</libid>
+        <id>612</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>-1</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_if_variable</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>0</kind>
+            <string>invulnerable</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>false</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>0</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>422</id>
+        <kind>1</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>recentlyDamaged = true;
+damaged = true;
+invulnerable = true;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>301</id>
+        <kind>0</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_set_alarm</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>0</kind>
+            <string>90</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>0</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>424</id>
+        <kind>2</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
       </action>
     </event>
     <event eventtype="4" ename="obj_contrain_platform_top">
@@ -236,21 +392,18 @@ lasty = y;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (vspeed &gt; 0 &amp;&amp; !place_free(x,y+vspeed))
+            <string>if(damaged)
+{
+    hspeed = 0;
+    damaged = false;
+}
+if (vspeed &gt; 0 &amp;&amp; !place_free(x,y+vspeed))
 { 
-    if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
-    { 
-        if( hspeed &gt; 0)
-            move_contact(0);
-        else
-            move_contact(180);   
-        hspeed = 0;
-        moving = false;
-    }
-    move_contact(270)
-    vspeed = 0;
-    jump = 0;
-    falling = false;
+
+        move_contact(270)
+        vspeed = 0;
+        jump = 0;
+        falling = false;
 }
 
 if (vspeed &lt; 0 &amp;&amp; !place_free(x,y+vspeed))
@@ -301,21 +454,18 @@ if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (vspeed &gt; 0 &amp;&amp; !place_free(x,y+vspeed))
+            <string>if(damaged)
+{
+    hspeed = 0;
+    damaged = false;
+}
+if (vspeed &gt; 0 &amp;&amp; !place_free(x,y+vspeed))
 { 
-    if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
-    { 
-        if( hspeed &gt; 0)
-            move_contact(0);
-        else
-            move_contact(180);   
-        hspeed = 0;
-        moving = false;
-    }
-    move_contact(270)
-    vspeed = 0;
-    jump = 0;
-    falling = false;
+
+        move_contact(270)
+        vspeed = 0;
+        jump = 0;
+        falling = false;
 }
 
 if (vspeed &lt; 0 &amp;&amp; !place_free(x,y+vspeed))
@@ -366,21 +516,18 @@ if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (vspeed &gt; 0 &amp;&amp; !place_free(x,y+vspeed))
+            <string>if(damaged)
+{
+    hspeed = 0;
+    damaged = false;
+}
+if (vspeed &gt; 0 &amp;&amp; !place_free(x,y+vspeed))
 { 
-    if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
-    { 
-        if( hspeed &gt; 0)
-            move_contact(0);
-        else
-            move_contact(180);   
-        hspeed = 0;
-        moving = false;
-    }
-    move_contact(270)
-    vspeed = 0;
-    jump = 0;
-    falling = false;
+
+        move_contact(270)
+        vspeed = 0;
+        jump = 0;
+        falling = false;
 }
 
 if (vspeed &lt; 0 &amp;&amp; !place_free(x,y+vspeed))
@@ -431,27 +578,18 @@ if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (vspeed &gt; 0 &amp;&amp; !place_free(x,y+vspeed))
+            <string>if(damaged)
+{
+    hspeed = 0;
+    damaged = false;
+}
+if (vspeed &gt; 0 &amp;&amp; !place_free(x,y+vspeed))
 { 
-    if (hspeed != 0 &amp;&amp; place_free(x + hspeed,y))
-    { 
-        if( hspeed &gt; 0)
-        {
-            move_contact(0);
-        }
-        else
-        {   
-            move_contact(180);   
-        }
-        hspeed = 0;
-        moving = false;
-    }
-    else{
+
         move_contact(270)
         vspeed = 0;
         jump = 0;
         falling = false;
-    }
 }
 
 if (vspeed &lt; 0 &amp;&amp; !place_free(x,y+vspeed))
@@ -547,28 +685,47 @@ if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(lookDirection == 2 &amp;&amp; jump == 0 &amp;&amp; !moving )
+            <string>if(invulnerable &amp;&amp; !damaged)
+{
+    if(color == c_white)
+    {
+        color = c_green;
+    }
+    else
+    {
+        color = c_white;
+    }
+}
+else if (!invulnerable)
+    color = c_white;
+
+if(damaged)
+{
+    draw_sprite_ext(spt_contra_damaged,image_index,x,y,facing * -1,1,0,c_white,1);
+    image_speed = 0.5;
+}
+else if(lookDirection == 2 &amp;&amp; jump == 0 &amp;&amp; !moving )
 {
    if(shooting){
-        draw_sprite_ext(spt_contra_shoot,image_index,x,y,facing * -1,1,0,c_white,1);
+        draw_sprite_ext(spt_contra_shoot,image_index,x,y,facing * -1,1,0,color,1);
         image_speed = 0.5;
     }
     else
-        draw_sprite_ext(spt_contra_normal,0,x,y,facing * -1,1,0,c_white,1);
+        draw_sprite_ext(spt_contra_normal,0,x,y,facing * -1,1,0,color,1);
 }
 else if (jump == 1)
 {
-   draw_sprite_ext(spt_contra_jumping,image_index,x,y,facing * -1,1,0,c_white,1); 
+   draw_sprite_ext(spt_contra_jumping,image_index,x,y,facing * -1,1,0,color,1); 
    image_speed = 0.6;
 }
 else if(lookDirection == 1 &amp;&amp; jump == 0 )
 {
-    draw_sprite_ext(spt_contra_Up_Diagonal,image_index,x,y,facing * -1,1,0,c_white,1);
+    draw_sprite_ext(spt_contra_Up_Diagonal,image_index,x,y,facing * -1,1,0,color,1);
     image_speed = 0.5;
 }
 else if(lookDirection == 0 &amp;&amp; jump == 0)
 {
-    draw_sprite_ext(spt_contra_up,image_index,x,y,facing * -1,1,0,c_white,1);
+    draw_sprite_ext(spt_contra_up,image_index,x,y,facing * -1,1,0,color,1);
     if (shooting)
     {
         image_speed = 0.5;
@@ -580,24 +737,24 @@ else if(lookDirection == 0 &amp;&amp; jump == 0)
 }
 else if(lookDirection == 3 &amp;&amp; jump == 0)
 {
-    draw_sprite_ext(spt_contra_down_diagonal,image_index,x,y,facing * -1,1,0,c_white,1);
+    draw_sprite_ext(spt_contra_down_diagonal,image_index,x,y,facing * -1,1,0,color,1);
     image_speed = 0.5;
 }
 else if(moving &amp;&amp; lookDirection == 2 )
 {
     if(shooting)
     {
-        draw_sprite_ext(spt_contra_shoot_and_run, image_index,x,y,facing * -1,1,0,c_white,1);
+        draw_sprite_ext(spt_contra_shoot_and_run, image_index,x,y,facing * -1,1,0,color,1);
     }
     else
     {
-        draw_sprite_ext(spt_contra_run, image_index,x,y,facing * -1,1,0,c_white,1);
+        draw_sprite_ext(spt_contra_run, image_index,x,y,facing * -1,1,0,color,1);
     }
     image_speed = 0.5;
 }
 else if (crouching)
 {
-    draw_sprite_ext(spt_contra_crouch,0,x,y,facing * -1,1,0,c_white,1);
+    draw_sprite_ext(spt_contra_crouch,0,x,y,facing * -1,1,0,color,1);
 }
 
 </string>

@@ -203,6 +203,7 @@
       <sprite>sprites\spt_contrain_platform_bottom</sprite>
       <sprite>sprites\spt_contrain_platform_top</sprite>
       <sprite>sprites\spt_contrain_wheels</sprite>
+      <sprite>sprites\spt_contra_damaged</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -216,6 +217,7 @@
     <backgrounds name="contra_backgrounds">
       <background>background\bg_contra_sky</background>
       <background>background\bg_contra_scrolling</background>
+      <background>background\bg_contra_sky_scrolling</background>
     </backgrounds>
   </backgrounds>
   <paths name="paths">

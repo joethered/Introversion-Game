@@ -98,8 +98,20 @@ moving = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//effect_create_below(ef_cloud, x, y, 0.05, c_gray);
-//effect_create_below(ef_spark, x, y, 0.05, c_blue);
+            <string>//effect_create_below(ef_cloud, x, y, 0.0000000000000000000000001, c_black);
+
+effect_create_below(ef_spark, x + random(15), y+random(15), 0.1, c_orange);
+effect_create_below(ef_spark, x + random(15), y+random(15), 0.1, c_orange);
+effect_create_below(ef_spark, x + random(15), y+random(15), 0.1, c_orange);
+effect_create_below(ef_spark, x + random(15), y+random(15), 0.1, c_orange);
+effect_create_below(ef_spark, x + random(15), y+random(15), 0.1, c_orange);
+effect_create_below(ef_spark, x + random(15), y+random(15), 0.1, c_orange);
+effect_create_below(ef_spark, x + random(15), y+random(15), 0.1, c_orange);
+effect_create_below(ef_spark, x + random(15), y+random(15), 0.1, c_orange);
+effect_create_below(ef_spark, x + random(15), y+random(15), 0.1, c_orange);
+effect_create_below(ef_spark, x + random(15), y+random(15), 0.1, c_orange);
+
+
 //screwing with paricle effects
 instance_destroy();
 </string>
