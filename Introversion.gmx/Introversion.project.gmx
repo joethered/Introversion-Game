@@ -323,14 +323,17 @@
         <object>objects\jmp_kitchen_to_hallway</object>
         <object>objects\jmp_kitchen_to_entry</object>
         <object>objects\jmp_kitchen_to_parlor</object>
+        <object>objects\obj_kitchen_collision</object>
       </objects>
       <objects name="Hallway Room">
         <object>objects\jmp_hallway_to_kitchen</object>
         <object>objects\jmp_hallway_to_dining</object>
+        <object>objects\obj_hallway_collision</object>
       </objects>
       <objects name="Dining Room">
         <object>objects\jmp_dining_to_hallway</object>
         <object>objects\jmp_dining_to_entry</object>
+        <object>objects\obj_dining_collision</object>
       </objects>
       <objects name="Characters">
         <object>objects\obj_npc</object>
