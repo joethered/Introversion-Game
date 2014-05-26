@@ -29,12 +29,15 @@
 jump = 0;
 moving = false;
 shooting = false;
+falling = false;
 facing = 1;
 crouching = false;
 bulletCooldown = 5;
 bulletReady = true;
 bulletTimer = 0;
 lookDirection = 2;
+lastx = x;
+lasty = y;
 </string>
           </argument>
         </arguments>
@@ -62,6 +65,11 @@ if(jump == 0 &amp;&amp; keyboard_check_pressed(ord('C')) &amp;&amp; vspeed ==0)
 {
     jump = 1;
     vspeed = -20;
+}
+
+if(vspeed &gt; 0)
+{
+    falling = true;
 }
 
 if ( keyboard_check(vk_up) &amp;&amp; (keyboard_check(vk_right) || keyboard_check(vk_left)))
@@ -199,6 +207,13 @@ else
     bulletReady = true;
 }
 
+if(falling &amp;&amp; lasty == y)
+{
+    y -= 5;
+}
+lastx = x;
+lasty = y;
+
 </string>
           </argument>
         </arguments>
@@ -223,13 +238,32 @@ else
             <kind>1</kind>
             <string>if (vspeed &gt; 0 &amp;&amp; !place_free(x,y+vspeed))
 { 
+    if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
+    { 
+        if( hspeed &gt; 0)
+            move_contact(0);
+        else
+            move_contact(180);   
+        hspeed = 0;
+        moving = false;
+    }
     move_contact(270)
     vspeed = 0;
     jump = 0;
+    falling = false;
 }
 
 if (vspeed &lt; 0 &amp;&amp; !place_free(x,y+vspeed))
 { 
+    if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
+    { 
+        if( hspeed &gt; 0)
+            move_contact(0);
+        else
+            move_contact(180);   
+        hspeed = 0;
+        moving = false;
+    }
     move_contact(90)
     vspeed = 0;
 }
@@ -241,6 +275,7 @@ if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
     else
         move_contact(180);   
     hspeed = 0;
+    moving = false;
 }
 
 
@@ -268,13 +303,32 @@ if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
             <kind>1</kind>
             <string>if (vspeed &gt; 0 &amp;&amp; !place_free(x,y+vspeed))
 { 
+    if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
+    { 
+        if( hspeed &gt; 0)
+            move_contact(0);
+        else
+            move_contact(180);   
+        hspeed = 0;
+        moving = false;
+    }
     move_contact(270)
     vspeed = 0;
     jump = 0;
+    falling = false;
 }
 
 if (vspeed &lt; 0 &amp;&amp; !place_free(x,y+vspeed))
 { 
+    if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
+    { 
+        if( hspeed &gt; 0)
+            move_contact(0);
+        else
+            move_contact(180);   
+        hspeed = 0;
+        moving = false;
+    }
     move_contact(90)
     vspeed = 0;
 }
@@ -286,6 +340,7 @@ if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
     else
         move_contact(180);   
     hspeed = 0;
+    moving = false;
 }
 
 
@@ -313,13 +368,32 @@ if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
             <kind>1</kind>
             <string>if (vspeed &gt; 0 &amp;&amp; !place_free(x,y+vspeed))
 { 
+    if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
+    { 
+        if( hspeed &gt; 0)
+            move_contact(0);
+        else
+            move_contact(180);   
+        hspeed = 0;
+        moving = false;
+    }
     move_contact(270)
     vspeed = 0;
     jump = 0;
+    falling = false;
 }
 
 if (vspeed &lt; 0 &amp;&amp; !place_free(x,y+vspeed))
 { 
+    if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
+    { 
+        if( hspeed &gt; 0)
+            move_contact(0);
+        else
+            move_contact(180);   
+        hspeed = 0;
+        moving = false;
+    }
     move_contact(90)
     vspeed = 0;
 }
@@ -331,6 +405,7 @@ if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
     else
         move_contact(180);   
     hspeed = 0;
+    moving = false;
 }
 
 
@@ -358,13 +433,38 @@ if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
             <kind>1</kind>
             <string>if (vspeed &gt; 0 &amp;&amp; !place_free(x,y+vspeed))
 { 
-    move_contact(270)
-    vspeed = 0;
-    jump = 0;
+    if (hspeed != 0 &amp;&amp; place_free(x + hspeed,y))
+    { 
+        if( hspeed &gt; 0)
+        {
+            move_contact(0);
+        }
+        else
+        {   
+            move_contact(180);   
+        }
+        hspeed = 0;
+        moving = false;
+    }
+    else{
+        move_contact(270)
+        vspeed = 0;
+        jump = 0;
+        falling = false;
+    }
 }
 
 if (vspeed &lt; 0 &amp;&amp; !place_free(x,y+vspeed))
 { 
+    if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
+    { 
+        if( hspeed &gt; 0)
+            move_contact(0);
+        else
+            move_contact(180);   
+        hspeed = 0;
+        moving = false;
+    }
     move_contact(90)
     vspeed = 0;
 }

@@ -81,6 +81,32 @@ moving = true;
         </arguments>
       </action>
     </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//effect_create_below(ef_cloud, x, y, 0.05, c_gray);
+//effect_create_below(ef_spark, x, y, 0.05, c_blue);
+//screwing with paricle effects
+instance_destroy();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -138,13 +164,31 @@ if( x &lt; -40 || x &gt; room_width)
 { 
     move_contact(270)
     vspeed = 0;
-    jumping = 0;
+    jump = 0;
+    if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
+    { 
+        if( hspeed &gt; 0)
+            move_contact(0);
+        else
+            move_contact(180);   
+        hspeed = 0;
+        moving = false;
+    }
 }
 
 if (vspeed &lt; 0 &amp;&amp; !place_free(x,y+vspeed))
 { 
     move_contact(90)
     vspeed = 0;
+    if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
+    { 
+        if( hspeed &gt; 0)
+            move_contact(0);
+        else
+            move_contact(180);   
+        hspeed = 0;
+        moving = false;
+    }
 }
 
 if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
@@ -154,7 +198,10 @@ if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
     else
         move_contact(180);   
     hspeed = 0;
+    moving = false;
 }
+
+
 </string>
           </argument>
         </arguments>
@@ -181,13 +228,31 @@ if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
 { 
     move_contact(270)
     vspeed = 0;
-    jumping = 0;
+    jump = 0;
+    if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
+    { 
+        if( hspeed &gt; 0)
+            move_contact(0);
+        else
+            move_contact(180);   
+        hspeed = 0;
+        moving = false;
+    }
 }
 
 if (vspeed &lt; 0 &amp;&amp; !place_free(x,y+vspeed))
 { 
     move_contact(90)
     vspeed = 0;
+    if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
+    { 
+        if( hspeed &gt; 0)
+            move_contact(0);
+        else
+            move_contact(180);   
+        hspeed = 0;
+        moving = false;
+    }
 }
 
 if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
@@ -197,7 +262,10 @@ if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
     else
         move_contact(180);   
     hspeed = 0;
+    moving = false;
 }
+
+
 </string>
           </argument>
         </arguments>
@@ -224,13 +292,31 @@ if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
 { 
     move_contact(270)
     vspeed = 0;
-    jumping = 0;
+    jump = 0;
+    if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
+    { 
+        if( hspeed &gt; 0)
+            move_contact(0);
+        else
+            move_contact(180);   
+        hspeed = 0;
+        moving = false;
+    }
 }
 
 if (vspeed &lt; 0 &amp;&amp; !place_free(x,y+vspeed))
 { 
     move_contact(90)
     vspeed = 0;
+    if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
+    { 
+        if( hspeed &gt; 0)
+            move_contact(0);
+        else
+            move_contact(180);   
+        hspeed = 0;
+        moving = false;
+    }
 }
 
 if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
@@ -240,7 +326,10 @@ if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
     else
         move_contact(180);   
     hspeed = 0;
+    moving = false;
 }
+
+
 </string>
           </argument>
         </arguments>
@@ -267,13 +356,31 @@ if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
 { 
     move_contact(270)
     vspeed = 0;
-    jumping = 0;
+    jump = 0;
+    if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
+    { 
+        if( hspeed &gt; 0)
+            move_contact(0);
+        else
+            move_contact(180);   
+        hspeed = 0;
+        moving = false;
+    }
 }
 
 if (vspeed &lt; 0 &amp;&amp; !place_free(x,y+vspeed))
 { 
     move_contact(90)
     vspeed = 0;
+    if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
+    { 
+        if( hspeed &gt; 0)
+            move_contact(0);
+        else
+            move_contact(180);   
+        hspeed = 0;
+        moving = false;
+    }
 }
 
 if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
@@ -283,7 +390,10 @@ if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
     else
         move_contact(180);   
     hspeed = 0;
+    moving = false;
 }
+
+
 </string>
           </argument>
         </arguments>

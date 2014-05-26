@@ -3,22 +3,22 @@
   <type>0</type>
   <xorig>10</xorig>
   <yorigin>21</yorigin>
-  <colkind>1</colkind>
+  <colkind>0</colkind>
   <coltolerance>0</coltolerance>
-  <sepmasks>0</sepmasks>
-  <bboxmode>0</bboxmode>
+  <sepmasks>-1</sepmasks>
+  <bboxmode>1</bboxmode>
   <bbox_left>0</bbox_left>
-  <bbox_right>20</bbox_right>
+  <bbox_right>26</bbox_right>
   <bbox_top>0</bbox_top>
-  <bbox_bottom>20</bbox_bottom>
+  <bbox_bottom>35</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>21</width>
-  <height>21</height>
+  <width>27</width>
+  <height>36</height>
   <frames>
     <frame index="0">images\spt_contra_jumping_0.png</frame>
     <frame index="1">images\spt_contra_jumping_1.png</frame>
