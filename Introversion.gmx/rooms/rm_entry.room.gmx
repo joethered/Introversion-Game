@@ -16,7 +16,6 @@ global.cur_room = "entry";
 script_execute(scr_spawn_party_player);</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
-  <clearDisplayBuffer>-1</clearDisplayBuffer>
   <makerSettings>
     <isSet>0</isSet>
     <w>0</w>
@@ -58,65 +57,10 @@ script_execute(scr_spawn_party_player);</code>
     <instance objName="obj_party_controller" x="0" y="10" name="inst_4D9A9450" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_topbar" x="0" y="0" name="inst_ED030EF9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="jmp_entry_to_living" x="146" y="82" name="inst_F10BA1D7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="jmp_entry_to_kitchen" x="104" y="128" name="inst_D97A77B7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_entry_foreground" x="48" y="104" name="inst_EB63CA70" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_wall" x="152" y="72" name="inst_D6B71FF9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="jmp_entry_to_dining" x="16" y="78" name="inst_FB37CD1C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_wall" x="152" y="80" name="inst_EAC5E484" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_wall" x="64" y="120" name="inst_1C2197B3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_wall" x="64" y="112" name="inst_DE4CCF7A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_group_spot2" x="112" y="96" name="inst_3112593F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_wall" x="56" y="104" name="inst_6D4D23F3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_wall" x="48" y="104" name="inst_671604F0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_wall" x="16" y="96" name="inst_5D3CBDCF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_wall" x="32" y="56" name="inst_AD9D6A5D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_wall" x="40" y="56" name="inst_C2064A56" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_wall" x="48" y="56" name="inst_A58DC6AA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_wall" x="56" y="56" name="inst_12459842" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_wall" x="64" y="56" name="inst_D35F4760" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_wall" x="72" y="56" name="inst_B31A03D9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_wall" x="80" y="56" name="inst_97D35D8A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_wall" x="88" y="56" name="inst_8445C936" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_wall" x="96" y="56" name="inst_7DCD6FB0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_wall" x="104" y="56" name="inst_1FF9006E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_wall" x="112" y="56" name="inst_F4E5A66D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_wall" x="120" y="56" name="inst_4B3BC949" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_wall" x="128" y="56" name="inst_C2667B13" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_wall" x="144" y="104" name="inst_A892DD77" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_wall" x="144" y="112" name="inst_26EFFA9E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_wall" x="144" y="120" name="inst_65CE9DAF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_wall" x="72" y="120" name="inst_BB4FAF33" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_group_spot1" x="56" y="72" name="inst_A3003EC5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_wall" x="152" y="88" name="inst_FA2D219C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_wall" x="128" y="120" name="inst_A61FF9B4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_wall" x="136" y="120" name="inst_8250EC77" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_wall" x="136" y="112" name="inst_4D902967" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_wall" x="8" y="88" name="inst_221C46F5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_wall" x="8" y="96" name="inst_16D3A222" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_wall" x="0" y="96" name="inst_709406E5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_wall" x="152" y="104" name="inst_A54DADC2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_wall" x="152" y="96" name="inst_9ADE48F4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_wall" x="136" y="56" name="inst_1D552361" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_wall" x="144" y="56" name="inst_11E2132A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_wall" x="152" y="64" name="inst_25540AB5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_wall" x="24" y="56" name="inst_5DB204C9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_wall" x="8" y="56" name="inst_C3612227" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_wall" x="16" y="56" name="inst_A827F879" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_wall" x="0" y="64" name="inst_88109BD5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_wall" x="0" y="104" name="inst_CC9DDEDD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_wall" x="0" y="112" name="inst_771B7BE6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_wall" x="0" y="120" name="inst_57A1AF69" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_wall" x="8" y="120" name="inst_1030941E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_wall" x="16" y="120" name="inst_D227B457" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_wall" x="24" y="120" name="inst_8B250416" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_wall" x="32" y="120" name="inst_D3755E03" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_wall" x="40" y="120" name="inst_1502B959" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_wall" x="48" y="120" name="inst_21642C0E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_wall" x="48" y="112" name="inst_6A98F8AA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_wall" x="0" y="72" name="inst_A9858653" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_wall" x="0" y="80" name="inst_1FB56954" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_npc_wall" x="0" y="88" name="inst_FB8615FB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_party_group1" x="39" y="105" name="inst_E6458F94" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_party_group1" x="38" y="104" name="inst_E6458F94" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_entry_collision" x="0" y="8" name="inst_E0623F6E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="jmp_entry_to_kitchen" x="104" y="131" name="inst_836BD28B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
