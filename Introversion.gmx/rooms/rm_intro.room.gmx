@@ -3,33 +3,14 @@
   <caption></caption>
   <width>160</width>
   <height>128</height>
-  <vsnap>2</vsnap>
-  <hsnap>2</hsnap>
+  <vsnap>8</vsnap>
+  <hsnap>16</hsnap>
   <isometric>0</isometric>
   <speed>30</speed>
   <persistent>0</persistent>
-  <colour>8388608</colour>
+  <colour>0</colour>
   <showcolour>-1</showcolour>
-  <code>switch(global.cur_room){
-case "entry":
-    background_index[0] = bg_party_entry;
-    break;
-case "living":
-    background_index[0] = bg_party_living;
-    break;
-case "parlor":
-    background_index[0] = bg_party_parlor;
-    break;
-case "kitchen":
-    background_index[0] = bg_party_kitchen;
-    break;
-case "hallway":
-    background_index[0] = bg_party_hallway;
-    break;
-case "dining":
-    background_index[0] = bg_party_dining;
-    break;
-}</code>
+  <code></code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <makerSettings>
@@ -49,7 +30,7 @@ case "dining":
     <yoffset>0</yoffset>
   </makerSettings>
   <backgrounds>
-    <background visible="-1" foreground="0" name="bg_party_entry" x="0" y="8" htiled="0" vtiled="0" hspeed="0" vspeed="0" stretch="0"/>
+    <background visible="-1" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
@@ -69,13 +50,8 @@ case "dining":
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="obj_topbar" x="0" y="0" name="inst_750BB0A6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_convo_controller" x="0" y="8" name="inst_ED3EE94A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Stamina" x="6" y="2" name="inst_B6A23448" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="debug_controller" x="134" y="10" name="inst_43D0A1A7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_player_convo" x="156" y="28" name="inst_C96740AF" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_front_convo" x="56" y="36" name="inst_94203B93" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="menu_convo_main" x="0" y="84" name="inst_125F8E6C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_fire" x="80" y="72" name="inst_D1E14A88" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_dialog_box" x="0" y="88" name="inst_4AF43D50" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

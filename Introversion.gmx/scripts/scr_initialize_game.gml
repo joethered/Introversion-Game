@@ -1,5 +1,4 @@
-global.music = "party1";
-audio_play_music(mus_party1, true);
+global.music = "";
 global.inventory_menu = false;
 //global.menu_stack = ds_stack_create();
 global.cur_room = "title";

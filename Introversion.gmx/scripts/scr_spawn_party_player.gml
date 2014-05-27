@@ -42,4 +42,8 @@ case "dining":
     else if (global.cur_room == "entry")
         instance_create(34,85,obj_player_party);
     break;
+case "imagination":
+    if (global.cur_room == "living")
+        instance_create(91,66,obj_player_party);
+    break
 }
