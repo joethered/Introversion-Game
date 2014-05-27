@@ -93,7 +93,7 @@
         <arguments>
           <argument>
             <kind>0</kind>
-            <string>1800</string>
+            <string>2100</string>
           </argument>
           <argument>
             <kind>4</kind>
@@ -145,10 +145,11 @@
 r = irandom(1);
 if (r == 0)
     dir = -1;
-ninja = instance_create(obj_player_kage.x + dir*200, obj_player_kage.y-irandom_range(150,90), obj_ninja_kage);
+
+ninja = instance_create(obj_player_kage.x + dir*200, obj_player_kage.y-irandom_range(150,60), obj_ninja_kage);
 ninja.facing = -1 * dir;
 ninja.hspeed = -1 * dir * 5;
-ninja2 = instance_create(obj_player_kage.x + -1*dir*200, obj_player_kage.y-irandom_range(150,90), obj_ninja_kage);
+ninja2 = instance_create(obj_player_kage.x + -1*dir*200, obj_player_kage.y-irandom_range(150,60), obj_ninja_kage);
 ninja2.facing = dir;
 ninja2.hspeed = dir * 5;
 </string>
@@ -171,7 +172,7 @@ ninja2.hspeed = dir * 5;
         <arguments>
           <argument>
             <kind>0</kind>
-            <string>10</string>
+            <string>2</string>
           </argument>
           <argument>
             <kind>4</kind>

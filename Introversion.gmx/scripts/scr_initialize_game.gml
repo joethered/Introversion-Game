@@ -15,6 +15,8 @@ global.back_convo = spt_leon_convo;
 global.middle_convo = spt_max_convo;
 global.front_convo = spt_lara_convo;
 
+global.dream = 1;
+
 //Inventory Setup\
 cars = 0;
 vid_games = 5;

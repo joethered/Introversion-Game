@@ -15,6 +15,8 @@
     <sound>sound\mus_kage</sound>
     <sound>sound\sfx_spin_attack</sound>
     <sound>sound\mus_contrain</sound>
+    <sound>sound\sfx_player_hit</sound>
+    <sound>sound\sfx_ninja_death</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spt_topic_bubble_left</sprite>
@@ -63,6 +65,7 @@
     <sprites name="Kage">
       <sprites name="Player Kage">
         <sprite>sprites\spt_player_kage_idle</sprite>
+        <sprite>sprites\spt_kage_dodge</sprite>
         <sprite>sprites\spt_player_kage_run</sprite>
         <sprite>sprites\spt_player_kage_jump</sprite>
         <sprite>sprites\spt_player_kage_spin</sprite>
