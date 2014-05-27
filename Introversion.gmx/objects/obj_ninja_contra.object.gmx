@@ -100,16 +100,18 @@ moving = true;
             <kind>1</kind>
             <string>//effect_create_below(ef_cloud, x, y, 0.0000000000000000000000001, c_black);
 
-effect_create_below(ef_spark, x + random(15), y+random(15), 0.1, c_orange);
-effect_create_below(ef_spark, x + random(15), y+random(15), 0.1, c_orange);
-effect_create_below(ef_spark, x + random(15), y+random(15), 0.1, c_orange);
-effect_create_below(ef_spark, x + random(15), y+random(15), 0.1, c_orange);
-effect_create_below(ef_spark, x + random(15), y+random(15), 0.1, c_orange);
-effect_create_below(ef_spark, x + random(15), y+random(15), 0.1, c_orange);
-effect_create_below(ef_spark, x + random(15), y+random(15), 0.1, c_orange);
-effect_create_below(ef_spark, x + random(15), y+random(15), 0.1, c_orange);
-effect_create_below(ef_spark, x + random(15), y+random(15), 0.1, c_orange);
-effect_create_below(ef_spark, x + random(15), y+random(15), 0.1, c_orange);
+effect_create_below(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(31, 46, 109));
+effect_create_below(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(31, 46, 109));
+effect_create_below(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(31, 46, 109));
+effect_create_below(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(31, 46, 109));
+effect_create_below(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(31, 46, 109));
+effect_create_below(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(31, 46, 109));
+effect_create_below(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(31, 46, 109));
+effect_create_below(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(31, 46, 109));
+effect_create_below(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(31, 46, 109));
+effect_create_below(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(88, 43, 0));
+effect_create_below(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(88, 43, 0));
+effect_create_below(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(88, 43, 0));
 
 
 //screwing with paricle effects
@@ -412,6 +414,30 @@ if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
       </action>
     </event>
     <event eventtype="4" ename="obj_bullet">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>with(obj_Contra_Controller)
+{
+    killCount += 1;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
       <action>
         <libid>1</libid>
         <id>203</id>
