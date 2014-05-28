@@ -135,7 +135,7 @@
             <kind>1</kind>
             <string>global.minutes += 15;
 global.stamina = 100;
-global.prev_room = "imagination";
+global.cur_room = "imagination";
 if (global.dream = 1){
      global.dream += 1;
     room_goto(rm_kage);

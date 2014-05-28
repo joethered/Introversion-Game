@@ -29,7 +29,10 @@ case "hallway":
 case "dining":
     background_index[0] = bg_party_dining;
     break;
-}</code>
+}
+
+global.prev_room = global.cur_room;
+global.cur_room = "convo";</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <makerSettings>

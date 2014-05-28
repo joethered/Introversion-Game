@@ -1,3 +1,5 @@
+show_debug_message(global.prev_room);
+show_debug_message(global.cur_room);
 switch (global.prev_room){
 case "title":
     instance_create(80,88,obj_player_party);
@@ -45,5 +47,17 @@ case "dining":
 case "imagination":
     if (global.cur_room == "living")
         instance_create(91,66,obj_player_party);
-    break
+    break;
+case "convo":
+    if (global.cur_room == "parlor")
+        instance_create(93,66,obj_player_party);
+    else if (global.cur_room == "kitchen")
+        instance_create(97,102,obj_player_party);
+    else if (global.cur_room == "hallway")
+        instance_create(100,119,obj_player_party);
+    else if (global.cur_room == "dining")
+        instance_create(85,109,obj_player_party);
+    else
+        instance_create(80,88,obj_player_party);
+    break;
 }

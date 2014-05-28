@@ -209,6 +209,7 @@
       <sprite>sprites\spt_contra_damaged</sprite>
     </sprites>
     <sprite>sprites\spt_fire</sprite>
+    <sprite>sprites\spt_x_key</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_party_entry</background>
@@ -265,6 +266,7 @@
       <script>scripts\d_scr_get_path_name.gml</script>
       <script>scripts\scr_check_correct_path.gml</script>
     </scripts>
+    <script>scripts\scr_cur_party_room.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\thefont</font>

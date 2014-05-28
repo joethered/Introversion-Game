@@ -26,7 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>if (keyboard_check_pressed(vk_space) || keyboard_check_pressed(vk_enter)){
-     room_goto(rm_conversation3);
+    global.cur_room = "convo";
+    room_goto(scr_cur_party_room());
 }
 </string>
           </argument>

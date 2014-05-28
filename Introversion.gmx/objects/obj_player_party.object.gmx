@@ -57,7 +57,8 @@
 prevx = x;
 prevy = y;
 group_num = 1;
-
+try_convo = false;
+convo_courage = 15;
 show_debug_message("cur_room: " + global.cur_room);
 </string>
           </argument>
@@ -141,8 +142,7 @@ if (hspeed == 0 &amp;&amp; vspeed = 0){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-if (keyboard_check(vk_right)){
+            <string>if (keyboard_check(vk_right)){
     hspeed = 1.5
     image_speed = .2;
     image_xscale = 1;
@@ -186,8 +186,9 @@ if (vspeed &lt; 0 &amp;&amp; keyboard_check_released(vk_up)){
 
 if(keyboard_check(vk_space) &amp;&amp; hasCollided)
 {
-    switch(group_num){
-    case 1:
+    if (convo_courage &gt; 0){
+            switch(group_num){
+                case 1:
         global.front_convo = spt_lara_convo;
         global.middle_convo = spt_max_convo;
         global.back_convo = spt_leon_convo;
@@ -239,6 +240,67 @@ if(keyboard_check(vk_space) &amp;&amp; hasCollided)
         break;
     }
 }
+}/*else{
+    convo_courage -= 1;
+    if(keyboard_check_pressed(ord('x')))
+    convo_courage += 2;{
+        if (convo_courage &gt; 50){
+            switch(group_num){
+                case 1:
+        global.front_convo = spt_lara_convo;
+        global.middle_convo = spt_max_convo;
+        global.back_convo = spt_leon_convo;
+        room_goto (rm_conversation3);
+        break;
+    case 2:
+        global.front_convo = spt_jill_convo;
+        global.middle_convo = spt_chell_convo;
+        global.back_convo = spt_mario_convo;
+        room_goto (rm_conversation3);
+        break;
+    case 3:
+        global.front_convo = spt_glenn_convo;
+        global.middle_convo = spt_terra_convo;
+        global.back_convo = spt_sam_convo;
+        room_goto (rm_conversation3);
+        break;
+    case 4:
+        global.front_convo = spt_ezio_convo;
+        global.middle_convo = spt_zelda_convo;
+        room_goto (rm_conversation2);
+        break;
+    case 5:
+        global.front_convo = spt_luke_convo;
+        global.middle_convo = spt_arthur_convo;
+        room_goto (rm_conversation2);
+        break;
+    case 6:
+        global.front_convo = spt_carmen_convo;
+        global.middle_convo = spt_simon_convo;
+        global.back_convo = spt_john_convo;
+        room_goto (rm_conversation3);
+        break;
+    case 7:
+        global.front_convo = spt_jessica_convo;
+        room_goto (rm_conversation1);
+        break;
+    case 8:
+        global.front_convo = spt_samus_convo;
+        room_goto (rm_conversation1);
+        break;
+    case 9:
+        global.front_convo = spt_jade_convo;
+        room_goto (rm_conversation1);
+        break;
+    case 10:
+        global.front_convo = spt_kyle_convo;
+        room_goto (rm_conversation1);
+        break;
+    }
+    }  
+    }
+    if (convo_courage &lt; 0)
+        try_convo = false;*/
 
 depth = -y +100;
 

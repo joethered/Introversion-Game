@@ -1,4 +1,5 @@
-switch(global.cur_room){
+global.cur_room = "convo";
+switch(global.prev_room){
 case "entry":
     room_goto(rm_entry);
     break;
