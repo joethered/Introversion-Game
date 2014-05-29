@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>ds_stack_push(global.menu_stack,id);
+            <string>//ds_stack_push(global.menu_stack,id);
 kind = "inventory";
 
 
@@ -225,7 +225,7 @@ item[19,4] = scr_make_player_speech;   //Script to execute on item
             <kind>1</kind>
             <string>if (keyboard_check_pressed(vk_right) || keyboard_check_pressed(vk_left)
     || keyboard_check_pressed(vk_down) || keyboard_check_pressed(vk_up)
-    || keyboard_check_pressed(vk_escape)){
+    || keyboard_check_pressed(ord('C'))){
 
     audio_play_sound(sfx_menu, true, 0);    
 }
@@ -286,7 +286,7 @@ if (keyboard_check_pressed(vk_up)){
     }
 }
 
-if (keyboard_check_pressed(vk_space) || keyboard_check_pressed(vk_enter)){
+if (keyboard_check_pressed(ord('X')) || keyboard_check_pressed(vk_enter)){
     index = cursor_row * cols + cursor_col;
     if (item[index,2] &gt; 0){
         global.item[index,1] -= 1;
@@ -300,7 +300,7 @@ if (keyboard_check_pressed(vk_space) || keyboard_check_pressed(vk_enter)){
     }
 }
 
-if (keyboard_check_pressed(vk_escape)){
+if (keyboard_check_pressed(ord('C'))){
     instance_destroy();
 }
 </string>
@@ -502,6 +502,8 @@ for (i = view_start; i &lt; view_end; i++){
         y_curs += 1;
     }
 }
+
+draw_sprite(spt_scroll_cursor,image_index, x+width-2, y + 11 +  33 * (cursor_row-1)/rows);
 </string>
           </argument>
         </arguments>

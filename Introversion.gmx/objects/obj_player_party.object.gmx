@@ -58,7 +58,10 @@ prevx = x;
 prevy = y;
 group_num = 1;
 try_convo = false;
-convo_courage = 15;
+convo_courage = 50;
+facing = 1;
+conversable = true;
+greeting = false;
 show_debug_message("cur_room: " + global.cur_room);
 </string>
           </argument>
@@ -86,6 +89,106 @@ show_debug_message("cur_room: " + global.cur_room);
 show_debug_message("///////ROOM CHANGE/////////");
 show_debug_message("///////////////////////////");
 </string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>switch(group_num){
+            case 1:
+                global.front_convo = spt_lara_convo;
+                global.middle_convo = spt_max_convo;
+                global.back_convo = spt_leon_convo;
+                room_goto (rm_conversation3);
+                break;
+            case 2:
+                global.front_convo = spt_jill_convo;
+                global.middle_convo = spt_chell_convo;
+                global.back_convo = spt_mario_convo;
+                room_goto (rm_conversation3);
+                break;
+            case 3:
+                global.front_convo = spt_glenn_convo;
+                global.middle_convo = spt_terra_convo;
+                global.back_convo = spt_sam_convo;
+                room_goto (rm_conversation3);
+                break;
+            case 4:
+                global.front_convo = spt_ezio_convo;
+                global.middle_convo = spt_zelda_convo;
+                room_goto (rm_conversation2);
+                break;
+            case 5:
+                global.front_convo = spt_luke_convo;
+                global.middle_convo = spt_arthur_convo;
+                room_goto (rm_conversation2);
+                break;
+            case 6:
+                global.front_convo = spt_carmen_convo;
+                global.middle_convo = spt_simon_convo;
+                global.back_convo = spt_john_convo;
+                room_goto (rm_conversation3);
+                break;
+            case 7:
+                global.front_convo = spt_jessica_convo;
+                room_goto (rm_conversation1);
+                break;
+            case 8:
+                global.front_convo = spt_samus_convo;
+                room_goto (rm_conversation1);
+                break;
+            case 9:
+                global.front_convo = spt_jade_convo;
+                room_goto (rm_conversation1);
+                break;
+            case 10:
+                global.front_convo = spt_kyle_convo;
+                room_goto (rm_conversation1);
+                break;
+            }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>611</id>
+        <kind>6</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>conversable</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>true</string>
           </argument>
         </arguments>
       </action>
@@ -142,166 +245,70 @@ if (hspeed == 0 &amp;&amp; vspeed = 0){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (keyboard_check(vk_right)){
-    hspeed = 1.5
-    image_speed = .2;
-    image_xscale = 1;
-    hasCollided = false;
+            <string>if(!try_convo &amp;&amp; !greeting){
+        if (keyboard_check(vk_right)){
+        hspeed = 1.5
+        image_speed = .2;
+        facing = 1;
+        hasCollided = false;
+        
+    }
+    if (hspeed &gt; 0 &amp;&amp; keyboard_check_released(vk_right)){
+        hspeed = 0;
+    }
     
-}
-if (hspeed &gt; 0 &amp;&amp; keyboard_check_released(vk_right)){
-    hspeed = 0;
-}
-
-if (keyboard_check(vk_left)){
-    hspeed = -1.5;
-    image_speed = .2;
-    image_xscale = -1;
-    hasCollided = false;
-}
-if (hspeed &lt; 0 &amp;&amp; keyboard_check_released(vk_left)){
-    hspeed = 0;
-}
-
-
-
-if (keyboard_check(vk_down)){
-    vspeed = 1;
-    image_speed = .2;
-    hasCollided = false;
-}
-
-if (vspeed &gt; 0 &amp;&amp; keyboard_check_released(vk_down)){
-    vspeed = 0;
-}
-
-if (keyboard_check(vk_up)){
-    vspeed = -1;
-    image_speed = .2;
-    hasCollided = false;
-}
-if (vspeed &lt; 0 &amp;&amp; keyboard_check_released(vk_up)){
-    vspeed = 0;
-}
-
-if(keyboard_check(vk_space) &amp;&amp; hasCollided)
-{
-    if (convo_courage &gt; 0){
-            switch(group_num){
-                case 1:
-        global.front_convo = spt_lara_convo;
-        global.middle_convo = spt_max_convo;
-        global.back_convo = spt_leon_convo;
-        room_goto (rm_conversation3);
-        break;
-    case 2:
-        global.front_convo = spt_jill_convo;
-        global.middle_convo = spt_chell_convo;
-        global.back_convo = spt_mario_convo;
-        room_goto (rm_conversation3);
-        break;
-    case 3:
-        global.front_convo = spt_glenn_convo;
-        global.middle_convo = spt_terra_convo;
-        global.back_convo = spt_sam_convo;
-        room_goto (rm_conversation3);
-        break;
-    case 4:
-        global.front_convo = spt_ezio_convo;
-        global.middle_convo = spt_zelda_convo;
-        room_goto (rm_conversation2);
-        break;
-    case 5:
-        global.front_convo = spt_luke_convo;
-        global.middle_convo = spt_arthur_convo;
-        room_goto (rm_conversation2);
-        break;
-    case 6:
-        global.front_convo = spt_carmen_convo;
-        global.middle_convo = spt_simon_convo;
-        global.back_convo = spt_john_convo;
-        room_goto (rm_conversation3);
-        break;
-    case 7:
-        global.front_convo = spt_jessica_convo;
-        room_goto (rm_conversation1);
-        break;
-    case 8:
-        global.front_convo = spt_samus_convo;
-        room_goto (rm_conversation1);
-        break;
-    case 9:
-        global.front_convo = spt_jade_convo;
-        room_goto (rm_conversation1);
-        break;
-    case 10:
-        global.front_convo = spt_kyle_convo;
-        room_goto (rm_conversation1);
-        break;
+    if (keyboard_check(vk_left)){
+        hspeed = -1.5;
+        image_speed = .2;
+        facing = -1;
+        hasCollided = false;
     }
-}
-}/*else{
+    if (hspeed &lt; 0 &amp;&amp; keyboard_check_released(vk_left)){
+        hspeed = 0;
+    }
+    
+    
+    
+    if (keyboard_check(vk_down)){
+        vspeed = 1;
+        image_speed = .2;
+        hasCollided = false;
+    }
+    
+    if (vspeed &gt; 0 &amp;&amp; keyboard_check_released(vk_down)){
+        vspeed = 0;
+    }
+    
+    if (keyboard_check(vk_up)){
+        vspeed = -1;
+        image_speed = .2;
+        hasCollided = false;
+    }
+    if (vspeed &lt; 0 &amp;&amp; keyboard_check_released(vk_up)){
+        vspeed = 0;
+    }
+    
+    if(conversable &amp;&amp; keyboard_check(ord('X')) &amp;&amp; hasCollided)
+    {
+        try_convo = true;
+    }
+}else if (!greeting){
     convo_courage -= 1;
-    if(keyboard_check_pressed(ord('x')))
-    convo_courage += 2;{
-        if (convo_courage &gt; 50){
-            switch(group_num){
-                case 1:
-        global.front_convo = spt_lara_convo;
-        global.middle_convo = spt_max_convo;
-        global.back_convo = spt_leon_convo;
-        room_goto (rm_conversation3);
-        break;
-    case 2:
-        global.front_convo = spt_jill_convo;
-        global.middle_convo = spt_chell_convo;
-        global.back_convo = spt_mario_convo;
-        room_goto (rm_conversation3);
-        break;
-    case 3:
-        global.front_convo = spt_glenn_convo;
-        global.middle_convo = spt_terra_convo;
-        global.back_convo = spt_sam_convo;
-        room_goto (rm_conversation3);
-        break;
-    case 4:
-        global.front_convo = spt_ezio_convo;
-        global.middle_convo = spt_zelda_convo;
-        room_goto (rm_conversation2);
-        break;
-    case 5:
-        global.front_convo = spt_luke_convo;
-        global.middle_convo = spt_arthur_convo;
-        room_goto (rm_conversation2);
-        break;
-    case 6:
-        global.front_convo = spt_carmen_convo;
-        global.middle_convo = spt_simon_convo;
-        global.back_convo = spt_john_convo;
-        room_goto (rm_conversation3);
-        break;
-    case 7:
-        global.front_convo = spt_jessica_convo;
-        room_goto (rm_conversation1);
-        break;
-    case 8:
-        global.front_convo = spt_samus_convo;
-        room_goto (rm_conversation1);
-        break;
-    case 9:
-        global.front_convo = spt_jade_convo;
-        room_goto (rm_conversation1);
-        break;
-    case 10:
-        global.front_convo = spt_kyle_convo;
-        room_goto (rm_conversation1);
-        break;
+    if(keyboard_check_pressed(ord('X')))
+    convo_courage += 10;{
+        if (convo_courage &gt;= 100){
+        audio_play_sound(sfx_gain,true,false);
+            greeting = true;
+            alarm[1] = 30;
+        }  
+        if (convo_courage &lt; 0){
+            try_convo = false;
+            convo_courage = 50;
+            conversable =false
+            alarm[0] = 30;
+        }
     }
-    }  
-    }
-    if (convo_courage &lt; 0)
-        try_convo = false;*/
-
+}
 depth = -y +100;
 
 
@@ -1278,6 +1285,46 @@ hasCollided = true;
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (!greeting){
+    draw_sprite_ext(spt_player_party,image_index,x,y,facing,1,0,c_white,1);
+}else{
+    draw_sprite_ext(spt_player_wave,image_index,x,y,facing,1,0,c_white,1);
+    if(facing &gt;0)
+        draw_sprite_ext(spt_hi,0,x+(facing*16),y-50,1,1,0,c_white,1);
+    else
+        draw_sprite_ext(spt_hi,1,x+(facing*16),y-50,1,1,0,c_white,1);
+}
+if (hasCollided &amp;&amp; !greeting &amp;&amp; !try_convo)
+    draw_sprite(spt_x_key,0,x,y-8);
+if (try_convo &amp;&amp; !greeting){
+    if (convo_courage % 10 &lt;= 6)
+       draw_sprite(spt_x_key,0,x,y-8); 
+    draw_set_color(c_black);
+    draw_rectangle(x-26,y+7,x+26,y+2,false);
+    draw_healthbar(x-25,y+6,x+25,y+3,convo_courage,c_ltgray,c_red,c_green,0,true,false);
+}
+</string>
+          </argument>
+        </arguments>
       </action>
     </event>
   </events>

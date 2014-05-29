@@ -143,7 +143,7 @@ if (count &gt;= 40) count = 0;
         <arguments>
           <argument>
             <kind>11</kind>
-            <room>rm_entry</room>
+            <room>rm_entry_cutscene</room>
           </argument>
         </arguments>
       </action>

@@ -34,6 +34,8 @@ if (global.seconds == 1){
         global.hours += 1;
     }
 }
+if (global.hours == 9 &amp;&amp; global.minutes &gt;= 12)
+    room_goto(rm_end);
 </string>
           </argument>
         </arguments>

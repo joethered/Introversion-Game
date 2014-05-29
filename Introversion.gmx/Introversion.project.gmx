@@ -17,6 +17,8 @@
     <sound>sound\mus_contrain</sound>
     <sound>sound\sfx_player_hit</sound>
     <sound>sound\sfx_ninja_death</sound>
+    <sound>sound\sfx_contra_shoot</sound>
+    <sound>sound\sfx_alert</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spt_topic_bubble_left</sprite>
@@ -87,6 +89,7 @@
       <sprite>sprites\spt_party_gourp9</sprite>
       <sprite>sprites\spt_party_gourp10</sprite>
       <sprite>sprites\spt_player_party</sprite>
+      <sprite>sprites\spt_player_wave</sprite>
       <sprites name="Characters">
         <sprite>sprites\spt_character_mask</sprite>
         <sprites name="Arthur">
@@ -210,6 +213,12 @@
     </sprites>
     <sprite>sprites\spt_fire</sprite>
     <sprite>sprites\spt_x_key</sprite>
+    <sprite>sprites\spt_hi</sprite>
+    <sprite>sprites\spt_dia1</sprite>
+    <sprite>sprites\spt_dia2</sprite>
+    <sprite>sprites\spt_dia3</sprite>
+    <sprite>sprites\spt_dia4</sprite>
+    <sprite>sprites\spt_dia5</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_party_entry</background>
@@ -353,10 +362,13 @@
       <object>objects\obj_group_spot2</object>
       <object>objects\obj_group_spot3</object>
       <object>objects\obj_group_spot4</object>
+      <object>objects\obj_player_cutscene</object>
+      <object>objects\obj_friend_cutscene</object>
     </objects>
     <object>objects\obj_Stamina</object>
     <object>objects\obj_clock</object>
     <object>objects\obj_topbar</object>
+    <object>objects\obj_topbar_blank</object>
     <objects name="Kage">
       <object>objects\obj_player_kage</object>
       <object>objects\obj_ground</object>
@@ -382,7 +394,9 @@
       <object>objects\obj_contrain_wheels</object>
     </objects>
     <object>objects\obj_dialog_box</object>
+    <object>objects\obj_dialog_box2</object>
     <object>objects\obj_fire</object>
+    <object>objects\obj_cutscene_controller</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_title</room>
@@ -392,6 +406,7 @@
     <room>rooms\rm_win</room>
     <rooms name="Party">
       <room>rooms\rm_entry</room>
+      <room>rooms\rm_entry_cutscene</room>
       <room>rooms\rm_living</room>
       <room>rooms\rm_parlor</room>
       <room>rooms\rm_kitchen</room>
@@ -404,6 +419,7 @@
       <room>rooms\rm_conversation2</room>
       <room>rooms\rm_conversation3</room>
     </rooms>
+    <room>rooms\rm_end</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

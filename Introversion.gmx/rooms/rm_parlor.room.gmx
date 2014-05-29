@@ -8,7 +8,7 @@
   <isometric>0</isometric>
   <speed>30</speed>
   <persistent>0</persistent>
-  <colour>16711935</colour>
+  <colour>8388736</colour>
   <showcolour>-1</showcolour>
   <code>global.prev_room = global.cur_room;
 global.cur_room = "parlor";

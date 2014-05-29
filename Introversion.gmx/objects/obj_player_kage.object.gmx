@@ -55,7 +55,34 @@ spin_avail = true;
 facing = 1;
 invulnerable = false;
 recentlyDamaged = false;
+damaged = false;
 </string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>611</id>
+        <kind>6</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>invulnerable</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>false</string>
           </argument>
         </arguments>
       </action>
@@ -124,13 +151,37 @@ alarm[2] = 5;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>invulnerable = false;
+            <string>damaged = false;
 if ((hspeed &lt; 0 &amp;&amp; !(keyboard_check(vk_left))) || 
         (hspeed &gt; 0 &amp;&amp; !(keyboard_check(vk_right)))){
     hspeed = 0;
 }
 
 </string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>301</id>
+        <kind>0</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_set_alarm</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>0</kind>
+            <string>30</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>3</string>
           </argument>
         </arguments>
       </action>
@@ -157,7 +208,7 @@ if ((hspeed &lt; 0 &amp;&amp; !(keyboard_check(vk_left))) ||
     hspeed = facing*20;
     recentlyDamaged = false;
     audio_play_sound(sfx_player_hit, true,0);
-}else if (!invulnerable){
+}else if (!damaged){
 
 if (spin_avail = true &amp;&amp; jumping == true &amp;&amp; keyboard_check_pressed(vk_up)){
     spin = true;
@@ -443,8 +494,17 @@ if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
             <string>alpha = 1;
 if(invulnerable)
 {
-    alpha = 0.1;
+    if (image_index % 2 == 0)
+        alpha = 1;
+    else
+        alpha = 0.5;
+    
 }
+if(damaged)
+{
+    alpha = 0;
+}
+
 
 
 if (jumping){
