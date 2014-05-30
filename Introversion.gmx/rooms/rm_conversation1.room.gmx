@@ -34,6 +34,7 @@ global.prev_room = global.cur_room;
 global.cur_room = "convo";</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
+  <clearDisplayBuffer>-1</clearDisplayBuffer>
   <makerSettings>
     <isSet>0</isSet>
     <w>0</w>

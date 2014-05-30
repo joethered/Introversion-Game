@@ -16,6 +16,7 @@ global.cur_room = "dining";
 script_execute(scr_spawn_party_player);</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
+  <clearDisplayBuffer>-1</clearDisplayBuffer>
   <makerSettings>
     <isSet>0</isSet>
     <w>0</w>
