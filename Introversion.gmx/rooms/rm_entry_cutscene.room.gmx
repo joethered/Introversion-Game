@@ -3,8 +3,8 @@
   <caption></caption>
   <width>160</width>
   <height>128</height>
-  <vsnap>1</vsnap>
-  <hsnap>1</hsnap>
+  <vsnap>8</vsnap>
+  <hsnap>8</hsnap>
   <isometric>0</isometric>
   <speed>30</speed>
   <persistent>0</persistent>
@@ -54,7 +54,7 @@
     <instance objName="obj_cutscene_controller" x="7" y="14" name="inst_A2C74750" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_party_group1" x="38" y="104" name="inst_E6458F94" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_player_cutscene" x="80" y="88" name="inst_931513B7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_friend_cutscene" x="104" y="83" name="inst_51E3C203" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_friend_cutscene" x="120" y="88" name="inst_51E3C203" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_topbar_blank" x="0" y="0" name="inst_D7C3D10A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>

@@ -19,6 +19,7 @@
     <sound>sound\sfx_ninja_death</sound>
     <sound>sound\sfx_contra_shoot</sound>
     <sound>sound\sfx_alert</sound>
+    <sound>sound\mus_hell</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spt_topic_bubble_left</sprite>
@@ -212,14 +213,30 @@
       <sprite>sprites\spt_contra_damaged</sprite>
     </sprites>
     <sprite>sprites\spt_fire</sprite>
-    <sprite>sprites\spt_x_key</sprite>
+    <sprites name="Intro">
+      <sprite>sprites\spt_brick</sprite>
+      <sprite>sprites\spt_player_vania_idle</sprite>
+      <sprite>sprites\spt_player_vania_walk</sprite>
+      <sprite>sprites\spt_player_vania_jump</sprite>
+      <sprite>sprites\spt_player_vania_sword1</sprite>
+      <sprite>sprites\spt_player_vania_sword2</sprite>
+      <sprite>sprites\spt_demon1</sprite>
+      <sprite>sprites\spt_demon2</sprite>
+      <sprite>sprites\spt_demon3</sprite>
+    </sprites>
     <sprite>sprites\spt_c_key</sprite>
+    <sprite>sprites\spt_x_key</sprite>
+    <sprite>sprites\spt_left_arrow_key</sprite>
     <sprite>sprites\spt_hi</sprite>
     <sprite>sprites\spt_dia1</sprite>
     <sprite>sprites\spt_dia2</sprite>
     <sprite>sprites\spt_dia3</sprite>
     <sprite>sprites\spt_dia4</sprite>
     <sprite>sprites\spt_dia5</sprite>
+    <sprite>sprites\spt_intro_dia1</sprite>
+    <sprite>sprites\spt_intro_dia2</sprite>
+    <sprite>sprites\spt_intro_dia3</sprite>
+    <sprite>sprites\spt_intro_dia4</sprite>
     <sprite>sprites\spt_white_screen</sprite>
   </sprites>
   <backgrounds name="background">
@@ -236,6 +253,7 @@
       <background>background\bg_contra_sky_scrolling</background>
     </backgrounds>
     <background>background\background10</background>
+    <background>background\bg_hell</background>
   </backgrounds>
   <paths name="paths">
     <path>paths\pth_empty</path>
@@ -376,6 +394,7 @@
       <object>objects\obj_ground</object>
       <object>objects\obj_kage_controller</object>
       <object>objects\obj_ninja_kage</object>
+      <object>objects\spt_ninja_kage_runner</object>
       <object>objects\obj_throwing_star</object>
     </objects>
     <object>objects\debug_controller</object>
@@ -401,8 +420,13 @@
     </objects>
     <object>objects\obj_dialog_box</object>
     <object>objects\obj_dialog_box2</object>
-    <object>objects\obj_fire</object>
     <object>objects\obj_cutscene_controller</object>
+    <objects name="Intro">
+      <object>objects\obj_brick</object>
+      <object>objects\obj_player_vania</object>
+      <object>objects\obj_demon</object>
+      <object>objects\obj_fire</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_title</room>

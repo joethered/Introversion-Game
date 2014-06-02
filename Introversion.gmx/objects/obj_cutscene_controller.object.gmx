@@ -195,19 +195,19 @@ case 3:
             <kind>1</kind>
             <string>switch (dialog){
 case 1:
-    draw_sprite(spt_dia1,0,obj_friend_cutscene.x+6,obj_friend_cutscene.y-52);
+    draw_sprite(spt_dia1,0,obj_friend_cutscene.x-6,obj_friend_cutscene.y-52);
     break;
 case 2:
     draw_sprite(spt_dia2,0,obj_player_cutscene.x-6,obj_player_cutscene.y-54);
     break;
 case 3:
-    draw_sprite(spt_dia3,0,obj_friend_cutscene.x+6,obj_friend_cutscene.y-52);
+    draw_sprite(spt_dia3,0,obj_friend_cutscene.x-6,obj_friend_cutscene.y-52);
     break;
 case 4:
-    draw_sprite(spt_dia4,0,obj_friend_cutscene.x+6,obj_friend_cutscene.y-52);
+    draw_sprite(spt_dia4,0,obj_friend_cutscene.x-6,obj_friend_cutscene.y-52);
     break;
 case 5:
-    draw_sprite(spt_dia5,0,obj_player_cutscene.x+6,obj_player_cutscene.y-54);
+    draw_sprite(spt_dia5,0,obj_player_cutscene.x-6,obj_player_cutscene.y-54);
     break;
 
 }
