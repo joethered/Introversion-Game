@@ -211,6 +211,8 @@
       <sprite>sprites\spt_contrain_platform_top</sprite>
       <sprite>sprites\spt_contrain_wheels</sprite>
       <sprite>sprites\spt_contra_damaged</sprite>
+      <sprite>sprites\spt_contrain_engine</sprite>
+      <sprite>sprites\spt_contra_ninja</sprite>
     </sprites>
     <sprite>sprites\spt_fire</sprite>
     <sprites name="Intro">
@@ -417,6 +419,7 @@
       <object>objects\obj_contrain_whitescreen</object>
       <object>objects\obj_contrain_jumpDummy</object>
       <object>objects\obj_contrain_shootDummy</object>
+      <object>objects\obj_contrain_engine</object>
     </objects>
     <object>objects\obj_dialog_box</object>
     <object>objects\obj_dialog_box2</object>

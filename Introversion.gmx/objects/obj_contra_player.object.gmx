@@ -276,6 +276,68 @@ if(hasBegun){
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="obj_contrain_engine">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(damaged)
+{
+    hspeed = 0;
+    damaged = false;
+}
+if (vspeed &gt; 0 &amp;&amp; !place_free(x,y+vspeed))
+{ 
+
+        move_contact(270)
+        vspeed = 0;
+        jump = 0;
+        falling = false;
+}
+
+if (vspeed &lt; 0 &amp;&amp; !place_free(x,y+vspeed))
+{ 
+    if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
+    { 
+        if( hspeed &gt; 0)
+            move_contact(0);
+        else
+            move_contact(180);   
+        hspeed = 0;
+        moving = false;
+    }
+    move_contact(90)
+    vspeed = 0;
+}
+
+if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
+{ 
+    if( hspeed &gt; 0)
+        move_contact(0);
+    else
+        move_contact(180);   
+    hspeed = 0;
+    moving = false;
+}
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="obj_ninja_contra">
       <action>
         <libid>1</libid>
@@ -584,18 +646,18 @@ if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(damaged)
-{
-    hspeed = 0;
-    damaged = false;
-}
-if (vspeed &gt; 0 &amp;&amp; !place_free(x,y+vspeed))
+            <string>if (vspeed &gt; 0 &amp;&amp; !place_free(x,y+vspeed))
 { 
 
-        move_contact(270)
-        vspeed = 0;
-        jump = 0;
-        falling = false;
+    move_contact(270)
+    vspeed = 0;
+    jump = 0;
+    falling = false;
+    if(damaged)
+    {
+        hspeed = 0;
+        damaged = false;
+    }
 }
 
 if (vspeed &lt; 0 &amp;&amp; !place_free(x,y+vspeed))
@@ -611,6 +673,11 @@ if (vspeed &lt; 0 &amp;&amp; !place_free(x,y+vspeed))
     }
     move_contact(90)
     vspeed = 0;
+    if(damaged)
+        {
+            hspeed = 0;
+            damaged = false;
+        }
 }
 
 if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
