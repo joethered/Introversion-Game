@@ -20,6 +20,7 @@
     <sound>sound\sfx_contra_shoot</sound>
     <sound>sound\sfx_alert</sound>
     <sound>sound\mus_hell</sound>
+    <sound>sound\sfx_shuriken</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spt_topic_bubble_left</sprite>
@@ -41,6 +42,7 @@
     <sprite>sprites\spt_scroll_cursor</sprite>
     <sprite>sprites\spr_plus</sprite>
     <sprite>sprites\spt_ground</sprite>
+    <sprite>sprites\spt_branch_col</sprite>
     <sprite>sprites\spt_minus</sprite>
     <sprites name="Convo">
       <sprite>sprites\spt_max_convo</sprite>
@@ -229,6 +231,7 @@
     <sprite>sprites\spt_c_key</sprite>
     <sprite>sprites\spt_x_key</sprite>
     <sprite>sprites\spt_left_arrow_key</sprite>
+    <sprite>sprites\spt_up_arrow_key</sprite>
     <sprite>sprites\spt_hi</sprite>
     <sprite>sprites\spt_dia1</sprite>
     <sprite>sprites\spt_dia2</sprite>
@@ -240,6 +243,12 @@
     <sprite>sprites\spt_intro_dia3</sprite>
     <sprite>sprites\spt_intro_dia4</sprite>
     <sprite>sprites\spt_white_screen</sprite>
+    <sprite>sprites\bg_bamboo_wall</sprite>
+    <sprite>sprites\bg_bamboo_detail1</sprite>
+    <sprite>sprites\bg_bamboo_detail2</sprite>
+    <sprite>sprites\bg_bamboo_detail3</sprite>
+    <sprite>sprites\bg_tree1</sprite>
+    <sprite>sprites\bg_tree2</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_party_entry</background>
@@ -394,9 +403,11 @@
     <objects name="Kage">
       <object>objects\obj_player_kage</object>
       <object>objects\obj_ground</object>
+      <object>objects\obj_branch_col</object>
       <object>objects\obj_kage_controller</object>
       <object>objects\obj_ninja_kage</object>
-      <object>objects\spt_ninja_kage_runner</object>
+      <object>objects\obj_ninja_kage_runner</object>
+      <object>objects\obj_ninja_kage_jumper</object>
       <object>objects\obj_throwing_star</object>
     </objects>
     <object>objects\debug_controller</object>
@@ -430,6 +441,12 @@
       <object>objects\obj_demon</object>
       <object>objects\obj_fire</object>
     </objects>
+    <object>objects\obj_bamboo_wall</object>
+    <object>objects\obj_bamboo_detail1</object>
+    <object>objects\obj_bamboo_detail2</object>
+    <object>objects\obj_bamboo_detail3</object>
+    <object>objects\obj_tree1</object>
+    <object>objects\obj_tree2</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_title</room>

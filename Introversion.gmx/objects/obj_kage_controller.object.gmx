@@ -11,45 +11,23 @@
     <event eventtype="0" enumb="0">
       <action>
         <libid>1</libid>
-        <id>212</id>
-        <kind>0</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_end_sound</functionname>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>6</kind>
-            <sound>-100</sound>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>211</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_sound</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>6</kind>
-            <sound>-100</sound>
-          </argument>
-          <argument>
-            <kind>3</kind>
-            <string>1</string>
+            <kind>1</kind>
+            <string>audio_stop_music();
+audio_play_music(mus_kage,true);
+</string>
           </argument>
         </arguments>
       </action>
@@ -73,7 +51,7 @@
           </argument>
           <argument>
             <kind>4</kind>
-            <string>0</string>
+            <string>2</string>
           </argument>
         </arguments>
       </action>
@@ -123,6 +101,57 @@
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>level += 1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>dir = 1;
+
+ninja = instance_create(obj_player_kage.x + dir*200, obj_player_kage.y, obj_ninja_kage_runner);
+ninja.facing = -1 * dir;
+ninja.hspeed = -5;
+level = 2
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="1">
       <action>
         <libid>1</libid>
@@ -166,13 +195,14 @@
 r = irandom(1);
 if (r == 0)
     dir = -1;
-
-ninja = instance_create(obj_player_kage.x + dir*200, obj_player_kage.y-irandom_range(150,60), obj_ninja_kage);
-ninja.facing = -1 * dir;
-ninja.hspeed = -1 * dir * 5;
-ninja2 = instance_create(obj_player_kage.x + -1*dir*200, obj_player_kage.y-irandom_range(150,60), obj_ninja_kage);
-ninja2.facing = dir;
-ninja2.hspeed = dir * 5;
+if (instance_number(obj_ninja_kage) &lt; 200){
+    ninja = instance_create(obj_player_kage.x + dir*200, obj_player_kage.y-irandom_range(150,0), obj_ninja_kage);
+    ninja.facing = -1 * dir;
+    ninja.hspeed = -1 * dir * 5;
+    ninja2 = instance_create(obj_player_kage.x + -1*dir*200, obj_player_kage.y-irandom_range(150,0), obj_ninja_kage);
+    ninja2.facing = dir;
+    ninja2.hspeed = dir * 5;
+}
 </string>
           </argument>
         </arguments>
@@ -193,11 +223,52 @@ ninja2.hspeed = dir * 5;
         <arguments>
           <argument>
             <kind>0</kind>
-            <string>2</string>
+            <string>3</string>
           </argument>
           <argument>
             <kind>4</kind>
             <string>0</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>other</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (level == 3){
+    dir = -1;
+    
+    ninja = instance_create(obj_player_kage.x - dir*200, obj_player_kage.y, obj_ninja_kage_runner);
+    ninja.facing = -1 * dir;
+    level = 4;
+}
+if (level == 6){
+dir = 1;
+    ninja = instance_create(obj_player_kage.x + 16, obj_player_kage.y-12, obj_ninja_kage_jumper);
+    ninja.facing = -1 * dir;
+    ninja2 = instance_create(obj_player_kage.x -16, obj_player_kage.y-12, obj_ninja_kage_jumper);
+    ninja2.facing = dir;
+    ninja = instance_create(obj_player_kage.x +16, obj_player_kage.y+24, obj_ninja_kage_jumper);
+    ninja.facing = -1 * dir;
+    ninja2 = instance_create(obj_player_kage.x -16, obj_player_kage.y+24, obj_ninja_kage_jumper);
+    ninja2.facing = dir;
+    level = 7;
+}
+</string>
           </argument>
         </arguments>
       </action>

@@ -37,30 +37,6 @@
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
-        <id>526</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_font</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>12</kind>
-            <font>thefont</font>
-          </argument>
-          <argument>
-            <kind>4</kind>
-            <string>1</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
         <id>524</id>
         <kind>0</kind>
         <userelative>0</userelative>
@@ -95,7 +71,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (count % 20 &gt; 5)
+            <string>draw_set_font(thefont);
+draw_set_halign(fa_center);
+if (count % 20 &gt; 5)
     draw_text(80,100,"press something already");
 
 count += 1;
@@ -123,27 +101,8 @@ if (count &gt;= 40) count = 0;
           <argument>
             <kind>1</kind>
             <string>script_execute(scr_initialize_game);
+room_goto(rm_intro);
 </string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>224</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_another_room</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>11</kind>
-            <room>rm_intro</room>
           </argument>
         </arguments>
       </action>

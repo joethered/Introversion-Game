@@ -494,7 +494,7 @@ if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
         <arguments>
           <argument>
             <kind>6</kind>
-            <sound>sfx_ninja_death</sound>
+            <sound>-100</sound>
           </argument>
           <argument>
             <kind>3</kind>

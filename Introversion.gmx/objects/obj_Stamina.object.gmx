@@ -71,7 +71,7 @@
           </argument>
           <argument>
             <kind>0</kind>
-            <string>-0.05</string>
+            <string>-0.01</string>
           </argument>
         </arguments>
       </action>
@@ -169,7 +169,7 @@ if (global.dream = 1){
         <arguments>
           <argument>
             <kind>6</kind>
-            <sound>mus_party1</sound>
+            <sound>-100</sound>
           </argument>
         </arguments>
       </action>
@@ -189,7 +189,7 @@ if (global.dream = 1){
         <arguments>
           <argument>
             <kind>6</kind>
-            <sound>sfx_to_imagination</sound>
+            <sound>-100</sound>
           </argument>
           <argument>
             <kind>3</kind>

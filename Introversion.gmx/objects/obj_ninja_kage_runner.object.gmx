@@ -53,7 +53,6 @@
 image_speed = 0.3;
 facing = -1;
 prevx = x-1;
-hspeed = -5;
 </string>
           </argument>
         </arguments>
@@ -78,19 +77,18 @@ hspeed = -5;
             <kind>1</kind>
             <string>//effect_create_below(ef_cloud, x, y, 0.0000000000000000000000001, c_black);
 
-effect_create_below(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(31, 46, 109));
-effect_create_below(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(31, 46, 109));
-effect_create_below(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(31, 46, 109));
-effect_create_below(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(31, 46, 109));
-effect_create_below(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(31, 46, 109));
-effect_create_below(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(31, 46, 109));
-effect_create_below(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(31, 46, 109));
-effect_create_below(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(31, 46, 109));
-effect_create_below(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(31, 46, 109));
-effect_create_below(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(88, 43, 0));
-effect_create_below(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(88, 43, 0));
-effect_create_below(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(88, 43, 0));
-
+effect_create_above(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(31, 46, 109));
+effect_create_above(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(31, 46, 109));
+effect_create_above(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(31, 46, 109));
+effect_create_above(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(31, 46, 109));
+effect_create_above(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(31, 46, 109));
+effect_create_above(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(31, 46, 109));
+effect_create_above(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(31, 46, 109));
+effect_create_above(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(31, 46, 109));
+effect_create_above(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(31, 46, 109));
+effect_create_above(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(88, 43, 0));
+effect_create_above(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(88, 43, 0));
+effect_create_above(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(88, 43, 0));
 
 //screwing with paricle effects
 instance_destroy();
@@ -116,7 +114,7 @@ instance_destroy();
         <arguments>
           <argument>
             <kind>6</kind>
-            <sound>-100</sound>
+            <sound>sfx_ninja_death</sound>
           </argument>
           <argument>
             <kind>3</kind>
@@ -156,28 +154,10 @@ instance_destroy();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (vspeed == 0){
-    randomize();
-    jump = floor(random_range(1,10));
-    if (jump == 1)
-        vspeed = -12;
-}
-if (x == prevx){
-    facing *= -1;
-    hspeed = facing * 5;
-}
-turn = irandom_range(0,10);
-if (turn == 0){
-    if ((hspeed &gt; 0 &amp;&amp; x &gt; obj_player_kage.x) || (hspeed &lt; 0 &amp;&amp; x &lt; obj_player_kage.x)){
-    facing *= -1;
-    hspeed = facing * 5;
-    }
-}
-prevx = x;
-
-if (x &gt; obj_player_kage.x+200 || x &lt; obj_player_kage.x-200)
-    instance_destroy();
-
+            <string>if (hspeed &lt; 0 &amp;&amp; x &lt; obj_player_kage.x + 92)
+    hspeed /= 2;
+if (hspeed &gt; 0 &amp;&amp; x &gt; obj_player_kage.x - 92)
+    hspeed /= 2;
 </string>
           </argument>
         </arguments>
@@ -186,25 +166,23 @@ if (x &gt; obj_player_kage.x+200 || x &lt; obj_player_kage.x-200)
     <event eventtype="4" ename="obj_throwing_star">
       <action>
         <libid>1</libid>
-        <id>211</id>
-        <kind>0</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_sound</functionname>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>6</kind>
-            <sound>-100</sound>
-          </argument>
-          <argument>
-            <kind>3</kind>
-            <string>0</string>
+            <kind>1</kind>
+            <string>audio_play_sound(sfx_ninja_death,true,false);
+obj_kage_controller.level += 1;
+</string>
           </argument>
         </arguments>
       </action>

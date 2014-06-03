@@ -56,6 +56,8 @@ facing = 1;
 invulnerable = false;
 recentlyDamaged = false;
 damaged = false;
+demo_count = 0;
+zoom_factor = 1;
 </string>
           </argument>
         </arguments>
@@ -128,7 +130,7 @@ damaged = false;
           <argument>
             <kind>1</kind>
             <string>spin = false;
-alarm[2] = 5;
+alarm[2] = 3;
 </string>
           </argument>
         </arguments>
@@ -203,7 +205,47 @@ if ((hspeed &lt; 0 &amp;&amp; !(keyboard_check(vk_left))) ||
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (obj_kage_controller.level &gt; 5){
+            <string>if (obj_kage_controller.level == 2){
+    if (zoom_factor &gt; 0.6)
+        zoom_factor -= 0.05;
+    if (zoom_factor == 0.6 &amp;&amp; keyboard_check_pressed(ord('C'))){
+        star = instance_create(x,y,obj_throwing_star);
+        star.hspeed = facing * 20;
+    }
+}
+if (obj_kage_controller.level == 4){
+    if (zoom_factor &lt; 0.75)
+        zoom_factor += 0.05;
+    if (zoom_factor == 0.75 &amp;&amp; keyboard_check_pressed(ord('X'))){
+        vspeed = -12;
+        jumping = true;
+        obj_kage_controller.level = 5;
+        obj_kage_controller.alarm[4] = 20;
+    }
+}
+if (obj_kage_controller.level == 7){
+    if (y &lt; 228){
+        obj_kage_controller.level = 7;
+        gravity = 0;
+        vspeed = 0;
+    }
+    
+}
+if (obj_kage_controller.level == 7){
+    if (keyboard_check_pressed(vk_up)){
+        spin = true;
+        alarm[1] = 10;
+        spin_avail = false;
+        audio_play_sound(sfx_spin_attack, true, 0);  
+        obj_kage_controller.level = 8;
+        obj_kage_controller.alarm[0] = 2;
+        gravity = 0.25
+    }
+}
+
+if (obj_kage_controller.level &gt;=8){
+    if (zoom_factor &lt; 1)
+        zoom_factor += 0.05;
     if(recentlyDamaged)
     {
         hspeed = facing*20;
@@ -248,6 +290,52 @@ if ((hspeed &lt; 0 &amp;&amp; !(keyboard_check(vk_left))) ||
             star.hspeed = facing * 20;
         }
     }
+}
+
+view_wview[0] = 320 * zoom_factor;
+view_hview[0] = 256 * zoom_factor;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_branch_col">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (vspeed &gt; 0 &amp;&amp; !place_free(x,y+vspeed))
+{ 
+    move_contact(270)
+    vspeed = 0;
+    jumping = 0;
+}
+
+if (vspeed &lt; 0 &amp;&amp; !place_free(x,y+vspeed))
+{ 
+    move_contact(90)
+    vspeed = 0;
+}
+
+if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
+{ 
+    if( hspeed &gt; 0)
+        move_contact(0);
+    else
+        move_contact(180);   
+    hspeed = 0;
 }
 </string>
           </argument>
@@ -313,11 +401,11 @@ if ((hspeed &lt; 0 &amp;&amp; !(keyboard_check(vk_left))) ||
         <arguments>
           <argument>
             <kind>0</kind>
-            <string>spin</string>
+            <string>spin_avail</string>
           </argument>
           <argument>
             <kind>0</kind>
-            <string>false</string>
+            <string>true</string>
           </argument>
           <argument>
             <kind>4</kind>
@@ -526,6 +614,31 @@ if (jumping){
     }
 }
 
+if(obj_kage_controller.level = 2){
+    image_speed = 0.2;
+    draw_sprite_ext(spt_c_key,image_index,x,y-30,1,1,0,c_white,1);
+    draw_sprite_ext(spt_throwing_star,image_index,x+demo_count,y,1,1,0,c_white,0.3)
+    demo_count += 20;
+    if (demo_count &gt; 120)
+        demo_count = 0;
+}
+
+if(obj_kage_controller.level = 4){    
+    draw_sprite_ext(spt_x_key,image_index,x,y-30,1,1,0,c_white,1);
+    if (demo_count &gt; 0)
+        draw_sprite_ext(spt_player_kage_jump,image_index,x,y+sqr(demo_count-8)-64,facing,1,0,c_white,0.3);  
+    demo_count += 0.25;
+    if (demo_count == 8)
+        demo_count = 0;
+    image_speed = 0.2;
+}
+
+if(obj_kage_controller.level = 7){
+    image_speed = 1;
+    
+    draw_sprite_ext(spt_up_arrow_key,image_index,x,y-30,1,1,0,c_white,1);
+    draw_sprite_ext(spt_player_kage_spin,image_index,x,y,1,1,0,c_white,0.3)
+}
 </string>
           </argument>
         </arguments>
