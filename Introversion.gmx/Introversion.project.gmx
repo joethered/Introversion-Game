@@ -249,6 +249,7 @@
     <sprite>sprites\bg_bamboo_detail3</sprite>
     <sprite>sprites\bg_tree1</sprite>
     <sprite>sprites\bg_tree2</sprite>
+    <sprite>sprites\spt_thumbs</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_party_entry</background>
@@ -409,6 +410,12 @@
       <object>objects\obj_ninja_kage_runner</object>
       <object>objects\obj_ninja_kage_jumper</object>
       <object>objects\obj_throwing_star</object>
+      <object>objects\obj_bamboo_wall</object>
+      <object>objects\obj_bamboo_detail1</object>
+      <object>objects\obj_bamboo_detail2</object>
+      <object>objects\obj_bamboo_detail3</object>
+      <object>objects\obj_tree1</object>
+      <object>objects\obj_tree2</object>
     </objects>
     <object>objects\debug_controller</object>
     <object>objects\obj_winRoom</object>
@@ -441,12 +448,6 @@
       <object>objects\obj_demon</object>
       <object>objects\obj_fire</object>
     </objects>
-    <object>objects\obj_bamboo_wall</object>
-    <object>objects\obj_bamboo_detail1</object>
-    <object>objects\obj_bamboo_detail2</object>
-    <object>objects\obj_bamboo_detail3</object>
-    <object>objects\obj_tree1</object>
-    <object>objects\obj_tree2</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_title</room>
