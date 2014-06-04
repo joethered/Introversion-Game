@@ -21,6 +21,10 @@
     <sound>sound\sfx_alert</sound>
     <sound>sound\mus_hell</sound>
     <sound>sound\sfx_shuriken</sound>
+    <sound>sound\mus_title_begin</sound>
+    <sound>sound\mus_title_loop</sound>
+    <sound>sound\sfx_demon_attack</sound>
+    <sound>sound\sfx_demon_growl</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spt_topic_bubble_left</sprite>
@@ -172,6 +176,7 @@
         <sprite>sprites\spt_parlor_room</sprite>
         <sprite>sprites\spt_parlor_exit3</sprite>
         <sprite>sprites\spt_parlor_exit2</sprite>
+        <sprite>sprites\spt_parlor_forground</sprite>
       </sprites>
       <sprites name="Kitchen">
         <sprite>sprites\spt_kitchen_room</sprite>
@@ -186,6 +191,9 @@
       </sprites>
       <sprites name="Dining">
         <sprite>sprites\spt_dining_room</sprite>
+        <sprite>sprites\spt_dining_foreground3</sprite>
+        <sprite>sprites\spt_dining_foreground2</sprite>
+        <sprite>sprites\spt_dinning_foreground1</sprite>
         <sprite>sprites\spt_dining_exit2</sprite>
         <sprite>sprites\spt_dining_exit1</sprite>
       </sprites>
@@ -242,6 +250,11 @@
     <sprite>sprites\spt_intro_dia2</sprite>
     <sprite>sprites\spt_intro_dia3</sprite>
     <sprite>sprites\spt_intro_dia4</sprite>
+    <sprite>sprites\spt_end_dia1</sprite>
+    <sprite>sprites\spt_end_dia2</sprite>
+    <sprite>sprites\spt_end_dia3</sprite>
+    <sprite>sprites\spt_end_dia4</sprite>
+    <sprite>sprites\spt_end_dia5</sprite>
     <sprite>sprites\spt_white_screen</sprite>
     <sprite>sprites\spt_blackScreen</sprite>
     <sprite>sprites\bg_bamboo_wall</sprite>
@@ -251,6 +264,9 @@
     <sprite>sprites\bg_tree1</sprite>
     <sprite>sprites\bg_tree2</sprite>
     <sprite>sprites\spt_thumbs</sprite>
+    <sprite>sprites\spt_party_game</sprite>
+    <sprite>sprites\spt_team_mu</sprite>
+    <sprite>sprites\spt_title</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_party_entry</background>
@@ -370,6 +386,7 @@
         <object>objects\obj_parlor_collision</object>
         <object>objects\jmp_parlor_to_kitchen</object>
         <object>objects\jmp_parlor_to_living</object>
+        <object>objects\obj_parlor_foreground</object>
       </objects>
       <objects name="Kitchen Room">
         <object>objects\jmp_kitchen_to_hallway</object>
@@ -386,6 +403,9 @@
         <object>objects\jmp_dining_to_hallway</object>
         <object>objects\jmp_dining_to_entry</object>
         <object>objects\obj_dining_collision</object>
+        <object>objects\obj_dining_forground1</object>
+        <object>objects\obj_dining_foreground2</object>
+        <object>objects\obj_dining_foreground3</object>
       </objects>
       <objects name="Characters">
         <object>objects\obj_npc</object>
@@ -397,6 +417,8 @@
       <object>objects\obj_group_spot4</object>
       <object>objects\obj_player_cutscene</object>
       <object>objects\obj_friend_cutscene</object>
+      <object>objects\obj_friend_end_cutscene</object>
+      <object>objects\obj_player_end_cutscene</object>
     </objects>
     <object>objects\obj_Stamina</object>
     <object>objects\obj_clock</object>
@@ -444,6 +466,7 @@
     <object>objects\obj_dialog_box</object>
     <object>objects\obj_dialog_box2</object>
     <object>objects\obj_cutscene_controller</object>
+    <object>objects\obj_end_cutscene_controller</object>
     <objects name="Intro">
       <object>objects\obj_brick</object>
       <object>objects\obj_player_vania</object>

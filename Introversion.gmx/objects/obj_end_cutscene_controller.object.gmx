@@ -11,9 +11,9 @@
     <event eventtype="0" enumb="0">
       <action>
         <libid>1</libid>
-        <id>611</id>
-        <kind>6</kind>
-        <userelative>-1</userelative>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
         <exetype>2</exetype>
@@ -25,11 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>count</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
+            <string>bg_color = 0;
+if (global.music != "party1"){
+    audio_play_music(mus_party1, true);
+    global.music = "party1";
+}
+
+
+
+</string>
           </argument>
         </arguments>
       </action>
@@ -49,7 +53,7 @@
         <arguments>
           <argument>
             <kind>0</kind>
-            <string>10</string>
+            <string>15</string>
           </argument>
           <argument>
             <kind>4</kind>
@@ -59,9 +63,9 @@
       </action>
       <action>
         <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
+        <id>611</id>
+        <kind>6</kind>
+        <userelative>-1</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
         <exetype>2</exetype>
@@ -73,9 +77,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>state =0;
-image_speed = 0.5;
-</string>
+            <string>dialog</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>1</string>
           </argument>
         </arguments>
       </action>
@@ -97,8 +103,23 @@ image_speed = 0.5;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>state++;
-audio_play_music(mus_title_begin,false);
+            <string>bg_color += 1;
+if (bg_color == 4) bg_color = 1;
+
+switch (bg_color){
+case 1:
+    background_color = c_purple;
+    alarm[0] = 15;
+    break;
+case 2:
+    background_color = c_maroon;
+    alarm[0] = 15;
+    break;
+case 3:
+    background_color = c_navy;
+    alarm[0] = 8;
+    break;
+}
 </string>
           </argument>
         </arguments>
@@ -107,6 +128,34 @@ audio_play_music(mus_title_begin,false);
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
+        <id>612</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>-1</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_if_variable</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>0</kind>
+            <string>dialog</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>5</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>2</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
         <id>603</id>
         <kind>7</kind>
         <userelative>0</userelative>
@@ -121,10 +170,8 @@ audio_play_music(mus_title_begin,false);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (state == 2 &amp;&amp; !audio_music_is_playing()){
-    audio_play_music(mus_title_loop,true);
-    state = 3;
-}
+            <string>obj_friend_end_cutscene.moving = true;
+obj_player_end_cutscene.moving = true;
 </string>
           </argument>
         </arguments>
@@ -133,26 +180,6 @@ audio_play_music(mus_title_begin,false);
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
-        <id>524</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_color</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>13</kind>
-            <string>16777215</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
         <id>603</id>
         <kind>7</kind>
         <userelative>0</userelative>
@@ -167,29 +194,23 @@ audio_play_music(mus_title_begin,false);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (state == 1)
-    draw_sprite_ext(spt_team_mu,0,0,0,1,1,0,c_white,count/20);
-if (state == 2){
-    if (count &lt; 180)
-        draw_sprite_ext(spt_title,0,80,30,1,count/180,0,c_white,1);
-    else
-        draw_sprite(spt_title,0,80,30);
-}
-if(state == 3){
-    draw_sprite(spt_title,0,80,30);
-    draw_sprite(spt_party_game,image_index,80,55);
-    draw_set_font(thefont);
-    draw_set_halign(fa_center);
-    if (count % 20 &gt; 5)
-        draw_text(80,100,"press something already");
-}
-if (state &gt; 0){
-    count += 1;
-    if (count &gt;= 500) count = 0;
-    if (state == 1 &amp;&amp; count == 90){
-        state++;
-        count = 0;
-    }
+            <string>switch (dialog){
+case 1:
+    draw_sprite(spt_end_dia1,0,obj_friend_end_cutscene.x-6,obj_friend_end_cutscene.y-52);
+    break;
+case 2:
+    draw_sprite(spt_end_dia2,0,obj_player_end_cutscene.x-6,obj_player_end_cutscene.y-54);
+    break;
+case 3:
+    draw_sprite(spt_end_dia3,0,obj_friend_end_cutscene.x-6,obj_friend_end_cutscene.y-52);
+    break;
+case 4:
+    draw_sprite(spt_end_dia4,0,obj_player_end_cutscene.x-6,obj_player_end_cutscene.y-54);
+    break;
+case 5:
+    draw_sprite(spt_end_dia5,0,obj_friend_end_cutscene.x-6,obj_friend_end_cutscene.y-52);
+    break;
+
 }
 </string>
           </argument>
@@ -199,6 +220,30 @@ if (state &gt; 0){
     <event eventtype="9" enumb="1">
       <action>
         <libid>1</libid>
+        <id>611</id>
+        <kind>6</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>-1</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>dialog</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>1</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
         <id>603</id>
         <kind>7</kind>
         <userelative>0</userelative>
@@ -213,14 +258,7 @@ if (state &gt; 0){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (state &lt; 3){
-    state = 3;
-    audio_stop_music();
-    audio_play_music(mus_title_loop,true);
-}else{
-    script_execute(scr_initialize_game);
-    room_goto(rm_intro);
-}
+            <string>audio_play_sound(sfx_menu, true, 0);
 </string>
           </argument>
         </arguments>

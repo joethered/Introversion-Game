@@ -202,11 +202,13 @@ if (state == 5 &amp;&amp; x &lt; 96){
     vspeed = 0;
     demo_count = 0;
     state += 1;
+    audio_play_sound(sfx_demon_growl,true,false);
 }
 if (state == 6){
     if (keyboard_check_pressed(ord('C'))){
         state += 1;
         demo_count = 0;
+        audio_play_sound(sfx_demon_attack,true,false);
     }
 
 }
