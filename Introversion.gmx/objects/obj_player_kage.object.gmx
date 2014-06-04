@@ -299,49 +299,6 @@ view_hview[0] = 256 * zoom_factor;
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_branch_col">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if (vspeed &gt; 0 &amp;&amp; !place_free(x,y+vspeed))
-{ 
-    move_contact(270)
-    vspeed = 0;
-    jumping = 0;
-}
-
-if (vspeed &lt; 0 &amp;&amp; !place_free(x,y+vspeed))
-{ 
-    move_contact(90)
-    vspeed = 0;
-}
-
-if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
-{ 
-    if( hspeed &gt; 0)
-        move_contact(0);
-    else
-        move_contact(180);   
-    hspeed = 0;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="4" ename="obj_ninja_kage">
       <action>
         <libid>1</libid>
@@ -520,6 +477,49 @@ effect_create_below(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_branch_col">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (vspeed &gt; 0 &amp;&amp; !place_free(x,y+vspeed))
+{ 
+    move_contact(270)
+    vspeed = 0;
+    jumping = 0;
+}
+
+if (vspeed &lt; 0 &amp;&amp; !place_free(x,y+vspeed))
+{ 
+    move_contact(90)
+    vspeed = 0;
+}
+
+if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
+{ 
+    if( hspeed &gt; 0)
+        move_contact(0);
+    else
+        move_contact(180);   
+    hspeed = 0;
+}
+</string>
+          </argument>
+        </arguments>
       </action>
     </event>
     <event eventtype="4" ename="obj_ground">

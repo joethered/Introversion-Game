@@ -397,6 +397,7 @@
       <object>objects\obj_group_spot4</object>
       <object>objects\obj_player_cutscene</object>
       <object>objects\obj_friend_cutscene</object>
+      <object>objects\obj_eye_dummy</object>
     </objects>
     <object>objects\obj_Stamina</object>
     <object>objects\obj_clock</object>

@@ -181,34 +181,6 @@ if (x &gt; obj_player_kage.x+200 || x &lt; obj_player_kage.x-200)
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_branch_col">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if (vspeed &gt; 0 &amp;&amp; !place_free(x,y+vspeed))
-{ 
-    move_contact(270)
-    vspeed = 0;
-    jumping = 0;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="4" ename="obj_throwing_star">
       <action>
         <libid>1</libid>
@@ -258,6 +230,34 @@ if (x &gt; obj_player_kage.x+200 || x &lt; obj_player_kage.x-200)
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_branch_col">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (vspeed &gt; 0 &amp;&amp; !place_free(x,y+vspeed))
+{ 
+    move_contact(270)
+    vspeed = 0;
+    jumping = 0;
+}
+</string>
+          </argument>
+        </arguments>
       </action>
     </event>
     <event eventtype="4" ename="obj_ground">
