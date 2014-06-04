@@ -173,7 +173,7 @@ if(zoom_factor &lt; 1)
     if (zoom_factor &gt;= 1)
     {
         global.prev_room = "imagination";
-        global.cur_room = "living";
+        global.cur_room = "imagination";
         room_restart();
     }
 }

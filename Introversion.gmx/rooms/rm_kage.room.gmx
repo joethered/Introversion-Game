@@ -343,7 +343,6 @@ global.stamina = 100;</code>
     <instance objName="obj_tree2" x="4352" y="128" name="inst_74DD5FFC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_tree2" x="5920" y="128" name="inst_B10570C1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_tree2" x="5792" y="128" name="inst_01478D8A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Kage_blackscreen" x="192" y="96" name="inst_F3E7760C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="background10" x="0" y="448" w="32" h="48" xo="128" yo="160" id="10000001" name="inst_2697A358" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

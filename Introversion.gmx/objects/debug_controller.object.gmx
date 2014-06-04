@@ -46,8 +46,10 @@ if(keyboard_check_pressed(vk_pagedown))
     global.stamina_pause = !global.stamina_pause;
     
 
-if(keyboard_check_pressed(vk_end))
-    room_restart();
+if(keyboard_check_pressed(vk_end)){
+    global.cur_room = global.prev_room;
+    room_restart();    
+}
 </string>
           </argument>
         </arguments>

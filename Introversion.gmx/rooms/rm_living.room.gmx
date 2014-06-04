@@ -58,7 +58,7 @@ script_execute(scr_spawn_party_player);</code>
     <instance objName="obj_living_collision" x="0" y="0" name="inst_D6636A14" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="jmp_living_to_entry" x="28" y="53" name="inst_79ABF5AA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_party_controller" x="1" y="2" name="inst_A17DD700" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_topbar" x="0" y="0" name="inst_9BB68A24" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_topbar" x="1" y="0" name="inst_9BB68A24" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_group_spot1" x="24" y="96" name="inst_C9392DE5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_group_spot2" x="80" y="72" name="inst_209B6A6D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_group_spot3" x="104" y="104" name="inst_68AACEFE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -132,6 +132,7 @@ script_execute(scr_spawn_party_player);</code>
     <instance objName="obj_npc_wall" x="0" y="64" name="inst_A52ED214" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_party_group3" x="25" y="100" name="inst_FEC3740E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_party_group7" x="147" y="77" name="inst_1B7E3E3A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="debug_controller" x="2" y="19" name="inst_8575B17E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
