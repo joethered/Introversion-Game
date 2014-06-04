@@ -14,6 +14,17 @@
     <sound>sound\sfx_to_imagination</sound>
     <sound>sound\mus_kage</sound>
     <sound>sound\sfx_spin_attack</sound>
+    <sound>sound\mus_contrain</sound>
+    <sound>sound\sfx_player_hit</sound>
+    <sound>sound\sfx_ninja_death</sound>
+    <sound>sound\sfx_contra_shoot</sound>
+    <sound>sound\sfx_alert</sound>
+    <sound>sound\mus_hell</sound>
+    <sound>sound\sfx_shuriken</sound>
+    <sound>sound\mus_title_begin</sound>
+    <sound>sound\mus_title_loop</sound>
+    <sound>sound\sfx_demon_attack</sound>
+    <sound>sound\sfx_demon_growl</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spt_topic_bubble_left</sprite>
@@ -26,22 +37,44 @@
     <sprite>sprites\spt_cursor</sprite>
     <sprite>sprites\spt_player_convo</sprite>
     <sprite>sprites\spt_player_convo_speak</sprite>
-    <sprite>sprites\spt_guy1_convo</sprite>
-    <sprite>sprites\spt_guy2_convo</sprite>
-    <sprite>sprites\spt_girl2_convo</sprite>
     <sprite>sprites\spt_stamina_border</sprite>
     <sprite>sprites\spt_courage_border</sprite>
     <sprite>sprites\spt_topbar</sprite>
     <sprite>sprites\lbl_stamina</sprite>
     <sprite>sprites\spt_talk</sprite>
+    <sprite>sprites\spt_run_away</sprite>
     <sprite>sprites\spt_scroll_cursor</sprite>
     <sprite>sprites\spr_plus</sprite>
     <sprite>sprites\spt_ground</sprite>
+    <sprite>sprites\spt_branch_col</sprite>
     <sprite>sprites\spt_minus</sprite>
+    <sprites name="Convo">
+      <sprite>sprites\spt_max_convo</sprite>
+      <sprite>sprites\spt_leon_convo</sprite>
+      <sprite>sprites\spt_lara_convo</sprite>
+      <sprite>sprites\spt_arthur_convo</sprite>
+      <sprite>sprites\spt_carmen_convo</sprite>
+      <sprite>sprites\spt_chell_convo</sprite>
+      <sprite>sprites\spt_ezio_convo</sprite>
+      <sprite>sprites\spt_glenn_convo</sprite>
+      <sprite>sprites\spt_jade_convo</sprite>
+      <sprite>sprites\spt_jessica_convo</sprite>
+      <sprite>sprites\spt_jill_convo</sprite>
+      <sprite>sprites\spt_john_convo</sprite>
+      <sprite>sprites\spt_kyle_convo</sprite>
+      <sprite>sprites\spt_luke_convo</sprite>
+      <sprite>sprites\spt_mario_convo</sprite>
+      <sprite>sprites\spt_sam_convo</sprite>
+      <sprite>sprites\spt_samus_convo</sprite>
+      <sprite>sprites\spt_simon_convo</sprite>
+      <sprite>sprites\spt_terra_convo</sprite>
+      <sprite>sprites\spt_zelda_convo</sprite>
+    </sprites>
     <sprite>sprites\sprite23</sprite>
     <sprites name="Kage">
       <sprites name="Player Kage">
         <sprite>sprites\spt_player_kage_idle</sprite>
+        <sprite>sprites\spt_kage_dodge</sprite>
         <sprite>sprites\spt_player_kage_run</sprite>
         <sprite>sprites\spt_player_kage_jump</sprite>
         <sprite>sprites\spt_player_kage_spin</sprite>
@@ -53,7 +86,17 @@
     </sprites>
     <sprites name="Party">
       <sprite>sprites\spt_party_group1</sprite>
+      <sprite>sprites\spt_party_group2</sprite>
+      <sprite>sprites\spt_party_group3</sprite>
+      <sprite>sprites\spt_party_gourp4</sprite>
+      <sprite>sprites\spt_party_gourp5</sprite>
+      <sprite>sprites\spt_party_gourp6</sprite>
+      <sprite>sprites\spt_party_gourp7</sprite>
+      <sprite>sprites\spt_party_gourp8</sprite>
+      <sprite>sprites\spt_party_gourp9</sprite>
+      <sprite>sprites\spt_party_gourp10</sprite>
       <sprite>sprites\spt_player_party</sprite>
+      <sprite>sprites\spt_player_wave</sprite>
       <sprites name="Characters">
         <sprite>sprites\spt_character_mask</sprite>
         <sprites name="Arthur">
@@ -63,7 +106,7 @@
           <sprite>sprites\spt_carmen_idle</sprite>
         </sprites>
         <sprites name="Chell">
-          <sprite>sprites\spt_chell_idel</sprite>
+          <sprite>sprites\spt_chell_idle</sprite>
         </sprites>
         <sprites name="Ezio">
           <sprite>sprites\spt_ezio_idle</sprite>
@@ -133,6 +176,7 @@
         <sprite>sprites\spt_parlor_room</sprite>
         <sprite>sprites\spt_parlor_exit3</sprite>
         <sprite>sprites\spt_parlor_exit2</sprite>
+        <sprite>sprites\spt_parlor_forground</sprite>
       </sprites>
       <sprites name="Kitchen">
         <sprite>sprites\spt_kitchen_room</sprite>
@@ -145,11 +189,19 @@
         <sprite>sprites\spt_hallway_exit2</sprite>
         <sprite>sprites\spt_hallway_exit1</sprite>
       </sprites>
-      <sprites name="dining">
+      <sprites name="Dining">
         <sprite>sprites\spt_dining_room</sprite>
+        <sprite>sprites\spt_dining_foreground3</sprite>
+        <sprite>sprites\spt_dining_foreground2</sprite>
+        <sprite>sprites\spt_dinning_foreground1</sprite>
         <sprite>sprites\spt_dining_exit2</sprite>
         <sprite>sprites\spt_dining_exit1</sprite>
       </sprites>
+      <sprite>sprites\spt_npc_wall</sprite>
+      <sprite>sprites\spt_group_spot1</sprite>
+      <sprite>sprites\spt_group_spot2</sprite>
+      <sprite>sprites\spt_group_spot3</sprite>
+      <sprite>sprites\spt_group_spot4</sprite>
     </sprites>
     <sprites name="Contra">
       <sprite>sprites\spt_contra_bullet</sprite>
@@ -162,23 +214,59 @@
       <sprite>sprites\spt_contra_up</sprite>
       <sprite>sprites\spt_contra_Up_Diagonal</sprite>
       <sprite>sprites\Spr_Wall</sprite>
+      <sprite>sprites\spt_contra_normal</sprite>
+      <sprite>sprites\spt_Contrain_car</sprite>
+      <sprite>sprites\spt_contrain_connector</sprite>
+      <sprite>sprites\spt_contrain_platform_bottom</sprite>
+      <sprite>sprites\spt_contrain_platform_top</sprite>
+      <sprite>sprites\spt_contrain_wheels</sprite>
+      <sprite>sprites\spt_contra_damaged</sprite>
+      <sprite>sprites\spt_contrain_engine</sprite>
+      <sprite>sprites\spt_contra_ninja</sprite>
     </sprites>
-<<<<<<< .merge_file_a12864
-=======
-    <sprites name="Contra">
-      <sprite>sprites\spt_contra_bullet</sprite>
-      <sprite>sprites\spt_contra_crouch</sprite>
-      <sprite>sprites\spt_contra_down_diagonal</sprite>
-      <sprite>sprites\spt_contra_jumping</sprite>
-      <sprite>sprites\spt_contra_run</sprite>
-      <sprite>sprites\spt_contra_shoot</sprite>
-      <sprite>sprites\spt_contra_shoot_and_run</sprite>
-      <sprite>sprites\spt_contra_up</sprite>
-      <sprite>sprites\spt_contra_Up_Diagonal</sprite>
-      <sprite>sprites\Spr_Wall</sprite>
+    <sprite>sprites\spt_fire</sprite>
+    <sprites name="Intro">
+      <sprite>sprites\spt_brick</sprite>
+      <sprite>sprites\spt_player_vania_idle</sprite>
+      <sprite>sprites\spt_player_vania_walk</sprite>
+      <sprite>sprites\spt_player_vania_jump</sprite>
+      <sprite>sprites\spt_player_vania_sword1</sprite>
+      <sprite>sprites\spt_player_vania_sword2</sprite>
+      <sprite>sprites\spt_demon1</sprite>
+      <sprite>sprites\spt_demon2</sprite>
+      <sprite>sprites\spt_demon3</sprite>
     </sprites>
->>>>>>> .merge_file_a09444
-    <sprite>sprites\spt_run</sprite>
+    <sprite>sprites\spt_c_key</sprite>
+    <sprite>sprites\spt_x_key</sprite>
+    <sprite>sprites\spt_left_arrow_key</sprite>
+    <sprite>sprites\spt_up_arrow_key</sprite>
+    <sprite>sprites\spt_hi</sprite>
+    <sprite>sprites\spt_dia1</sprite>
+    <sprite>sprites\spt_dia2</sprite>
+    <sprite>sprites\spt_dia3</sprite>
+    <sprite>sprites\spt_dia4</sprite>
+    <sprite>sprites\spt_dia5</sprite>
+    <sprite>sprites\spt_intro_dia1</sprite>
+    <sprite>sprites\spt_intro_dia2</sprite>
+    <sprite>sprites\spt_intro_dia3</sprite>
+    <sprite>sprites\spt_intro_dia4</sprite>
+    <sprite>sprites\spt_end_dia1</sprite>
+    <sprite>sprites\spt_end_dia2</sprite>
+    <sprite>sprites\spt_end_dia3</sprite>
+    <sprite>sprites\spt_end_dia4</sprite>
+    <sprite>sprites\spt_end_dia5</sprite>
+    <sprite>sprites\spt_white_screen</sprite>
+    <sprite>sprites\spt_blackScreen</sprite>
+    <sprite>sprites\bg_bamboo_wall</sprite>
+    <sprite>sprites\bg_bamboo_detail1</sprite>
+    <sprite>sprites\bg_bamboo_detail2</sprite>
+    <sprite>sprites\bg_bamboo_detail3</sprite>
+    <sprite>sprites\bg_tree1</sprite>
+    <sprite>sprites\bg_tree2</sprite>
+    <sprite>sprites\spt_thumbs</sprite>
+    <sprite>sprites\spt_party_game</sprite>
+    <sprite>sprites\spt_team_mu</sprite>
+    <sprite>sprites\spt_title</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_party_entry</background>
@@ -188,45 +276,100 @@
     <background>background\bg_party_kitchen</background>
     <background>background\bg_party_hallway</background>
     <background>background\bg_party_dining</background>
+    <backgrounds name="contra_backgrounds">
+      <background>background\bg_contra_sky</background>
+      <background>background\bg_contra_scrolling</background>
+      <background>background\bg_contra_sky_scrolling</background>
+    </backgrounds>
+    <background>background\background10</background>
+    <background>background\bg_hell</background>
   </backgrounds>
-  <paths name="paths"/>
+  <paths name="paths">
+    <path>paths\pth_empty</path>
+    <paths name="Entry">
+      <path>paths\pth_entry_dining_to_kitchen</path>
+      <path>paths\pth_entry_dining_to_living</path>
+      <path>paths\pth_entry_living_to_kitchen</path>
+    </paths>
+    <paths name="Living">
+      <path>paths\pth_living_entry_to_parlor</path>
+    </paths>
+    <paths name="Parlor">
+      <path>paths\pth_parlor_living_to_kitchen</path>
+    </paths>
+    <paths name="Kitchen">
+      <path>paths\pth_kitchen_parlor_to_entry</path>
+      <path>paths\pth_kitchen_parlor_to_hallway</path>
+      <path>paths\pth_kitchen_hallway_to_entry</path>
+    </paths>
+    <paths name="Hallway">
+      <path>paths\pth_hallway_kitchen_to_dining</path>
+    </paths>
+    <paths name="Dining">
+      <path>paths\pth_dining_hallway_to_entry</path>
+    </paths>
+  </paths>
   <scripts name="scripts">
+    <script>scripts\scr_initialize_game.gml</script>
     <script>scripts\scr_sample_menu_script.gml</script>
     <script>scripts\scr_check_convo.gml</script>
     <script>scripts\scr_make_menu.gml</script>
     <script>scripts\scr_run_away.gml</script>
     <script>scripts\scr_make_player_speech.gml</script>
-    <script>scripts\scr_initialize_game.gml</script>
-    <script>scripts\scr_spawn_party_player.gml</script>
+    <scripts name="Party">
+      <script>scripts\scr_spawn_party_player.gml</script>
+      <script>scripts\scr_get_path.gml</script>
+      <script>scripts\scr_spawn_npcs.gml</script>
+      <script>scripts\scr_move_to_next_room.gml</script>
+      <script>scripts\d_scr_get_path_name.gml</script>
+      <script>scripts\scr_check_correct_path.gml</script>
+    </scripts>
+    <script>scripts\scr_cur_party_room.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\thefont</font>
+    <font>fonts\thefontital</font>
     <font>fonts\font2</font>
   </fonts>
   <objects name="objects">
     <objects name="Templates">
       <object>objects\menu_template</object>
     </objects>
-    <objects name="Menus">
-      <object>objects\menu_convo_main</object>
-      <object>objects\menu_inventory</object>
-    </objects>
     <objects name="Conversation">
       <object>objects\obj_speech_bubble</object>
       <object>objects\obj_player_speech</object>
       <object>objects\obj_courage</object>
       <object>objects\obj_player_convo</object>
-      <object>objects\obj_guy1</object>
-      <object>objects\obj_guy2</object>
-      <object>objects\obj_girl2</object>
       <object>objects\obj_convo_plus</object>
       <object>objects\obj_convo_minus</object>
       <object>objects\obj_convo_controller</object>
+      <objects name="back">
+        <object>objects\obj_back_convo</object>
+      </objects>
+      <objects name="middle">
+        <object>objects\obj_middle_convo</object>
+      </objects>
+      <objects name="front">
+        <object>objects\obj_front_convo</object>
+      </objects>
+      <objects name="Menus">
+        <object>objects\menu_convo_main</object>
+        <object>objects\menu_inventory</object>
+      </objects>
     </objects>
     <objects name="Party">
       <object>objects\obj_party_controller</object>
       <object>objects\obj_player_party</object>
       <object>objects\obj_party_group1</object>
+      <object>objects\obj_party_group2</object>
+      <object>objects\obj_party_group3</object>
+      <object>objects\obj_party_group4</object>
+      <object>objects\obj_party_group5</object>
+      <object>objects\obj_party_group6</object>
+      <object>objects\obj_party_group7</object>
+      <object>objects\obj_party_group8</object>
+      <object>objects\obj_party_group9</object>
+      <object>objects\obj_party_group10</object>
       <objects name="Entry Room">
         <object>objects\jmp_entry_to_living</object>
         <object>objects\jmp_entry_to_kitchen</object>
@@ -243,63 +386,121 @@
         <object>objects\obj_parlor_collision</object>
         <object>objects\jmp_parlor_to_kitchen</object>
         <object>objects\jmp_parlor_to_living</object>
+        <object>objects\obj_parlor_foreground</object>
       </objects>
       <objects name="Kitchen Room">
         <object>objects\jmp_kitchen_to_hallway</object>
         <object>objects\jmp_kitchen_to_entry</object>
         <object>objects\jmp_kitchen_to_parlor</object>
+        <object>objects\obj_kitchen_collision</object>
       </objects>
       <objects name="Hallway Room">
         <object>objects\jmp_hallway_to_kitchen</object>
         <object>objects\jmp_hallway_to_dining</object>
+        <object>objects\obj_hallway_collision</object>
       </objects>
       <objects name="Dining Room">
         <object>objects\jmp_dining_to_hallway</object>
         <object>objects\jmp_dining_to_entry</object>
+        <object>objects\obj_dining_collision</object>
+        <object>objects\obj_dining_forground1</object>
+        <object>objects\obj_dining_foreground2</object>
+        <object>objects\obj_dining_foreground3</object>
       </objects>
+      <objects name="Characters">
+        <object>objects\obj_npc</object>
+      </objects>
+      <object>objects\obj_npc_wall</object>
+      <object>objects\obj_group_spot1</object>
+      <object>objects\obj_group_spot2</object>
+      <object>objects\obj_group_spot3</object>
+      <object>objects\obj_group_spot4</object>
+      <object>objects\obj_player_cutscene</object>
+      <object>objects\obj_friend_cutscene</object>
+<<<<<<< HEAD
+      <object>objects\obj_friend_end_cutscene</object>
+      <object>objects\obj_player_end_cutscene</object>
+=======
+      <object>objects\obj_eye_dummy</object>
+>>>>>>> f1baffb9aeae5217c5f8adcc837aec8e4062f289
     </objects>
     <object>objects\obj_Stamina</object>
     <object>objects\obj_clock</object>
     <object>objects\obj_topbar</object>
+    <object>objects\obj_topbar_blank</object>
     <objects name="Kage">
       <object>objects\obj_player_kage</object>
       <object>objects\obj_ground</object>
+      <object>objects\obj_branch_col</object>
       <object>objects\obj_kage_controller</object>
       <object>objects\obj_ninja_kage</object>
+      <object>objects\obj_ninja_kage_runner</object>
+      <object>objects\obj_ninja_kage_jumper</object>
       <object>objects\obj_throwing_star</object>
+      <object>objects\obj_bamboo_wall</object>
+      <object>objects\obj_bamboo_detail1</object>
+      <object>objects\obj_bamboo_detail2</object>
+      <object>objects\obj_bamboo_detail3</object>
+      <object>objects\obj_tree1</object>
+      <object>objects\obj_tree2</object>
     </objects>
     <object>objects\debug_controller</object>
     <object>objects\obj_winRoom</object>
     <object>objects\obj_title_controller</object>
+    <object>objects\obj_intro_controller</object>
     <objects name="Contra">
       <object>objects\obj_contra_player</object>
       <object>objects\obj_bullet</object>
+      <object>objects\obj_contrain_bulletDummy</object>
       <object>objects\obj_wall</object>
+      <object>objects\obj_Contra_Controller</object>
+      <object>objects\obj_contrain_car</object>
+      <object>objects\obj_contrain_connector</object>
+      <object>objects\obj_contrain_platform_bottom</object>
+      <object>objects\obj_contrain_platform_top</object>
+      <object>objects\obj_ninja_contra</object>
+      <object>objects\obj_contra_Ninja_spawnpoint</object>
+      <object>objects\obj_contrain_wheels</object>
+      <object>objects\obj_contrain_whitescreen</object>
+      <object>objects\obj_contrain_blackScreen</object>
+      <object>objects\obj_contrain_jumpDummy</object>
+      <object>objects\obj_contrain_shootDummy</object>
+      <object>objects\obj_contrain_engine</object>
+    </objects>
+    <object>objects\obj_dialog_box</object>
+    <object>objects\obj_dialog_box2</object>
+    <object>objects\obj_cutscene_controller</object>
+    <object>objects\obj_end_cutscene_controller</object>
+    <objects name="Intro">
+      <object>objects\obj_brick</object>
+      <object>objects\obj_player_vania</object>
+      <object>objects\obj_demon</object>
+      <object>objects\obj_fire</object>
     </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_title</room>
-    <room>rooms\rm_conversation</room>
+    <room>rooms\rm_intro</room>
+    <room>rooms\rm_convo_1</room>
     <room>rooms\rm_kage</room>
     <room>rooms\rm_win</room>
-<<<<<<< .merge_file_a11644
     <rooms name="Party">
       <room>rooms\rm_entry</room>
+      <room>rooms\rm_entry_cutscene</room>
+      <room>rooms\rm_entry_end</room>
       <room>rooms\rm_living</room>
       <room>rooms\rm_parlor</room>
       <room>rooms\rm_kitchen</room>
       <room>rooms\rm_hallway</room>
       <room>rooms\rm_dining</room>
     </rooms>
-=======
-    <room>rooms\rm_living</room>
-    <room>rooms\rm_parlor</room>
-    <room>rooms\rm_kitchen</room>
     <room>rooms\rm_contra</room>
-<<<<<<< .merge_file_a12864
->>>>>>> .merge_file_a12380
-=======
->>>>>>> .merge_file_a09444
+    <rooms name="Conversations">
+      <room>rooms\rm_conversation1</room>
+      <room>rooms\rm_conversation2</room>
+      <room>rooms\rm_conversation3</room>
+    </rooms>
+    <room>rooms\rm_end</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
