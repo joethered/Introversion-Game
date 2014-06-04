@@ -59,9 +59,8 @@ script_execute(scr_spawn_party_player);</code>
     <instance objName="obj_topbar" x="0" y="0" name="inst_ED030EF9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="jmp_entry_to_living" x="146" y="82" name="inst_F10BA1D7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="jmp_entry_to_dining" x="16" y="78" name="inst_FB37CD1C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_party_group1" x="38" y="104" name="inst_E6458F94" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_entry_collision" x="0" y="8" name="inst_E0623F6E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="jmp_entry_to_kitchen" x="104" y="131" name="inst_836BD28B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_entry_collision" x="0" y="8" name="inst_E0623F6E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

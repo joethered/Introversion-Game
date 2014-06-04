@@ -145,7 +145,8 @@ script_execute(scr_spawn_party_player);</code>
     <instance objName="obj_npc_wall" x="112" y="48" name="inst_053CC632" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_npc_wall" x="120" y="48" name="inst_B14AAFA9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_npc_wall" x="128" y="48" name="inst_5718D68A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_party_group4" x="57" y="74" name="inst_EA12BD67" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_party_group4" x="57" y="77" name="inst_EA12BD67" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_party_group1" x="146" y="100" name="inst_E6B1AAEB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
