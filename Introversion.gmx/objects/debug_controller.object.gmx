@@ -25,15 +25,19 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(keyboard_check_pressed(vk_numpad2))
+            <string>if(keyboard_check_pressed(vk_numpad2)){
+    global.cur_room = "imagination";
     room_goto(rm_kage);
+}
     
 if(keyboard_check_pressed(vk_numpad1))
     room_goto(rm_conversation3);
     
-if(keyboard_check_pressed(vk_numpad3))
+if(keyboard_check_pressed(vk_numpad3)){
+    global.cur_room = "imagination";
     room_goto(rm_contra);
-    
+}
+
 if(keyboard_check_pressed(vk_delete))
     game_end();
     
@@ -41,6 +45,9 @@ if(keyboard_check_pressed(vk_delete))
 if(keyboard_check_pressed(vk_pagedown))
     global.stamina_pause = !global.stamina_pause;
     
+
+if(keyboard_check_pressed(vk_end))
+    room_restart();
 </string>
           </argument>
         </arguments>
