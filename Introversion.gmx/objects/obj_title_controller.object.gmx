@@ -75,6 +75,7 @@
             <kind>1</kind>
             <string>state =0;
 image_speed = 0.5;
+global.fromImagination = false;
 </string>
           </argument>
         </arguments>

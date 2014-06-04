@@ -301,6 +301,11 @@ else
     view_hview[0] = 128 * zoom_factor;
 }
 
+if(x == 150 &amp;&amp; y == 66)
+{
+    x = 58;
+    y = 58;
+}
 
 /*
 if (group1){

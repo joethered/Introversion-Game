@@ -33,6 +33,7 @@ audio_play_music(mus_contrain,true);
 pulse = 0;
 global.music = "contra";
 begun = false;
+global.fromImagination = true;
 </string>
           </argument>
         </arguments>
