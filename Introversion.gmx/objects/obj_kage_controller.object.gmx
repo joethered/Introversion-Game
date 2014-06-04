@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>audio_stop_music();
 audio_play_music(mus_kage,true);
+global.fromImagination = true;
 </string>
           </argument>
         </arguments>

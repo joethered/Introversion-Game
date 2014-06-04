@@ -26,9 +26,21 @@
           <argument>
             <kind>1</kind>
             <string>bg_color = 0;
+zoom_factor = 1;
 if (global.music != "party1"){
     audio_play_music(mus_party1, true);
     global.music = "party1";
+}
+if(global.fromImagination != true)
+{
+    global.fromImagination = false;
+}
+else
+{
+    zoom_factor = 0.01;
+    view_wview[0] = 180 * zoom_factor;
+    view_hview[0] = 128 * zoom_factor;
+    global.fromImagination = false;
 }
 surf = -1;
 
@@ -148,6 +160,27 @@ for (i = 0; i &lt; num_of_walkers; i+=1){
          
     }
 }*/
+if(zoom_factor &lt; 1)
+{
+    zoom_factor += 0.06;
+    view_wview[0] = 180 * zoom_factor;
+    view_hview[0] = 128 * zoom_factor;
+    if(zoom_factor &gt;=0.5)
+    {
+        view_xview[0] = background_x[0];
+        view_yview[0] = background_y[0];
+    }
+    if (zoom_factor &gt;= 1)
+    {
+        global.prev_room = "imagination";
+        global.cur_room = "living";
+        room_restart();
+    }
+}
+else 
+{
+    zoom_factor = 1
+}
 </string>
           </argument>
         </arguments>

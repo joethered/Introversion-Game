@@ -440,6 +440,7 @@
       <object>objects\obj_bamboo_detail3</object>
       <object>objects\obj_tree1</object>
       <object>objects\obj_tree2</object>
+      <object>objects\obj_Kage_blackscreen</object>
     </objects>
     <object>objects\debug_controller</object>
     <object>objects\obj_winRoom</object>
