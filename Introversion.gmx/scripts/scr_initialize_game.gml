@@ -120,7 +120,7 @@ global.item[19,1] = hobbies;
 global.item[19,2] = hobbies;
 
 
-
+/*
 //Character Data
 //Arthur
 global.npc_map[0] = ds_map_create();
@@ -904,7 +904,7 @@ for(i = 0; i < 20; i+=1){
         ds_list_add(global.standers, i);
 }
 
-
+*/
 
 global.entry_exits[0] = "dining";
 global.entry_exits[1] = "kitchen";
