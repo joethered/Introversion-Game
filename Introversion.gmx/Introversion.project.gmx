@@ -458,6 +458,7 @@
     <rooms name="Party">
       <room>rooms\rm_entry</room>
       <room>rooms\rm_entry_cutscene</room>
+      <room>rooms\rm_entry_end</room>
       <room>rooms\rm_living</room>
       <room>rooms\rm_parlor</room>
       <room>rooms\rm_kitchen</room>

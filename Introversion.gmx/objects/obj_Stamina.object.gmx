@@ -71,7 +71,7 @@
           </argument>
           <argument>
             <kind>0</kind>
-            <string>-0.01</string>
+            <string>-0.02</string>
           </argument>
         </arguments>
       </action>
@@ -136,6 +136,8 @@
             <string>global.minutes += 15;
 global.stamina = 100;
 global.cur_room = "imagination";
+audio_stop_music();
+audio_play_sound(sfx_to_imagination,true,false);
 if (global.dream = 1){
      global.dream += 1;
     room_goto(rm_kage);
@@ -150,50 +152,6 @@ if (global.dream = 1){
         room_goto(rm_contra);
 }
 </string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>212</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_end_sound</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>6</kind>
-            <sound>-100</sound>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>211</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_sound</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>6</kind>
-            <sound>-100</sound>
-          </argument>
-          <argument>
-            <kind>3</kind>
-            <string>0</string>
           </argument>
         </arguments>
       </action>
