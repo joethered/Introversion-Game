@@ -8,6 +8,67 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>hasLost = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>global.minutes += 15;
+global.stamina = 100;
+global.cur_room = "imagination";
+if (global.dream = 1){
+     global.dream += 1;
+    room_goto(rm_kage);
+}else if (global.dream == 2){
+    global.dream += 1;
+    room_goto(rm_contra)
+}else{
+     r =  irandom_range(0,1);
+     if (r == 1)
+        room_goto(rm_kage);
+     else
+        room_goto(rm_contra);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -71,7 +132,7 @@
           </argument>
           <argument>
             <kind>0</kind>
-            <string>-0.02</string>
+            <string>-0.01</string>
           </argument>
         </arguments>
       </action>
@@ -133,23 +194,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.minutes += 15;
-global.stamina = 100;
-global.cur_room = "imagination";
-audio_stop_music();
-audio_play_sound(sfx_to_imagination,true,false);
-if (global.dream = 1){
-     global.dream += 1;
-    room_goto(rm_kage);
-}else if (global.dream == 2){
-    global.dream += 1;
-    room_goto(rm_contra)
-}else{
-     r =  irandom_range(0,1);
-     if (r == 1)
-        room_goto(rm_kage);
-     else
-        room_goto(rm_contra);
+            <string>if(!hasLost){
+    audio_stop_music();
+    audio_play_music(sfx_to_imagination,false);
+    alarm[0] = 50;
+    hasLost = true;
+    with(obj_player_convo)
+    {
+        hasLost = true;
+    }
 }
 </string>
           </argument>

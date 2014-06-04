@@ -243,6 +243,7 @@
     <sprite>sprites\spt_intro_dia3</sprite>
     <sprite>sprites\spt_intro_dia4</sprite>
     <sprite>sprites\spt_white_screen</sprite>
+    <sprite>sprites\spt_blackScreen</sprite>
     <sprite>sprites\bg_bamboo_wall</sprite>
     <sprite>sprites\bg_bamboo_detail1</sprite>
     <sprite>sprites\bg_bamboo_detail2</sprite>
@@ -435,6 +436,7 @@
       <object>objects\obj_contra_Ninja_spawnpoint</object>
       <object>objects\obj_contrain_wheels</object>
       <object>objects\obj_contrain_whitescreen</object>
+      <object>objects\obj_contrain_blackScreen</object>
       <object>objects\obj_contrain_jumpDummy</object>
       <object>objects\obj_contrain_shootDummy</object>
       <object>objects\obj_contrain_engine</object>

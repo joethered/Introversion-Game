@@ -125,18 +125,18 @@ with(obj_player_convo){
           <argument>
             <kind>1</kind>
             <string>len = string_length(topic) * 5
-draw_sprite(spt_topic_bubble_right,0,154,y);
+draw_sprite(spt_topic_bubble_right,0,154,y-5);
 
 i = 0;
 for(i = len-1; i &gt;= 5; i-=1){
-    draw_sprite(spt_topic_bubble_center,0,x-len+i-2,y);
+    draw_sprite(spt_topic_bubble_center,0,154-len+i,y-5);
 } 
-draw_sprite(spt_topic_bubble_left2,0,x-len-3,y);
-draw_sprite(spt_topic_bubble_cspeak,0,x-20,y+15);
+draw_sprite(spt_topic_bubble_left2,0,154-len,y-5);
+draw_sprite(spt_topic_bubble_cspeak,0,154-17,y+10);
 draw_set_color(color);
 
 draw_set_halign(fa_right);
-draw_text(x,y+6, topic);
+draw_text(158,y+1, topic);
 </string>
           </argument>
         </arguments>
