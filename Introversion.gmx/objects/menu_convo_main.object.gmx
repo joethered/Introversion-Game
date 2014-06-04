@@ -65,8 +65,7 @@ item[1,4] = scr_run_away;   //Script to execute on item
 
 
 //Widget objects
-widget[0] = instance_create(x + left_margin + x_spacing, y + top_margin+8,
-                    obj_courage);
+widget[0] = instance_create(x + left_margin + x_spacing, y + top_margin+8,obj_courage);
 widget[0].depth = depth-1;
 
 </string>
