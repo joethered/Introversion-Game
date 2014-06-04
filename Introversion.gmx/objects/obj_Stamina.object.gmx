@@ -199,9 +199,18 @@ if (global.dream = 1){
     audio_play_music(sfx_to_imagination,false);
     alarm[0] = 50;
     hasLost = true;
-    with(obj_player_convo)
+    if(global.cur_room == "convo"){
+        with(obj_player_convo)
+        {
+            hasLost = true;
+        }
+    }
+    else
     {
-        hasLost = true;
+        with(obj_player_party)
+        {
+            hasLost = true;
+        }
     }
 }
 </string>
