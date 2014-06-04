@@ -419,6 +419,7 @@
       <object>objects\obj_friend_cutscene</object>
       <object>objects\obj_friend_end_cutscene</object>
       <object>objects\obj_player_end_cutscene</object>
+      <object>objects\obj_eye_dummy</object>
     </objects>
     <object>objects\obj_Stamina</object>
     <object>objects\obj_clock</object>
