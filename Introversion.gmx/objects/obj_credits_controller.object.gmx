@@ -8,7 +8,7 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="3" enumb="0">
+    <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,31 +25,40 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(keyboard_check_pressed(vk_numpad2)){
-    global.cur_room = "imagination";
-    room_goto(rm_kage);
-}
-    
-if(keyboard_check_pressed(vk_numpad1))
-    room_goto(rm_conversation3);
-    
-if(keyboard_check_pressed(vk_numpad3)){
-    global.cur_room = "imagination";
-    room_goto(rm_contra);
-}
+            <string>draw_set_color(c_white);
+draw_set_font(thefont);
+draw_set_halign(fa_center);
+draw_text(80,20,"by");  
+draw_text(80,28,"Joseph Rossi"); 
+draw_text(80,36,"and"); 
+draw_text(80,43,"Chris Dilday"); 
+draw_text(80,66,"additional music by"); 
+draw_text(80,74,"Tyler Lesley"); 
 
-if(keyboard_check_pressed(vk_escape))
-    game_end();
-    
-    
-if(keyboard_check_pressed(vk_pagedown))
-    global.stamina_pause = !global.stamina_pause;
-    
-
-if(keyboard_check_pressed(vk_end)){
-    global.cur_room = global.prev_room;
-    room_restart();    
-}
+draw_text(80,100, "Press 'C' to return");
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="67">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>room_goto(rm_title);
 </string>
           </argument>
         </arguments>

@@ -283,6 +283,13 @@ if (x &gt; obj_player_kage.x+200 || x &lt; obj_player_kage.x-200)
     vspeed = 0;
     jumping = 0;
 }
+
+if (vspeed &lt; 0 &amp;&amp; !place_free(x,y+vspeed))
+{ 
+    move_contact(90)
+    vspeed = 0;
+}
+
 </string>
           </argument>
         </arguments>

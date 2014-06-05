@@ -25,6 +25,8 @@
     <sound>sound\mus_title_loop</sound>
     <sound>sound\sfx_demon_attack</sound>
     <sound>sound\sfx_demon_growl</sound>
+    <sound>sound\sfx_sword_swing</sound>
+    <sound>sound\sfx_sword_reveal</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spt_topic_bubble_left</sprite>
@@ -440,8 +442,10 @@
       <object>objects\obj_bamboo_detail3</object>
       <object>objects\obj_tree1</object>
       <object>objects\obj_tree2</object>
+      <object>objects\obj_kage_blackScreen</object>
     </objects>
     <object>objects\debug_controller</object>
+    <object>objects\obj_credits_controller</object>
     <object>objects\obj_winRoom</object>
     <object>objects\obj_title_controller</object>
     <object>objects\obj_intro_controller</object>
@@ -498,6 +502,7 @@
       <room>rooms\rm_conversation3</room>
     </rooms>
     <room>rooms\rm_end</room>
+    <room>rooms\rm_credits</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

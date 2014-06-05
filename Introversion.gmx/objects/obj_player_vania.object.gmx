@@ -103,8 +103,10 @@ image_speed = 0.2;
           <argument>
             <kind>1</kind>
             <string>sword += 1;
-if (sword == 2)
+if (sword == 2){
+    audio_play_sound(sfx_sword_swing,true,false);
     alarm[0] = 8;
+}
 if(sword &gt; 2)
     sword = 0;
 </string>
@@ -176,6 +178,7 @@ if (state == 2){
     
     if (x &gt; 176 &amp;&amp; sword = 0 &amp;&amp; keyboard_check_pressed(ord('C'))){
     alarm[0] = 5;
+        audio_play_sound(sfx_sword_reveal,true,false);
         sword = 1;
         if (!jumping)
             hspeed = 0;
@@ -206,6 +209,7 @@ if (state == 5 &amp;&amp; x &lt; 96){
 }
 if (state == 6){
     if (keyboard_check_pressed(ord('C'))){
+        audio_play_sound(sfx_sword_reveal,true,false);
         state += 1;
         demo_count = 0;
         audio_play_sound(sfx_demon_attack,true,false);

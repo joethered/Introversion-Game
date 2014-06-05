@@ -407,18 +407,18 @@ invulnerable = true;
 
 //effect_create_below(ef_cloud, x, y, 0.0000000000000000000000001, c_black);
 
-effect_create_below(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(255, 255, 255));
-effect_create_below(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(255, 255, 255));
-effect_create_below(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(255, 255, 255));
-effect_create_below(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(255, 255, 255));
-effect_create_below(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(190, 190, 190));
-effect_create_below(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(190, 190, 190));
-effect_create_below(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(190, 190, 190));
-effect_create_below(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(210, 210, 210));
-effect_create_below(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(140, 140, 140));
-effect_create_below(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(140, 140, 140));
-effect_create_below(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(255, 255, 255));
-effect_create_below(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(255, 255, 255));
+effect_create_above(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(255, 255, 255));
+effect_create_above(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(255, 255, 255));
+effect_create_above(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(255, 255, 255));
+effect_create_above(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(255, 255, 255));
+effect_create_above(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(190, 190, 190));
+effect_create_above(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(190, 190, 190));
+effect_create_above(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(190, 190, 190));
+effect_create_above(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(210, 210, 210));
+effect_create_above(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(140, 140, 140));
+effect_create_above(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(140, 140, 140));
+effect_create_above(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(255, 255, 255));
+effect_create_above(ef_flare, x + random(15), y+random(15), 0.1, make_color_rgb(255, 255, 255));
 
 
 //screwing with paricle effects
@@ -617,7 +617,7 @@ if (jumping){
 if(obj_kage_controller.level = 2){
     image_speed = 0.2;
     draw_sprite_ext(spt_c_key,image_index,x,y-30,1,1,0,c_white,1);
-    draw_sprite_ext(spt_throwing_star,image_index,x+demo_count,y,1,1,0,c_white,0.3)
+    draw_sprite_ext(spt_throwing_star,image_index,x+demo_count,y,1,1,0,c_white,0.5)
     demo_count += 20;
     if (demo_count &gt; 120)
         demo_count = 0;

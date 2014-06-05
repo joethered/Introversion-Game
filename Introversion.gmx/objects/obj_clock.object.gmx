@@ -29,13 +29,13 @@
 if (global.seconds == 1){
     global.seconds = 0;
     global.minutes += 1;
-    if (global.minutes &gt; 60){
+    if (global.minutes &gt;= 60){
         global.minutes = global.minutes - 60;
         global.hours += 1;
     }
 }
-if (global.hours == 9 &amp;&amp; global.minutes &gt;= 12)
-    room_goto(rm_end);
+if (global.hours == 9 &amp;&amp; global.minutes &gt;= 36)
+    room_goto(rm_entry_end);
 </string>
           </argument>
         </arguments>

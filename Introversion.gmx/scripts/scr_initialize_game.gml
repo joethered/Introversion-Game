@@ -3,6 +3,7 @@ global.inventory_menu = false;
 //global.menu_stack = ds_stack_create();
 global.cur_room = "title";
 global.prev_room = "title";
+randomize();
 
 global.seconds = 0;
 global.minutes = 13;

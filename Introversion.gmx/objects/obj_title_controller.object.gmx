@@ -182,7 +182,8 @@ if(state == 3){
     draw_set_font(thefont);
     draw_set_halign(fa_center);
     if (count % 20 &gt; 5)
-        draw_text(80,100,"press something already");
+        draw_text(80,90,"press 'X' to start");
+    draw_text(80,100,"press 'C' for credits");        
 }
 if (state &gt; 0){
     count += 1;
@@ -192,6 +193,79 @@ if (state &gt; 0){
         count = 0;
     }
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="88">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(state == 3){
+    script_execute(scr_initialize_game);
+    room_goto(rm_intro);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="67">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(state == 3)
+    room_goto(rm_credits);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="27">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>game_end();
 </string>
           </argument>
         </arguments>
@@ -218,9 +292,6 @@ if (state &gt; 0){
     state = 3;
     audio_stop_music();
     audio_play_music(mus_title_loop,true);
-}else{
-    script_execute(scr_initialize_game);
-    room_goto(rm_intro);
 }
 </string>
           </argument>
