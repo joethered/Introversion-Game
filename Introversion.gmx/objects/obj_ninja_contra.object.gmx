@@ -150,8 +150,143 @@ if (hspeed == 0){
     moving = false;
 }
 
+if ( x &gt;= obj_contra_player.x - 100 &amp;&amp; x &lt;= obj_contra_player.x + 100)
+{
+    hspeed = facing * 3;
+}
+else
+    hspeed = facing * 5;
+
 if( x &lt; -40 || x &gt; room_width)
     instance_destroy();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_contrain_car_outside">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (vspeed &gt; 0 &amp;&amp; !place_free(x,y+vspeed))
+{ 
+    move_contact(270)
+    vspeed = 0;
+    jump = 0;
+    if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
+    { 
+        if( hspeed &gt; 0)
+            move_contact(0);
+        else
+            move_contact(180);   
+        hspeed = 0;
+        moving = false;
+    }
+}
+
+if (vspeed &lt; 0 &amp;&amp; !place_free(x,y+vspeed))
+{ 
+    move_contact(90)
+    vspeed = 0;
+    if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
+    { 
+        if( hspeed &gt; 0)
+            move_contact(0);
+        else
+            move_contact(180);   
+        hspeed = 0;
+        moving = false;
+    }
+}
+
+if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
+{ 
+    if( hspeed &gt; 0)
+        move_contact(0);
+    else
+        move_contact(180);   
+    hspeed = 0;
+    moving = false;
+}
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_contrain_car_inside">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (vspeed &gt; 0 &amp;&amp; !place_free(x,y+vspeed))
+{ 
+    move_contact(270)
+    vspeed = 0;
+    jump = 0;
+    if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
+    { 
+        if( hspeed &gt; 0)
+            move_contact(0);
+        else
+            move_contact(180);   
+        hspeed = 0;
+        moving = false;
+    }
+}
+
+if (vspeed &lt; 0 &amp;&amp; !place_free(x,y+vspeed))
+{ 
+    move_contact(90)
+    vspeed = 0;
+    if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
+    { 
+        if( hspeed &gt; 0)
+            move_contact(0);
+        else
+            move_contact(180);   
+        hspeed = 0;
+        moving = false;
+    }
+}
+
+if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
+{ 
+    if( hspeed &gt; 0)
+        move_contact(0);
+    else
+        move_contact(180);   
+    hspeed = 0;
+    moving = false;
+}
+
+
 </string>
           </argument>
         </arguments>

@@ -90,12 +90,14 @@ color = c_white;
           <argument>
             <kind>1</kind>
             <string>var hasBegun;
+//check to see if player has control over the character yet
 with(obj_Contra_Controller)
 {
     hasBegun = begun;
 }
 if(hasBegun){
     image_index += 1;
+    //recently damaged manages invincibility frames after being hit
     if(recentlyDamaged)
     {
         vspeed =-15;
@@ -105,9 +107,9 @@ if(hasBegun){
     }
     
     //boundry patrol just in case
-    if(x &lt; 0 || x &gt; room_width || y &gt; room_height)
+    if(x &lt; view_xview[0] || x &gt; view_xview[0] + 320 || y &gt; room_height)
     {
-        x = 203;
+        x = view_xview[0] + 80;
         y = -50;
         vspeed = 0;
         hspeed = 0;
@@ -116,19 +118,20 @@ if(hasBegun){
         damaged = true;
     }
     
+    //check to make sure player isn't in damaged animation
     if(!damaged){
-        
+        //jumping
         if(jump == 0 &amp;&amp; keyboard_check_pressed(ord('X')) &amp;&amp; vspeed ==0)
         {
             jump = 1;
             vspeed = -20;
         }
-        
+        //falling
         if(vspeed &gt; 0)
         {
             falling = true;
         }
-        
+        //looking diagonally upwards
         if ( keyboard_check(vk_up) &amp;&amp; (keyboard_check(vk_right) || keyboard_check(vk_left)))
         {
             lookDirection = 1;
@@ -143,7 +146,7 @@ if(hasBegun){
                 hspeed = -6;
                 facing = -1;
             }
-        }
+        }//looking diagonally downwards
         else if ( keyboard_check(vk_down) &amp;&amp; (keyboard_check(vk_right) || keyboard_check(vk_left)))
         {
             lookDirection = 3;
@@ -159,12 +162,14 @@ if(hasBegun){
                 facing = -1;
             }
         }
+        //looking up
         else if(keyboard_check(vk_up))
         {
             lookDirection = 0;
             moving = false;
             crouching = false;
         }
+        //looking right
         else if(keyboard_check(vk_right))
         {
             facing = 1;
@@ -172,6 +177,7 @@ if(hasBegun){
             hspeed = 6;
             moving = true;
         }
+        //looking left
         else if(keyboard_check(vk_left))
         {
             facing = -1;
@@ -179,24 +185,25 @@ if(hasBegun){
             hspeed = -6;
             moving = true;
         }
+        //crouching (doesn't actually work)
         else if(keyboard_check(vk_down))
         {
             lookDirection = 2;
             crouching = true;
             moving = false;
         }
-        
+        //letting go of up to reset look direction to default
         if( keyboard_check_released(vk_up))
         {
             lookDirection = 2;
         }
-        
+        //letting go of down to reset look direction to default
         if( keyboard_check_released(vk_down))
         {
             lookDirection = 2;
             crouching = false; 
         }
-        
+        //letting go of right
         if( hspeed &gt; 0 &amp;&amp; keyboard_check_released(vk_right))
         {
             if(keyboard_check(vk_down))
@@ -204,7 +211,7 @@ if(hasBegun){
             hspeed = 0;   
             moving = false;
         }
-        
+        //letting go of left
         if( hspeed &lt; 0 &amp;&amp; keyboard_check_released(vk_left))
         {
             if(keyboard_check(vk_down))
@@ -212,7 +219,7 @@ if(hasBegun){
             hspeed = 0;   
             moving = false;
         }
-        
+        //check if ready to fire bullet and player wants to fire
         if(keyboard_check(ord('C')) &amp;&amp; bulletReady &amp;&amp; bulletTimer &lt;=0)
         {
             if(jump == 1 &amp;&amp; keyboard_check(vk_down))
@@ -249,12 +256,12 @@ if(hasBegun){
             bulletReady = false;
             shooting = true;
         }
-        
+        //releasing shoot button
         if (keyboard_check_released(ord('C')))
         {
             shooting = false;
         }
-        
+        //timing for bullets
         if (bulletTimer &gt; 0)
         {
             bulletTimer -= 1;
@@ -264,6 +271,7 @@ if(hasBegun){
             bulletReady = true;
         }
     }
+    //attempt at fixing corner cases
     if(falling &amp;&amp; lasty == y)
     {
         y -= 5;
@@ -271,6 +279,130 @@ if(hasBegun){
     lastx = x;
     lasty = y;
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_contrain_car_outside">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(damaged)
+{
+    hspeed = 0;
+    damaged = false;
+}
+if (vspeed &gt; 0 &amp;&amp; !place_free(x,y+vspeed))
+{ 
+
+        move_contact(270)
+        vspeed = 0;
+        jump = 0;
+        falling = false;
+}
+
+if (vspeed &lt; 0 &amp;&amp; !place_free(x,y+vspeed))
+{ 
+    if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
+    { 
+        if( hspeed &gt; 0)
+            move_contact(0);
+        else
+            move_contact(180);   
+        hspeed = 0;
+        moving = false;
+    }
+    move_contact(90)
+    vspeed = 0;
+}
+
+if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
+{ 
+    if( hspeed &gt; 0)
+        move_contact(0);
+    else
+        move_contact(180);   
+    hspeed = 0;
+    moving = false;
+}
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_contrain_car_inside">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(damaged)
+{
+    hspeed = 0;
+    damaged = false;
+}
+if (vspeed &gt; 0 &amp;&amp; !place_free(x,y+vspeed))
+{ 
+
+        move_contact(270)
+        vspeed = 0;
+        jump = 0;
+        falling = false;
+}
+
+if (vspeed &lt; 0 &amp;&amp; !place_free(x,y+vspeed))
+{ 
+    if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
+    { 
+        if( hspeed &gt; 0)
+            move_contact(0);
+        else
+            move_contact(180);   
+        hspeed = 0;
+        moving = false;
+    }
+    move_contact(90)
+    vspeed = 0;
+}
+
+if (hspeed != 0 &amp;&amp; !place_free(x + hspeed,y))
+{ 
+    if( hspeed &gt; 0)
+        move_contact(0);
+    else
+        move_contact(180);   
+    hspeed = 0;
+    moving = false;
+}
+
+
 </string>
           </argument>
         </arguments>

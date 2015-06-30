@@ -34,6 +34,7 @@ pulse = 0;
 global.music = "contra";
 begun = false;
 global.fromImagination = true;
+moveTrigger = true;
 </string>
           </argument>
         </arguments>
@@ -201,6 +202,7 @@ global.fromImagination = true;
           <argument>
             <kind>1</kind>
             <string>background_y[0] += 1;
+moveTrigger = true;
 </string>
           </argument>
         </arguments>
@@ -248,6 +250,13 @@ global.fromImagination = true;
           <argument>
             <kind>1</kind>
             <string>background_x[0]=view_xview[0];
+//unlocks the camera and spawns an arrow to tell the player to advance.
+if ( moveTrigger = true &amp;&amp; killCount == 15)
+{
+    moveTrigger = false;
+    view_object[0] = obj_contra_player;
+    instance_create(view_xview[0] +300, 128, obj_contra_arrow);
+}
 </string>
           </argument>
         </arguments>
