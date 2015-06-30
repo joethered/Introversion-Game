@@ -91,4 +91,3 @@ show_debug_message(ds_map_find_value(npc,"name"));
 show_debug_message("prev: " + ds_map_find_value(npc,"prev_room"));*/
 //show_debug_message("cur:  " + ds_map_find_value(npc,"cur_room"));
 //show_debug_message("next: " + ds_map_find_value(npc,"next_room"));
-

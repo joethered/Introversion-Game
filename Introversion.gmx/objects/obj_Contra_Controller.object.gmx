@@ -28,8 +28,8 @@
             <string>background_y[0] = -220;
 quicken = false;
 killCount = 0;
-audio_stop_music();
-audio_play_music(mus_contrain,true);
+audio_stop_all();
+audio_play_sound(mus_contrain,100,true);
 pulse = 0;
 global.music = "contra";
 begun = false;

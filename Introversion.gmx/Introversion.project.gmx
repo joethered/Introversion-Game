@@ -483,8 +483,10 @@
       <object>objects\obj_demon</object>
       <object>objects\obj_fire</object>
     </objects>
+    <object>objects\obj_loadChecker</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_loadcheck</room>
     <room>rooms\rm_title</room>
     <room>rooms\rm_intro</room>
     <room>rooms\rm_convo_1</room>
@@ -508,6 +510,7 @@
     </rooms>
     <room>rooms\rm_end</room>
     <room>rooms\rm_credits</room>
+    <room>rooms\rm_fire</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

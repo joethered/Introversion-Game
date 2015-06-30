@@ -99,7 +99,8 @@ global.fromImagination = false;
           <argument>
             <kind>1</kind>
             <string>state++;
-audio_play_music(mus_title_begin,false);
+audio_play_sound(mus_title_begin,100,false);
+count = 0;
 </string>
           </argument>
         </arguments>
@@ -122,8 +123,9 @@ audio_play_music(mus_title_begin,false);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (state == 2 &amp;&amp; !audio_music_is_playing()){
-    audio_play_music(mus_title_loop,true);
+            <string>if (state == 2 &amp;&amp; !audio_is_playing(mus_title_begin)){
+    audio_stop_all();
+    audio_play_sound(mus_title_loop,100,true);
     state = 3;
 }
 </string>
@@ -218,6 +220,7 @@ if (state &gt; 0){
             <string>if(state == 3){
     script_execute(scr_initialize_game);
     room_goto(rm_intro);
+    audio_stop_all();
 }
 </string>
           </argument>
@@ -290,8 +293,8 @@ if (state &gt; 0){
             <kind>1</kind>
             <string>if (state &lt; 3){
     state = 3;
-    audio_stop_music();
-    audio_play_music(mus_title_loop,true);
+    audio_stop_sound(mus_title_begin);
+    audio_play_sound(mus_title_loop,100,true);
 }
 </string>
           </argument>
