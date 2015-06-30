@@ -87,11 +87,11 @@ if (global.dream = 1){
           <argument>
             <kind>1</kind>
             <string>if (!global.stamina_pause){
-    global.stamina -= 0.02;
+    global.stamina -= 0.03;
     if (global.stamina &lt;= 0){
         if(!hasLost){
-            audio_stop_music();
-            audio_play_music(sfx_to_imagination,false);
+            audio_stop_all();
+            audio_play_sound(sfx_to_imagination,100,false);
             alarm[0] = 50;
             hasLost = true;
             if(global.cur_room == "convo"){

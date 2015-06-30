@@ -119,4 +119,3 @@ with(obj_Stamina){
             }
     }
 }
-

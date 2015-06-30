@@ -28,7 +28,8 @@
             <string>bg_color = 0;
 zoom_factor = 1;
 if (global.music != "party1"){
-    audio_play_music(mus_party1, true);
+    audio_stop_all();
+    audio_play_sound(mus_party1,100, true);
     global.music = "party1";
 }
 if(global.fromImagination != true)

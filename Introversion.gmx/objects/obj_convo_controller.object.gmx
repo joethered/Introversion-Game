@@ -29,7 +29,7 @@
 global.menu_stack = ds_stack_create();
 bg_color = 0;
 if (global.music != "party1"){
-    audio_play_music(mus_party1, true);
+    audio_play_sound(mus_party1,1, true);
     global.music = "party1";
 }
 

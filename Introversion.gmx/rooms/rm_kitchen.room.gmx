@@ -59,7 +59,7 @@ script_execute(scr_spawn_party_player);</code>
     <instance objName="debug_controller" x="5" y="23" name="inst_430F28CC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="jmp_kitchen_to_parlor" x="160" y="102" name="inst_361815FB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="jmp_kitchen_to_entry" x="102" y="81" name="inst_13F62937" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="jmp_kitchen_to_hallway" x="-5" y="100" name="inst_CF059D59" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="jmp_kitchen_to_hallway" x="-4" y="101" name="inst_CF059D59" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_group_spot1" x="32" y="88" name="inst_4B8654C6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_group_spot2" x="88" y="104" name="inst_F2AB3043" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_npc_wall" x="8" y="64" name="inst_0C048D68" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

@@ -79,7 +79,7 @@ image_speed = 0.2;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>audio_play_music(mus_hell,true);
+            <string>audio_play_sound(mus_hell,100,true);
 </string>
           </argument>
         </arguments>

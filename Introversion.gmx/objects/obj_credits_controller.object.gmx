@@ -58,7 +58,8 @@ draw_text(80,100, "Press 'C' to return");
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room_goto(rm_title);
+            <string>audio_stop_all();
+room_goto(rm_title);
 </string>
           </argument>
         </arguments>
