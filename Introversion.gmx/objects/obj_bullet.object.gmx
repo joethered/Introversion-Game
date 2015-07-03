@@ -46,7 +46,7 @@
         <arguments>
           <argument>
             <kind>6</kind>
-            <sound>sfx_contra_shoot</sound>
+            <sound>sfx_contra_shoot_2</sound>
           </argument>
           <argument>
             <kind>3</kind>

@@ -35,6 +35,8 @@ global.music = "contra";
 begun = false;
 global.fromImagination = true;
 moveTrigger = true;
+stageLevel = 0;
+bossStage = false;
 </string>
           </argument>
         </arguments>
@@ -251,11 +253,27 @@ moveTrigger = true;
             <kind>1</kind>
             <string>background_x[0]=view_xview[0];
 //unlocks the camera and spawns an arrow to tell the player to advance.
-if ( moveTrigger = true &amp;&amp; killCount == 15)
+if ( stageLevel == 0 &amp;&amp; moveTrigger == true &amp;&amp; killCount &gt;= 15 )
 {
     moveTrigger = false;
     view_object[0] = obj_contra_player;
     instance_create(view_xview[0] +300, 128, obj_contra_arrow);
+    stageLevel = 1;
+} else if ( stageLevel == 1 &amp;&amp; obj_contra_player.x &gt;= 1020)
+{
+    moveTrigger = true;
+    view_object[0] = noone;
+    stageLevel = 2;
+} else if (stageLevel == 2 &amp;&amp; killCount &gt;= 40)
+{
+    moveTrigger = false;
+    view_object[0] = obj_contra_player;
+    instance_create(view_xview[0] +300, 128, obj_contra_arrow);
+    stageLevel = 3;
+} else if (stageLevel == 3 &amp;&amp; obj_contra_player.x &gt;= 2040)
+{
+    stageLevel = 4;
+    bossStage = true;
 }
 </string>
           </argument>

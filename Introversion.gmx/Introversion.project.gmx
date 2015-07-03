@@ -27,6 +27,7 @@
     <sound>sound\sfx_demon_growl</sound>
     <sound>sound\sfx_sword_swing</sound>
     <sound>sound\sfx_sword_reveal</sound>
+    <sound>sound\sfx_contra_shoot_2</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spt_topic_bubble_left</sprite>
